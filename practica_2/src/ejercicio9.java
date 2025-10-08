@@ -26,12 +26,12 @@ public class ejercicio9 {
             //El valor máximo y la posición en la que aparece.
             if(numeros[i] > max) {
                 max = numeros[i];
-                posMax = posicion[i];
+                posMax = i+2;
             }
             //El valor mínimo y la posición en la que aparece.
             if(numeros[i] < min) {
                 min = numeros[i];
-                posMin = posicion[i];
+                posMin = i+2;
             }
 
         }
