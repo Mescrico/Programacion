@@ -22,5 +22,3 @@
    * [Ejercicio 13 – Lista de números y suma tota](src/ejercicio13.java) 
    * [Ejercicio 14 - Lista de nombres y búsqueda](src/ejercicio14.java)
    * [Ejercicio 15 - Ordenar y eliminar duplicados](src/ejercicio15.java)
-
- 
