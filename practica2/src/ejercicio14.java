@@ -24,12 +24,22 @@ public class ejercicio14 {
 
         System.out.println("Dime un nombre a buscar");
         String buscar = s.nextLine();
+        //Creamos un booleano para el bucle siguiente
+        boolean encontrado = false;
 
         //Si el nombre está en la lista se mostrará su posición
-        if(lista.contains(buscar)) {
-            System.out.println("Está en la lista, en la posición "+lista.indexOf(buscar));
-        } else {
-            System.out.println("No está en la lista");
+        for( int i = 0; i<lista.size(); i++) {
+            if(lista.get(i).equals(buscar)) {
+                System.out.println("Está en la lista, en la posición "+lista.indexOf(buscar));
+                encontrado = true;
+                break;
+            }
+            //Si no está en la lista usamos el booleano
+            if(!encontrado) {
+                System.out.println("No está en la lista");
+                break;
+            }
         }
+
     }
 }
