@@ -25,19 +25,21 @@ public class ejercicio3 {
             suma = 0;
             //Hacemos un bucle para mostrar los numeros
             for (int j = 0; j < numeros[i].length; j++) {
-                System.out.print("|  "+numeros[i][j]+"  |");
+                //Usamos %-10d para reservar 10 espacios para el digito
+                System.out.printf("|%-10d|", numeros[i][j]);
                 //Vamos sumando la suma mas cada numero del array bidimensional
                 suma += numeros[i][j];
 
             }
-            System.out.print("||  "+suma);
+            System.out.printf("|| %-10d", suma);
             //Usamos este printf %n para hacer un salto de linea
             System.out.printf("%n");
             //A la suma total le vamos sumando la suma de la fila al final de cada vuelta
             sumaT += suma;
 
         }
-        System.out.println("------------------------------------------------");
+
+        System.out.println("------------------------------------------------------------------------");
 
         //Creamos el bucle que nos diga cual es el numero mayor de cada columna
         for (int j = 0; j < numeros[0].length; j++) {
@@ -52,9 +54,9 @@ public class ejercicio3 {
             }
             //Sumamos la suma total (que ya tiene la suma de las filas) mas la suma de cada numero mayor de la columna
             sumaT += mayor;
-            System.out.print("|  "+mayor+"  |");
+            System.out.printf("|%-10d|", mayor);
         }
-        System.out.print("||  "+sumaT);
+        System.out.printf("|| %-10d", sumaT);
 
 
     }
