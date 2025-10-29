@@ -15,7 +15,7 @@ public class ejercicio1 {
         doub[2][3] = 9; doub[2][4] = 100; doub[2][5] = 11;
 
         //Creamos los textos de la tabla
-        System.out.println("Array num    Columna 0  Columna 1  Columna 2  Columna 3  Columna 4  Columna 5");
+        System.out.println("Array num    Columna 0   Columna 1   Columna 2   Columna 3   Columna 4   Columna 5");
         //Creamos el bucle que vaya mostrando la tabla con los valores segun la posicion
         for (int i = 0; i < doub.length; i++) {
             //Creamos el texto fila de la tabla
@@ -23,11 +23,11 @@ public class ejercicio1 {
             for (int j = 0; j < doub[i].length; j++) {
                 //Si el numero no es 100, lo mostramos por pantalla
                 if(doub[i][j] != 100) {
-                    System.out.printf("|    %.0f    |", doub[i][j]); //El %.0f es para mostrar el valor sin decimales
+                    System.out.printf("|%-10.0f|", doub[i][j]); //El %.0f es para mostrar el valor sin decimales
                 }
                 //En caso contrario muestra un espacio vacio
                 else {
-                    System.out.print("|         |");
+                    System.out.printf("|%-10s|", "");
                 }
             }
             System.out.printf("%n"); //El %n es para hacer un salto de linea
