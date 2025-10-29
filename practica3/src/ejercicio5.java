@@ -11,7 +11,7 @@ public class ejercicio5 {
         int maximo = 0;
         int minimo = 0;
         int maximoC = 0;
-        //Pongo que minimoC valga 1001 para hacer las posteriores comparaciones
+        //Pongo que minimoC valga 1001 para hacer las posteriores comparaciones q
         int minimoC = 1001;
 
         for (int i = 0; i < numeros.length; i++) {
