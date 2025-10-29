@@ -11,8 +11,7 @@ public class ejercicio3 {
         int suma = 0;
         int mayor = 0;
 
-        //Pedimos los 20 numeros enteros
-        System.out.println("Escribe 20 números enteros");
+        //Hacemos el bucle que ponga los numeros aleatorios
         for (int i = 0; i <numeros.length; i++) {
             for (int j = 0; j < numeros[i].length; j++) {
                 //Usamos el math.random para que genere un numero hasta el 1999 (sin contarlo) y le sumamos 1 para que sea desde el 1 hasta 1999
