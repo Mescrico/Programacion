@@ -15,8 +15,10 @@ public class ejercicio5 {
         String posmin = "";
         int sumaT;
         int sumaF = 0;
+        int sumaC = 0;
         //Pongo que minimoC valga 1001 para hacer las posteriores comparaciones q
         int minimoC = 1001;
+
 
         for (int i = 0; i < numeros.length; i++) {
             for (int j = 0; j < numeros[i].length; j++) {
@@ -27,7 +29,6 @@ public class ejercicio5 {
         }
 
         for (int i = 0; i < numeros.length; i++) {
-            sumaT = 0;
             if(i == 0) {
                 maximo = numeros[i][0];
                 minimo = numeros[i][0];
@@ -42,25 +43,34 @@ public class ejercicio5 {
                     minimo = numeros[i][j];
                     posmin = "Fila "+(i+1)+" y Columna "+(j+1);
                 }
-                sumaT += numeros[i][j];
             }
 
             if(maximo > maximoC) {
                 maximoC = maximo;
             }
-            if(i == numeros.length-1) {
-                System.out.println("La posición del numero maximo ("+maximoC+") es "+posmax);
-            }
+
             if(minimo < minimoC) {
                 minimoC = minimo;
             }
-            if(i == numeros.length-1) {
-                System.out.println("La posición del numero minimo ("+minimoC+") es "+posmin);
-            }
-            sumaF += sumaT;
-            if(i == numeros.length-1) {
-                System.out.println("Suma de las filas: "+sumaF);
-            }
         }
+        System.out.println("La posición del numero maximo ("+maximoC+") es "+posmax);
+        System.out.println("La posición del numero minimo ("+minimoC+") es "+posmin);
+
+        for (int i = 0; i < numeros.length; i++) {
+            sumaT = 0;
+            for (int j = 0; j < numeros[i].length; j++) {
+                sumaT += numeros[i][j];
+                for (int k = 0; k < numeros.length; k++) {
+                    sumaC += numeros[k][j];
+
+                }
+            }
+            System.out.println("Fila "+(i+1)+": "+sumaT);
+            System.out.println("Columna "+(i+1)+": "+sumaC);
+            sumaF += sumaT;
+        }
+        System.out.println("Suma de las filas: "+sumaF);
+        System.out.println("Suma de las columnas: "+sumaC);
+        System.out.println("Suma total de todas las filas y columnas: ");
     }
 }
