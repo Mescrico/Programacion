@@ -46,17 +46,8 @@ public class ejercicio7 {
 
         //Creamos el array bidimensional de 6 filas y 10 columnas
         int[][] numeros = new int[6][10];
-        //Creamos todas las variables que se utilizarán
-        int maximo = 0;
-        int minimo = 0;
-        int maximoC = 0;
-        String posmax = "";
-        String posmin = "";
         int sumaT;
         int sumaF = 0;
-        int sumaC = 0;
-        //Pongo que minimoC valga 1001 para hacer las posteriores comparaciones q
-        int minimoC = 1001;
         //Creamos las variables nuevas
         boolean repetido = false;
         int numeroactual = 0;
@@ -92,8 +83,8 @@ public class ejercicio7 {
                                 }
                                 //Si ya se ha superado el limite de intentos (que son 100)
                                 if(intentos >= intentostotal) {
-                                    //Ponemos en esa posición el valor de 0
-                                    numeros[i][j] = -9999;
+                                    //Ponemos en esa posición la celda vacia
+                                    numeros[i][j] = min-1;
                                     break;
                                 }
 
