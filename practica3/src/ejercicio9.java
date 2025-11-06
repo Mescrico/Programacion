@@ -23,6 +23,7 @@ public class ejercicio9 {
             }
             System.out.printf("%n");
         }
+
         //Pedimos que diga una posicion
         System.out.println("Donde quieres poner al caballo");
         String inicial = s.nextLine();
