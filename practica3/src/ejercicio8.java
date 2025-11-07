@@ -32,7 +32,7 @@ public class ejercicio8 {
             for (int j = 0; j < mesa[i].length; j++) {
                 //Si a donde vamos es igual a 1 hemos ganado
                 if(destino == 1) {
-                    System.out.println("\uD83E\uDE99 Ganaste \uD83D\uDC4F");
+                    System.out.println("\uD83D\uDCB0 Ganaste \uD83D\uDC4F");
                     return true;
                 }
                 //si a donde vamos es igual a 2 hemos perdido
