@@ -186,7 +186,7 @@ public class ejercicio10 {
                     columnas = s.nextInt();
 
                     //Si ha puesto alguna fila o columna mayor a 3 o menor a 1 le printeamos que es del 1 al 3 y el tablero
-                    if(filas > 3 || columnas > 3 || filas < 0 || columnas < 0) {
+                    if(filas > 3 || columnas > 3 || filas < 1 || columnas < 0) {
                         System.out.println("Del 1 al 3");
                         mesa(tablero);
                         //Devolvemos valido como falso
