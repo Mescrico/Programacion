@@ -125,7 +125,7 @@ public class ejercicio10 {
 
         //Creamos un do while para hacer esto mientras la partida no haya acabado
         do{
-            //Al booleano de turno de x lo ponemos true y al turno de o falso para que empieze la x
+            //Al booleano de turno de x lo ponemos true y al turno de o falso
             turnox = true;
             turnoo = false;
 
