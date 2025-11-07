@@ -104,7 +104,7 @@ public class ejercicio10 {
 
         //Creamos el tablero 3x3
         int[][] tablero = new int[3][3];
-        //Creamos el bucle para colocar a cada casilla el valor de 7, que será casilla vacia
+        //Creamos el bucle para colocar a cada casilla el valor de 7, que será la casilla vacia
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 tablero[i][j] = 7;
