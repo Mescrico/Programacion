@@ -30,6 +30,8 @@ public class main {
         String password = s.nextLine();
         if(usuario1.checkUsuario(correo,password) && correo.equals(usuario1.getEmail())) {
             System.out.println("Acceso concedido a "+usuario1.getNombre());
+        } else if (correo.equals(usuario1.getEmail())){
+            System.out.println("¡ERROR! Contraseña incorrecta para "+usuario1.getEmail()+". Acceso denegado.");
         }
         if(usuario2.checkUsuario(correo,password) && correo.equals(usuario2.getEmail())) {
             System.out.println("Acceso concedido a "+usuario2.getNombre());
