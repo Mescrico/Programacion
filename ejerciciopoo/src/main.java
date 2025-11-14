@@ -23,6 +23,7 @@ public class main {
 
         //validarRegistro(usuarios);
 
+        //Simulacion de inicio de sesion y manejo de errores
         System.out.println("Dime el correo del usuario");
         String correo = s.nextLine();
         System.out.println("Dime la contraseña del usuario");
