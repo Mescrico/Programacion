@@ -1,11 +1,11 @@
 public class Areas {
     private String nombre;
-    private int identificador;
+    private String identificador;
     private int planta;
     private Hospital hospital;
     private int numMedicos;
 
-    public Areas(String nombre, int identificador, int planta, Hospital hospital) {
+    public Areas(String nombre, String identificador, int planta, Hospital hospital) {
         this.nombre = nombre;
         this.identificador = identificador;
         this.planta = planta;
@@ -21,11 +21,11 @@ public class Areas {
         this.nombre = nombre;
     }
 
-    public int getIdentificador() {
+    public String getIdentificador() {
         return identificador;
     }
 
-    public void setIdentificador(int identificador) {
+    public void setIdentificador(String identificador) {
         this.identificador = identificador;
     }
 
@@ -73,5 +73,12 @@ public class Areas {
         }
     }
 
+    public int calcularCapacidadRestante(int capacidadMaxima) {
+        return capacidadMaxima - this.numMedicos;
+    }
 
+    @Override
+    public String toString(){
+        return "Nombre: "+nombre+" Identificador: "+identificador+" Planta: "+planta+" Hospital: "+hospital.getNombre();
+    }
 }
