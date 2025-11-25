@@ -8,18 +8,34 @@ public class MenuGestor {
     private ArrayList<Medico> medicos = new ArrayList<>();
     Scanner s = new Scanner(System.in);
 
-    public void crearDireccion() {
+    public Medico buscarMedico(String dni) {
+        if(medicos.isEmpty()) {
+            System.out.println("No hay médicos, primero crea uno");
+            return null;
+        }
 
+        System.out.println("Introduce el DNI");
+        dni = s.nextLine();
+
+        Medico medico;
+        for (int i = 0; i < medicos.size(); i++) {
+            if(medicos.get(i).getDni().equals(dni)) {
+                medico = medicos.get(i);
+                return medico;
+            }
+        }
+
+        System.out.println("No hay ningún médico con ese DNI");
+        return null;
     }
-
     public void crearHospital() {
-        System.out.println("Di el nombre");
+        System.out.println("Di el nombre del hospital");
         String nombre = s.nextLine();
         boolean existe;
         String cif;
         do {
             existe = false;
-            System.out.println("Di el CIF");
+            System.out.println("Di el CIF del hospital");
             cif = s.nextLine();
 
             for (int i = 0; i < hospitales.size(); i++) {
@@ -57,9 +73,9 @@ public class MenuGestor {
         if(hospitales.isEmpty()) {
             System.out.println("No hay hospitales, primero crea uno");
         } else {
-            System.out.println("Di el nombre");
+            System.out.println("Di el nombre del area");
             String nombre = s.nextLine();
-            System.out.println("Di el identificador");
+            System.out.println("Di el identificador del área");
             String identificador = s.nextLine();
             System.out.println("Di la planta");
             int planta = s.nextInt();
@@ -83,7 +99,7 @@ public class MenuGestor {
         if(areas.isEmpty()) {
             System.out.println("No hay áreas, primero debes crear uno");
         } else {
-            System.out.println("Di el DNI");
+            System.out.println("Di el DNI del médico");
             String dni = s.nextLine();
             System.out.println("Di el nombre");
             String nombre = s.nextLine();
@@ -165,73 +181,63 @@ public class MenuGestor {
                     crearMedico();
                     break;
                 case 4:
-                    if(medicos.isEmpty()) {
-                        System.out.println("No hay médicos, primero crea uno");
+                    Medico medicoSeleccionado = buscarMedico("");
+                    if (medicoSeleccionado == null) {
                         break;
-                    } else {
-                        System.out.println("Introduce el DNI");
-                        String DNI = s.nextLine();
-                        Medico medicoSeleccionado = null;
-                        for (int i = 0; i < medicos.size(); i++) {
-                            if (medicos.get(i).getDni().equals(DNI)) {
-                                medicoSeleccionado = medicos.get(i);
-                                break;
+                    }
+                    System.out.println("Que quieres cambiar");
+                    System.out.println("1.- Sueldo Bruto");
+                    System.out.println("2.- Dirección");
+                    System.out.println("3.- Área de trabajo");
+                    System.out.println("0.- Salir");
+                    int seleccion = s.nextInt();
+                    s.nextLine();
+                    switch (seleccion) {
+                        case 1:
+                            System.out.println("Cantidad nueva:");
+                            int cantidad = s.nextInt();
+                            s.nextLine();
+                            medicoSeleccionado.setSueldoBruto(cantidad);
+                            System.out.println("Cantidad del médico "+medicoSeleccionado.getNombre()+" actualizada");
+                            break;
+                        case 2:
+                            System.out.println("Dirección nueva:");
+                            System.out.println("Calle:");
+                            String calle = s.nextLine();
+                            System.out.println("Número:");
+                            int numero = s.nextInt();
+                            System.out.println("Código postal:");
+                            int cp = s.nextInt();
+                            s.nextLine();
+                            System.out.println("Localidad:");
+                            String localidad = s.nextLine();
+                            System.out.println("Provincia:");
+                            String provincia = s.nextLine();
+
+                            Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
+                            medicoSeleccionado.setDireccion(nuevaDireccion);
+                            System.out.println("Dirección del médico "+medicoSeleccionado.getNombre()+" actualizada");
+                            break;
+                        case 3:
+                            System.out.println("Área de trabajo nueva, elijela por el número");
+                            for (int i = 0; i < areas.size(); i++) {
+                                System.out.printf(i+".- "+areas.get(i).getNombre()+" Identificador: "+areas.get(i).getIdentificador());
                             }
-                        }
-                        if (medicoSeleccionado == null) {
-                            System.out.println("No hay ningún médico con ese DNI");
+                            int areaSeleccionada = s.nextInt();
+                            Areas areaNueva = areas.get(areaSeleccionada);
+                            medicoSeleccionado.cambiarArea(areaNueva);
+                            System.out.println("Área de trabajo del médico "+medicoSeleccionado.getNombre()+" actualizada");
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
                             break;
                         }
-                        s.nextLine();
-                        System.out.println("Que quieres cambiar");
-                        System.out.println("1.- Sueldo Bruto");
-                        System.out.println("2.- Dirección");
-                        System.out.println("3.- Área de trabajo");
 
-                        int seleccion = s.nextInt();
-                        s.nextLine();
-                        switch (seleccion) {
-                            case 1:
-                                System.out.println("Cantidad nueva:");
-                                int cantidad = s.nextInt();
-                                s.nextLine();
-                                medicoSeleccionado.setSueldoBruto(cantidad);
-                                System.out.println("Cantidad del médico actualizada");
-                                break;
-                            case 2:
-                                System.out.println("Dirección nueva:");
-                                System.out.println("Calle:");
-                                String calle = s.nextLine();
-                                System.out.println("Número:");
-                                int numero = s.nextInt();
-                                System.out.println("Código postal:");
-                                int cp = s.nextInt();
-                                s.nextLine();
-                                System.out.println("Localidad:");
-                                String localidad = s.nextLine();
-                                System.out.println("Provincia:");
-                                String provincia = s.nextLine();
-
-                                Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
-                                medicoSeleccionado.setDireccion(nuevaDireccion);
-                                System.out.println("Dirección del médico actualizada");
-                                break;
-                            case 3:
-                                System.out.println("Área de trabajo nueva, eligela por el número");
-                                for (int i = 0; i < areas.size(); i++) {
-                                    System.out.printf(i+".- "+areas.get(i).getNombre()+" Identificador: "+areas.get(i).getIdentificador());
-                                }
-                                int areaSeleccionada = s.nextInt();
-                                Areas areaNueva = areas.get(areaSeleccionada);
-                                medicoSeleccionado.cambiarArea(areaNueva);
-                                System.out.println("Área de trabajo del médico actualizada");
-                                break;
-                            default:
-                                System.out.println("Opción no válida");
-                                break;
-                        }
-                    }
+                    break;
                 case 5:
+                    //TENGO QUE CAMBIAR ESTO
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
@@ -253,6 +259,7 @@ public class MenuGestor {
                         System.out.println("Que quieres hacer");
                         System.out.println("1.- Nombre");
                         System.out.println("2.- Dirección");
+                        System.out.println("0.- Salir");
                         int opcionHospital = s.nextInt();
                         s.nextLine();
 
@@ -281,12 +288,43 @@ public class MenuGestor {
                                 hospitalSeleccionado.setDireccion(nuevaDireccion);
                                 System.out.println("Dirección del hospital actualizado");
                                 break;
+                            case 0:
+                                break;
                             default:
                                 System.out.println("Opción no válida");
                                 break;
                         }
                     }
+                    break;
 
+                case 6:
+                    Medico medicoSeleccionado6 = buscarMedico("");
+                    if(medicoSeleccionado6 == null) {
+                        System.out.println("No hay ningún médico con ese DNI");
+                        break;
+                    }
+
+                    System.out.println("Antigüedad del médico "+medicoSeleccionado6.getNombre()+" en el hospital: "+medicoSeleccionado6.getAniosAntiguedad()+" años");
+
+                    break;
+                case 7:
+                    Medico medicoSeleccionado7 = buscarMedico("");
+                    if (medicoSeleccionado7 == null) {
+                        System.out.println("No hay ningún médico con ese DNI");
+                        break;
+                    }
+
+                    Double retencion;
+                    do {
+                        System.out.println("Introduce el % de retención");
+                        retencion = s.nextDouble();
+                        if(retencion < 0) {
+                            System.out.println("El % de retención no puede ser negativo");
+                        }
+                    } while (retencion < 0);
+
+                    System.out.println("El sueldo neto del médico "+medicoSeleccionado7.getNombre()+" es: "+medicoSeleccionado7.calcularSueldoNeto(retencion)+"€");
+                    break;
                 case 0:
                     terminar = true;
                     break;
@@ -295,6 +333,7 @@ public class MenuGestor {
             }
         } while (!terminar);
     }
+
 
 
 }
