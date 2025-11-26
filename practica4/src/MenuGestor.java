@@ -28,6 +28,27 @@ public class MenuGestor {
         System.out.println("No hay ningún médico con ese DNI");
         return null;
     }
+
+    public Hospital buscarHospital(String nombre) {
+        if(hospitales.isEmpty()) {
+            System.out.println("No hay hospitales, primero crea uno");
+            return null;
+        }
+
+        System.out.println("Introduce el nombre del hospital");
+        nombre = s.nextLine();
+
+        Hospital hospital;
+        for (int i = 0; i < hospitales.size(); i++) {
+            if(hospitales.get(i).getNombre().equals(nombre)) {
+                hospital = hospitales.get(i);
+                return hospital;
+            }
+        }
+
+        System.out.println("No hay ningún hospital con ese nombre");
+        return null;
+    }
     public void crearHospital() {
         System.out.println("Di el nombre del hospital");
         String nombre = s.nextLine();
@@ -221,9 +242,10 @@ public class MenuGestor {
                         case 3:
                             System.out.println("Área de trabajo nueva, elijela por el número");
                             for (int i = 0; i < areas.size(); i++) {
-                                System.out.printf(i+".- "+areas.get(i).getNombre()+" Identificador: "+areas.get(i).getIdentificador());
+                                System.out.printf(i+".- "+areas.get(i).getNombre()+" Identificador: "+areas.get(i).getIdentificador()+"%n");
                             }
                             int areaSeleccionada = s.nextInt();
+                            s.nextLine();
                             Areas areaNueva = areas.get(areaSeleccionada);
                             medicoSeleccionado.cambiarArea(areaNueva);
                             System.out.println("Área de trabajo del médico "+medicoSeleccionado.getNombre()+" actualizada");
@@ -238,63 +260,52 @@ public class MenuGestor {
                     break;
                 case 5:
                     //TENGO QUE CAMBIAR ESTO
-                    if(hospitales.isEmpty()) {
-                        System.out.println("No hay hospitales, primero crea uno");
+                    Hospital hospitalSeleccionado = buscarHospital("");
+                    if (hospitalSeleccionado == null) {
+                        System.out.println("No hay ningún hospital con ese nombre");
                         break;
-                    } else {
-                        System.out.println("Introduce el nombre del hospital");
-                        String Nombre = s.nextLine();
-                        Hospital hospitalSeleccionado = null;
-                        for (int i = 0; i < hospitales.size(); i++) {
-                            if (hospitales.get(i).getNombre().equals(Nombre)) {
-                                hospitalSeleccionado = hospitales.get(i);
-                                break;
-                            }
-                        }
-                        if (hospitalSeleccionado == null) {
-                            System.out.println("No hay ningún hospital con ese nombre");
-                            break;
-                        }
-
-                        System.out.println("Que quieres hacer");
-                        System.out.println("1.- Nombre");
-                        System.out.println("2.- Dirección");
-                        System.out.println("0.- Salir");
-                        int opcionHospital = s.nextInt();
-                        s.nextLine();
-
-                        switch (opcionHospital) {
-                            case 1:
-                                System.out.println("Nombre nuevo: ");
-                                String nombreNuevo = s.next();
-                                hospitalSeleccionado.setNombre(nombreNuevo);
-                                break;
-                            case 2:
-                                System.out.println("Dirección nueva: ");
-                                System.out.println("Calle:");
-                                String calle = s.nextLine();
-                                System.out.println("Número:");
-                                int numero = s.nextInt();
-                                s.nextLine();
-                                System.out.println("Código postal:");
-                                int cp = s.nextInt();
-                                s.nextLine();
-                                System.out.println("Localidad:");
-                                String localidad = s.nextLine();
-                                System.out.println("Provincia:");
-                                String provincia = s.nextLine();
-
-                                Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
-                                hospitalSeleccionado.setDireccion(nuevaDireccion);
-                                System.out.println("Dirección del hospital actualizado");
-                                break;
-                            case 0:
-                                break;
-                            default:
-                                System.out.println("Opción no válida");
-                                break;
-                        }
                     }
+
+                    System.out.println("Que quieres hacer");
+                    System.out.println("1.- Nombre");
+                    System.out.println("2.- Dirección");
+                    System.out.println("0.- Salir");
+                    int opcionHospital = s.nextInt();
+                    s.nextLine();
+
+                    switch (opcionHospital) {
+                        case 1:
+                            System.out.println("Nombre nuevo: ");
+                            String nombreNuevo = s.next();
+                            hospitalSeleccionado.setNombre(nombreNuevo);
+                            break;
+                        case 2:
+                            System.out.println("Dirección nueva: ");
+                            System.out.println("Calle:");
+                            String calle = s.nextLine();
+                            System.out.println("Número:");
+                            int numero = s.nextInt();
+                            s.nextLine();
+                            System.out.println("Código postal:");
+                            int cp = s.nextInt();
+                            s.nextLine();
+                            System.out.println("Localidad:");
+                            String localidad = s.nextLine();
+                            System.out.println("Provincia:");
+                            String provincia = s.nextLine();
+
+                            Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
+                            hospitalSeleccionado.setDireccion(nuevaDireccion);
+                            System.out.println("Dirección del hospital actualizado");
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
+                            break;
+                    }
+
+
                     break;
 
                 case 6:
@@ -324,6 +335,29 @@ public class MenuGestor {
                     } while (retencion < 0);
 
                     System.out.println("El sueldo neto del médico "+medicoSeleccionado7.getNombre()+" es: "+medicoSeleccionado7.calcularSueldoNeto(retencion)+"€");
+                    break;
+                case 8:
+                    Medico medicoSeleccionado8 = buscarMedico("");
+                    if(medicoSeleccionado8 == null) {
+                        System.out.println("No hay ningún médico con ese DNI");
+                        break;
+                    }
+
+                    int edad;
+                    do {
+                        System.out.println("Introduce la edad mínima requerida");
+                        edad = s.nextInt();
+                        s.nextLine();
+                        if(edad <= 0) {
+                            System.out.println("La edad mínima no puede ser negativo ni 0");
+                        }
+                    } while(edad <= 0);
+
+                    if(medicoSeleccionado8.esMayorDeEdad(edad) == true) {
+                        System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es mayor de edad");
+                    } else {
+                        System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es menor de edad");
+                    }
                     break;
                 case 0:
                     terminar = true;
