@@ -359,6 +359,28 @@ public class MenuGestor {
                         System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es menor de edad");
                     }
                     break;
+                case 9:
+                    Hospital hospitalSeleccionado9 = buscarHospital("");
+                    if(hospitalSeleccionado9 == null) {
+                        System.out.println("No hay ningún hospital con ese nombre");
+                        break;
+                    }
+
+                    String idarea;
+                    boolean existe = false;
+                    do {
+                        System.out.println("Introduce el area del hospital");
+                        idarea = s.nextLine();
+
+                        if (hospitalSeleccionado9.existeArea(idarea)) {
+                            System.out.println("La proporción de médicos en la área "+idarea+" es: "+hospitalSeleccionado9.getProporcionMedicosArea(idarea));
+                            existe = true;
+                            break;
+                        } else {
+                            System.out.println("No existe esa area en el hospital "+hospitalSeleccionado9);
+                        }
+                    } while(!existe);
+                    break;
                 case 0:
                     terminar = true;
                     break;
