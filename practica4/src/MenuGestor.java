@@ -255,7 +255,7 @@ public class MenuGestor {
                         default:
                             System.out.println("Opción no válida");
                             break;
-                        }
+                    }
 
                     break;
                 case 5:
