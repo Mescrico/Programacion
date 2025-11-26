@@ -5,12 +5,14 @@ public class Hospital {
     private String cif;
     private Direccion direccion;
     private ArrayList<Areas> areas;
+    private ArrayList<Contrato> contrato;
 
     public Hospital (String nombre, String cif, Direccion direccion) {
         this.nombre = nombre;
         this.cif = cif;
         this.direccion = direccion;
         this.areas = new ArrayList<>();
+        this.contrato = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -47,6 +49,10 @@ public class Hospital {
 
     public void agregarArea(Areas areas) {
         this.areas.add(areas);
+    }
+
+    public void agregarContrato(Contrato contrato) {
+        this.contrato.add(contrato);
     }
 
     public int getNumeroTotalMedicos() {

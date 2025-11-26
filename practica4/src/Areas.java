@@ -11,6 +11,7 @@ public class Areas {
         this.planta = planta;
         this.hospital = hospital;
         this.numMedicos = 0;
+        hospital.agregarArea(this);
     }
 
     public String getNombre() {

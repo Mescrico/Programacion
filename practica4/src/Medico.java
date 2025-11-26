@@ -7,6 +7,7 @@ public class Medico {
     private int añosInicio;
     private Areas areas;
     private Direccion direccion;
+    private Contrato contrato;
 
     public Medico(String dni, String nombre, int edad, String sexo, int sueldoBruto, int añosInicio, Areas areas, Direccion direccion) {
         this.dni = dni;
@@ -17,6 +18,8 @@ public class Medico {
         this.añosInicio = añosInicio;
         this.areas = areas;
         this.direccion = direccion;
+        areas.aumentarMedico();
+        Contrato contratoMedico = new Contrato(this.añosInicio, this, this.areas.getHospital());
     }
 
     public String getDni() {
