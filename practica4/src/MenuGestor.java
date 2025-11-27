@@ -181,13 +181,24 @@ public class MenuGestor {
             int sueldoBruto = s.nextInt();
             System.out.println("Di el año de inicio");
             int añoInicio = s.nextInt();
-            System.out.println("Di el área por el número");
-            for (int i = 0; i < areas.size(); i++) {
-                System.out.printf(i + ".- " + areas.get(i).getNombre() + " Identificador: " + areas.get(i).getIdentificador() + " Hospital: "+ areas.get(i).getHospital().getNombre()+"%n");
-            }
 
-            int opcion = s.nextInt();
-            s.nextLine();
+            int opcion;
+            boolean encontr;
+            do {
+                encontr = false;
+                System.out.println("Di el área por el número");
+                for (int i = 0; i < areas.size(); i++) {
+                    System.out.printf(i + ".- " + areas.get(i).getNombre() + " Identificador: " + areas.get(i).getIdentificador() + " Hospital: "+ areas.get(i).getHospital().getNombre()+"%n");
+                }
+
+                opcion = s.nextInt();
+                s.nextLine();
+                if (opcion >= areas.size() || opcion < 0) {
+                    System.out.println("Ningún área tiene ese número");
+                } else {
+                    encontr = true;
+                }
+            } while (!encontr);
 
             Areas seleccion = areas.get(opcion);
 
@@ -209,11 +220,9 @@ public class MenuGestor {
             direcciones.add(nuevaDireccion);
             Medico nuevoMedico = new Medico(dni, nombre, edad, sexo, sueldoBruto, añoInicio, seleccion, nuevaDireccion);
             medicos.add(nuevoMedico);
-
-            Contrato nuevoContrato = new Contrato(añoInicio, nuevoMedico, nuevoMedico.getAreas().getHospital());
+            contratos.add(nuevoMedico.getContrato());
             System.out.println("Medico y Contrato creado:");
             System.out.println("Nombre: "+nuevoMedico.getNombre()+" DNI: "+nuevoMedico.getDni()+ " Hospital: "+nuevoMedico.getAreas().getHospital().getNombre());
-            System.out.println(nuevoContrato);
         }
     }
 
@@ -529,6 +538,38 @@ public class MenuGestor {
                     }
 
                     area1Seleccionada11.compararMedicos(area2Seleccionada11);
+                    break;
+                case 12:
+                    if(medicos.isEmpty()) {
+                        System.out.println("No hay médicos, primero crea uno");
+                    }
+
+                    boolean existe;
+                    int año;
+                    do {
+                        existe = false;
+                        System.out.println("Di un año para ver los médicos que tienen contrato de ese año");
+                        año = s.nextInt();
+                        s.nextLine();
+
+                        if(año < 0) {
+                            System.out.println("El año no puede ser negativo");
+                        } else {
+                            existe = true;
+                        }
+                    } while(!existe);
+
+                    boolean estaenaño = false;
+                    for (int i = 0; i < contratos.size(); i++) {
+                        if(contratos.get(i).esDeAnio(año)) {
+                            System.out.printf("Médico: "+contratos.get(i).getMedico().getNombre()+" Fecha del contrato: "+contratos.get(i).getFechaCreacion()+"%n");
+                            estaenaño = true;
+                        }
+                    }
+
+                    if(!estaenaño) {
+                        System.out.println("No hay médicos de ese año");
+                    }
                     break;
                 case 0:
                     terminar = true;

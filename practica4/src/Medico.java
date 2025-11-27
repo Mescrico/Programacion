@@ -26,6 +26,10 @@ public class Medico {
         return dni;
     }
 
+    public Contrato getContrato() {
+        return contrato;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -52,6 +56,10 @@ public class Medico {
 
     public Direccion getDireccion() {
         return direccion;
+    }
+
+    public void setContrato(Contrato contrato) {
+        this.contrato = contrato;
     }
 
     public void setDni(String dni) {
