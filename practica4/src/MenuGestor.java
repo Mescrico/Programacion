@@ -35,13 +35,13 @@ public class MenuGestor {
         return null;
     }
 
-    public Hospital buscarHospital(String nombre) {
+    public Hospital buscarHospital() {
         if(hospitales.isEmpty()) {
             return null;
         }
 
         System.out.println("Introduce el nombre del hospital");
-        nombre = s.nextLine();
+        String nombre = s.nextLine();
 
         Hospital hospital;
         for (int i = 0; i < hospitales.size(); i++) {
@@ -53,13 +53,13 @@ public class MenuGestor {
         return null;
     }
 
-    public Areas buscarAreas(String ident, Hospital hospitalpuesto) {
+    public Areas buscarAreas(Hospital hospitalpuesto) {
         if(hospitalpuesto.getAreas().isEmpty()) {
             return null;
         }
 
         System.out.println("Introduce el Identificador del área del hospital "+hospitalpuesto.getNombre());
-        ident = s.nextLine();
+        String ident = s.nextLine();
 
         Areas area;
         for (int i = 0; i < hospitalpuesto.getAreas().size(); i++) {
@@ -118,14 +118,29 @@ public class MenuGestor {
         } else {
             System.out.println("Di el nombre del area");
             String nombre = s.nextLine();
-            System.out.println("Di el identificador del área");
-            String identificador = s.nextLine();
-            System.out.println("Di la planta");
-            int planta = s.nextInt();
+
+            boolean existe;
+            int planta;
+            String identificador;
+            do {
+                existe = false;
+                System.out.println("Di el identificador del área");
+                identificador = s.nextLine();
+                System.out.println("Di la planta");
+                planta = s.nextInt();
+
+                for (int i = 0; i < areas.size(); i++) {
+                    if (areas.get(i).getIdentificador().equals(identificador)) {
+                        existe = true;
+                        System.out.println("El Identificador ya existe, pon otro");
+                    }
+                }
+            } while(existe);
 
             int opcion;
-            boolean encontr = false;
+            boolean encontr;
             do {
+                encontr = false;
                 System.out.println("Di el hospital por el numero");
 
                 for (int i = 0; i < hospitales.size(); i++) {
@@ -134,8 +149,7 @@ public class MenuGestor {
 
                 opcion = s.nextInt();
                 s.nextLine();
-
-                if (opcion > hospitales.size() || opcion < 0) {
+                if (opcion >= hospitales.size() || opcion < 0) {
                     System.out.println("Ningún hospital tiene ese número");
                 } else {
                     encontr = true;
@@ -311,7 +325,7 @@ public class MenuGestor {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
-                    Hospital hospitalSeleccionado = buscarHospital("");
+                    Hospital hospitalSeleccionado = buscarHospital();
                     if (hospitalSeleccionado == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
@@ -356,8 +370,6 @@ public class MenuGestor {
                             System.out.println("Opción no válida");
                             break;
                     }
-
-
                     break;
 
                 case 6:
@@ -428,7 +440,7 @@ public class MenuGestor {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
-                    Hospital hospitalSeleccionado9 = buscarHospital("");
+                    Hospital hospitalSeleccionado9 = buscarHospital();
                     if(hospitalSeleccionado9 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
@@ -438,7 +450,7 @@ public class MenuGestor {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
-                    Areas areaSeleccionada9 = buscarAreas("", hospitalSeleccionado9);
+                    Areas areaSeleccionada9 = buscarAreas(hospitalSeleccionado9);
                     if(areaSeleccionada9 == null) {
                         System.out.println("No hay ningún área con ese identificador");
                         break;
@@ -451,7 +463,7 @@ public class MenuGestor {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
-                    Hospital hospitalSeleccionado10 = buscarHospital("");
+                    Hospital hospitalSeleccionado10 = buscarHospital();
                     if(hospitalSeleccionado10 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
@@ -460,7 +472,7 @@ public class MenuGestor {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
-                    Areas areaSeleccionada10 = buscarAreas("", hospitalSeleccionado10);
+                    Areas areaSeleccionada10 = buscarAreas(hospitalSeleccionado10);
                     if(areaSeleccionada10 == null) {
                         System.out.println("No hay ningún área con ese identificador");
                         break;
@@ -483,7 +495,8 @@ public class MenuGestor {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
-                    Hospital hospital1Seleccionado11 = buscarHospital("");
+                    System.out.println("Primer Hospital:");
+                    Hospital hospital1Seleccionado11 = buscarHospital();
                     if(hospital1Seleccionado11 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
@@ -492,7 +505,14 @@ public class MenuGestor {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
-                    Hospital hospital2Seleccionado11 = buscarHospital("");
+                    System.out.println("Primer área:");
+                    Areas area1Seleccionada11 = buscarAreas(hospital1Seleccionado11);
+                    if(area1Seleccionada11 == null) {
+                        System.out.println("No hay ningún área en el hospital "+area1Seleccionada11.getHospital().getNombre()+" con ese identificador");
+                        break;
+                    }
+                    System.out.println("Segundo Hospital:");
+                    Hospital hospital2Seleccionado11 = buscarHospital();
                     if(hospital2Seleccionado11 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
@@ -501,18 +521,15 @@ public class MenuGestor {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
-                    Areas area1Seleccionada11 = buscarAreas("", hospital1Seleccionado11);
-                    if(area1Seleccionada11 == null) {
-                        System.out.println("No hay ningún área con ese identificador");
-                        break;
-                    }
-                    Areas area2Seleccionada11 = buscarAreas("", hospital1Seleccionado11);
+                    System.out.println("Segundo área:");
+                    Areas area2Seleccionada11 = buscarAreas(hospital2Seleccionado11);
                     if(area2Seleccionada11 == null) {
-                        System.out.println("No hay ningún área con ese identificador");
+                        System.out.println("No hay ningún área en el hospital "+area1Seleccionada11.getHospital().getNombre()+" con ese identificador");
                         break;
                     }
 
-                    System.out.println(area1Seleccionada11.compararMedicos(area2Seleccionada11));
+                    area1Seleccionada11.compararMedicos(area2Seleccionada11);
+                    break;
                 case 0:
                     terminar = true;
                     break;

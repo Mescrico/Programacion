@@ -66,9 +66,9 @@ public class Areas {
 
     public void compararMedicos(Areas otraArea) {
         if(this.numMedicos > otraArea.numMedicos) {
-            System.out.println("La área "+otraArea+" tiene menos médicos");
+            System.out.println("La área "+this.getNombre()+" tiene menos médicos");
         } else if(this.numMedicos < otraArea.numMedicos) {
-            System.out.println("La área "+otraArea+" tiene más médicos");
+            System.out.println("La área "+otraArea.getNombre()+" tiene más médicos");
         } else {
             System.out.println("Las dos áreas tienen el mismo número de médicos");
         }

@@ -19,7 +19,7 @@ public class Medico {
         this.areas = areas;
         this.direccion = direccion;
         areas.aumentarMedico();
-        Contrato contratoMedico = new Contrato(this.añosInicio, this, this.areas.getHospital());
+        this.contrato = new Contrato(this.añosInicio, this, this.areas.getHospital());
     }
 
     public String getDni() {
