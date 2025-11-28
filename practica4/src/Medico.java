@@ -1,4 +1,5 @@
 public class Medico {
+    //Creamos los atributos que va a tener la clase medico
     private String dni;
     private String nombre;
     private int edad;
@@ -9,6 +10,7 @@ public class Medico {
     private Direccion direccion;
     private Contrato contrato;
 
+    //Creamos el constructor de la clase medico
     public Medico(String dni, String nombre, int edad, String sexo, int sueldoBruto, int añosInicio, Areas areas, Direccion direccion) {
         this.dni = dni;
         this.nombre = nombre;
@@ -18,9 +20,13 @@ public class Medico {
         this.añosInicio = añosInicio;
         this.areas = areas;
         this.direccion = direccion;
-        areas.aumentarMedico();
+        //Cuando creamos un medico aumentamos al area de ese medico el numero de medicos que hay
+        this.areas.aumentarMedico();
+        //Añadimos automaticamente un contrato nuevo para ese medico con los datos ya introducidos
         this.contrato = new Contrato(this.añosInicio, this, this.areas.getHospital());
     }
+
+    //Creamos los getter y setter de los atributos
 
     public String getDni() {
         return dni;
@@ -94,18 +100,25 @@ public class Medico {
         this.direccion = direccion;
     }
 
+    //Creamos las funciones que va a tener la clase medico
+
+    //Esta funcion va a calcular el sueldo neto de un medico en concreto multiplicando el sueldo bruto por el % de  retencion que se tiene que introducir
     public double calcularSueldoNeto(double retencion) {
         return this.sueldoBruto*retencion;
     }
 
+    //Esta funcion va a devolver los años que lleva el medico en concreto activo
     public int getAniosAntiguedad() {
         return java.time.Year.now().getValue() - this.añosInicio;
     }
 
+    //Esta funcion va a devolver los impuestos anuales del medico en concreto
+    //Se tiene que introducir la tasa impositiva
     public double calcularImpuestosAnuales(double tasaImpositiva) {
         return this.sueldoBruto - (this.sueldoBruto*tasaImpositiva);
     }
 
+    //Esta funcion es para ver si el medico en concreto es mayor de edad o no dependiendo de la variable introducida
     public boolean esMayorDeEdad(int mayoriaEdad) {
         if(mayoriaEdad >= 18) {
             return true;
@@ -114,6 +127,8 @@ public class Medico {
         }
     }
 
+    //Esta funcion se para calcular el proximo aumento que va a tener el medico en concreto
+    //Se tiene que introducir el porcentaje de aumento que va a recibir y los años requeridos para conseguir ese aumento
     public double proximoAumento(double porcentajeAumento, int aniosRequeridos) {
         if(getAniosAntiguedad() >= aniosRequeridos) {
             return sueldoBruto*porcentajeAumento;
@@ -122,12 +137,18 @@ public class Medico {
         }
     }
 
+    //Esta funcion sirve para cambiar el area a un medico en concreto
+    //Se tiene que introducir el area nueva del medico
     public void cambiarArea(Areas nuevaArea) {
+        //Primero al area actual que esta el medico va a disminuirle el numero de medicos de ese area
         this.areas.disminuirMedico();
+        //Luego va a sobreescribir su area con el area introducida
         this.setAreas(nuevaArea);
+        //Y a esa area introducida va a aumentarle el numero de medicos de ese area
         this.areas.aumentarMedico();
     }
 
+    //Hacemos el paso  de parámetros a toString
     @Override
     public String toString(){
         return "Nombre: "+nombre+" DNI: "+dni+" Edad: "+edad+" Sexo: "+sexo+" Sueldo bruto: "+sueldoBruto+" Años de inicio: "+añosInicio+" Áreas: "+areas.getNombre()+" Dirección: "+direccion;
