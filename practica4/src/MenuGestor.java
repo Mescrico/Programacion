@@ -305,8 +305,9 @@ public class MenuGestor {
 
 
 
-
+    //Creamos la funcion de menu para que muestre el menu
     public void menu() {
+        //Le añadimos ya los objetos creados para que se precarguen
         direcciones.add(d1);
         direcciones.add(d2);
         hospitales.add(h1);
@@ -314,8 +315,10 @@ public class MenuGestor {
         medicos.add(m1);
         contratos.add(c1);
 
+        //Creamos el do-while para que muestre la tabla mientras no se haya terminado la accion, que es el numero 0
         boolean terminar = false;
         do {
+            //Printeamos las opciones disponibles
             System.out.println("1.- Crear Hospital");
             System.out.println("2.- Crear Área");
             System.out.println("3.- Crear Médico");
@@ -331,29 +334,41 @@ public class MenuGestor {
             System.out.println("0.- Salir");
             System.out.println("-----------------------------");
 
+            //Creamos la variable de la opcion que coge el usuario
             int opcion = s.nextInt();
             s.nextLine();
 
+            //Hacemos un switch case con lo que pasará dependiendo de la selección del usuario
             switch (opcion) {
+                //Primer caso crea hospital
                 case 1:
                     crearHospital();
                     break;
+                //Segundo caso crea area
                 case 2:
                     crearArea();
                     break;
+                //Tercer caso crea medico junto al contrato
                 case 3:
                     crearMedico();
                     break;
+                //Cuarto caso modifica el medico
                 case 4:
+                    //Si el arraylist de medicos esta vacia ponemos que cree no y termina
                     if(medicos.isEmpty()) {
                         System.out.println("No hay médicos, primero crea uno");
                         break;
                     }
+
+                    //Creamos el objeto medicoseleccionado y le ejecutamos la funcion de buscarmedico
                     Medico medicoSeleccionado = buscarMedico();
+                    //Si al hacerla nos returnea null es porque no hay ningun medico con el dni que ha introducido
                     if (medicoSeleccionado == null) {
                         System.out.println("No hay ningún médico con ese DNI");
                         break;
                     }
+
+                    //Printeamos las opciones que hay
                     System.out.println("Que quieres cambiar");
                     System.out.println("1.- Sueldo Bruto");
                     System.out.println("2.- Dirección");
@@ -361,15 +376,21 @@ public class MenuGestor {
                     System.out.println("0.- Salir");
                     int seleccion = s.nextInt();
                     s.nextLine();
+
+                    //Hacemos otro switch case dependiendo de la seleccion del usuario
                     switch (seleccion) {
+                        //Primer caso cambia la cantidad del sueldobruto del medico
                         case 1:
                             System.out.println("Cantidad nueva:");
                             int cantidad = s.nextInt();
                             s.nextLine();
+                            //Con la cantidad que ha introducido el usuario se la ponemos al medicoseleccionado
                             medicoSeleccionado.setSueldoBruto(cantidad);
                             System.out.println("Cantidad del médico "+medicoSeleccionado.getNombre()+" actualizada");
                             break;
+                        //Segundo caso cambia la direccion del medico
                         case 2:
+                            //Pedimos la nueva direccion
                             System.out.println("Dirección nueva:");
                             System.out.println("Calle:");
                             String calle = s.nextLine();
@@ -383,40 +404,58 @@ public class MenuGestor {
                             System.out.println("Provincia:");
                             String provincia = s.nextLine();
 
+                            //Creamos un objeto nuevo de direccion y le asignamos los valores que el usuario a puesto
                             Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
+
+                            //Al medico seleccionado le asignamos ese nuevo objeto
                             medicoSeleccionado.setDireccion(nuevaDireccion);
                             System.out.println("Dirección del médico "+medicoSeleccionado.getNombre()+" actualizada");
                             break;
+                        //Tercer caso cambia el area del medico
                         case 3:
-                            System.out.println("Selecciona el área de trabajo nueva, elijela por el número");
+                            //Pedimos que seleccion el area por numero
+                            System.out.println("Selecciona el área de trabajo nueva por el número");
+                            //Creamos el bucle que muestre en una lista las areas existentes que hay
                             for (int i = 0; i < areas.size(); i++) {
                                 System.out.printf(i+".- "+areas.get(i).getNombre()+" Identificador: "+areas.get(i).getIdentificador()+"%n");
                             }
+                            //Creamos la variable de area seleccionada
                             int areaSeleccionada = s.nextInt();
                             s.nextLine();
+
+                            //Creamos un objeto nuevo de area y le asignamos los valores que tiene el area seleccionada
                             Areas areaNueva = areas.get(areaSeleccionada);
+                            //Con la funcion cambiar area se la cambiamos al medico seleccionado por el area nueva
                             medicoSeleccionado.cambiarArea(areaNueva);
                             System.out.println("Área de trabajo del médico "+medicoSeleccionado.getNombre()+" actualizada");
                             break;
+                        //Caso 0 salimos
                         case 0:
                             break;
+                        //Si elige un numero que no esta disponible salimos tambien
                         default:
                             System.out.println("Opción no válida");
                             break;
                     }
 
                     break;
+                //Quinto caso modificamos el hospital
                 case 5:
+                    //Si la lista de hospitales esta vacia le pedimos que cree uno y termina
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
+
+                    //Creamos un objeto nuevo de hospital y le ejecutamos la funcion buscar hospital
                     Hospital hospitalSeleccionado = buscarHospital();
+                    //Si nos returnea null es porque no hay ningun hospital con el nombre introducido
                     if (hospitalSeleccionado == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
                     }
 
+                    //Printeamos las opciones disponibles
                     System.out.println("Que quieres hacer");
                     System.out.println("1.- Nombre");
                     System.out.println("2.- Dirección");
@@ -424,14 +463,19 @@ public class MenuGestor {
                     int opcionHospital = s.nextInt();
                     s.nextLine();
 
+                    //Hacemos un switch case segun la opcion elegida
                     switch (opcionHospital) {
+                        //Primer caso cambiamos el nombre
                         case 1:
                             System.out.println("Nombre nuevo: ");
                             String nombreNuevo = s.next();
+                            //Al nombre introducido se lo asignamos al hospital seleccionado
                             hospitalSeleccionado.setNombre(nombreNuevo);
                             System.out.println("Nombre del hospital actualizado");
                             break;
+                        //Segundo caso cambiamos la direccion
                         case 2:
+                            //Le pedimos que introduzca la direccion nueva
                             System.out.println("Dirección nueva: ");
                             System.out.println("Calle:");
                             String calle = s.nextLine();
@@ -446,217 +490,285 @@ public class MenuGestor {
                             System.out.println("Provincia:");
                             String provincia = s.nextLine();
 
+                            //Creamos un objeto nuevo de direccion y le asignamos los valores introducidos
                             Direccion nuevaDireccion = new Direccion(calle, numero, cp, localidad, provincia);
+                            //Al hospital seleccionado le asignamos como direccion la nueva
                             hospitalSeleccionado.setDireccion(nuevaDireccion);
                             System.out.println("Dirección del hospital actualizado");
                             break;
+                        //Caso 0 salimos
                         case 0:
                             break;
+                        //Si pone una opcion no valida salimos
                         default:
                             System.out.println("Opción no válida");
                             break;
                     }
                     break;
 
+                //Caso 6 calculamos la antiguedad del medico
                 case 6:
+                    //Si la lista medicos esta vacia pedimos que cree una
                     if(medicos.isEmpty()) {
                         System.out.println("No hay médicos, primero crea uno");
                         break;
                     }
+
+                    //Creamos un objeto nuevo de medico y le ejecutamos la funcion buscar medico
                     Medico medicoSeleccionado6 = buscarMedico();
+                    //Si returnea null es porque ningun medico tiene ese dni
                     if(medicoSeleccionado6 == null) {
                         System.out.println("No hay ningún médico con ese DNI");
                         break;
                     }
 
+                    //Mostramos la antiguedad del medico con la funcion de años de antiguedad
                     System.out.println("Antigüedad del médico "+medicoSeleccionado6.getNombre()+" en el hospital: "+medicoSeleccionado6.getAniosAntiguedad()+" años");
 
                     break;
+                //Caso 7 calculamos el sueldo neto
                 case 7:
+                    //Si la lista de medicos esta vacia le pedimos que cree uno
                     if(medicos.isEmpty()) {
                         System.out.println("No hay médicos, primero crea uno");
                         break;
                     }
+
+                    //Creamos un objeto nuevo de medico y le ejecutamos la funcions buscar medico
                     Medico medicoSeleccionado7 = buscarMedico();
+                    //Si returnea null es porque ningun medico tiene ese dni
                     if (medicoSeleccionado7 == null) {
                         System.out.println("No hay ningún médico con ese DNI");
                         break;
                     }
 
+                    //Creamos la variable de retencion y hacemos el do-while mientras ese numero sea menor a 0
                     Double retencion;
                     do {
                         System.out.println("Introduce el % de retención");
                         retencion = s.nextDouble();
+                        //Si el valor introducido es menor que 0 le mostramos el mensaje
                         if(retencion < 0) {
                             System.out.println("El % de retención no puede ser negativo");
                         }
                     } while (retencion < 0);
 
+                    //Mostramos el sueldo nueto con la funcion de calcular sueldo medico y la variable retencion
                     System.out.println("El sueldo neto del médico "+medicoSeleccionado7.getNombre()+" es: "+medicoSeleccionado7.calcularSueldoNeto(retencion)+"€");
                     break;
+                //Caso 8 comprobamos su edad
                 case 8:
+                    //Si la lista medicos esta vacia le pedimos que cree uno
                     if(medicos.isEmpty()) {
                         System.out.println("No hay médicos, primero crea uno");
                         break;
                     }
+                    //Creamos un objeto nuevo de medico y le ejecutamos la funcions buscar medico
                     Medico medicoSeleccionado8 = buscarMedico();
+                    //Si returnea null es porque ningun medico tiene ese dni
                     if(medicoSeleccionado8 == null) {
                         System.out.println("No hay ningún médico con ese DNI");
                         break;
                     }
 
+                    //Cramos la variable edad y el do-while mientras la edad sea igual o menor a 0
                     int edad;
                     do {
                         System.out.println("Introduce la edad mínima requerida");
                         edad = s.nextInt();
                         s.nextLine();
+                        //Si la edad introducida no es mayor a 0 muestra el mensaje
                         if(edad <= 0) {
                             System.out.println("La edad mínima no puede ser negativo ni 0");
                         }
                     } while(edad <= 0);
 
-                    if(medicoSeleccionado8.esMayorDeEdad(edad) == true) {
+                    //Llamamos a la funcion mayor de edad junto a la variable edad y dependiendo si es mayor o no nos mostrará un mensaje
+                    if(medicoSeleccionado8.esMayorDeEdad(edad)) {
                         System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es mayor de edad");
                     } else {
                         System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es menor de edad");
                     }
                     break;
+                //Caso 9 calculamos la proporcion de medicos de un area respecto al hospital entero
                 case 9:
+                    //Si la lista de hospitales esta vacia le pedimos que cree uno
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
+                    //Creamos un objeto nuevo de hospital y le ejecutamos la funcion buscar hospital
                     Hospital hospitalSeleccionado9 = buscarHospital();
+                    //Si returnea null es porque ningun hospital tiene ese nombre
                     if(hospitalSeleccionado9 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
                     }
 
-                    if(areas.isEmpty()) {
+                    //Si en ese hospital no hay areas le pedimos que cree uno
+                    if(hospitalSeleccionado9.getAreas().isEmpty()) {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
+                    //Creamos un objeto nuevo de area y le ejecutamos la funcion buscar area en el hospital seleccionado
                     Areas areaSeleccionada9 = buscarAreas(hospitalSeleccionado9);
+                    //Si returnea null es porque ningun area tiene ese identificador
                     if(areaSeleccionada9 == null) {
                         System.out.println("No hay ningún área con ese identificador");
                         break;
                     }
 
+                    //Mostramos la proporcion de medicos con la funcion de proporcion medicos con la identificacion del area
                     System.out.println("La proporción de médicos en el área "+areaSeleccionada9+ " es: "+hospitalSeleccionado9.getProporcionMedicosArea(areaSeleccionada9.getIdentificador()));
                     break;
+                //Caso 10 calculamos la capacidad de medicos restantes que queda en un area
                 case 10:
+                    //Si no hay hospitales pedimos que cree uno
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
+                    //Creamos un objeto nuevo de hospital y ejecutamos la funcion buscarhospital
                     Hospital hospitalSeleccionado10 = buscarHospital();
+                    //Si returnea null es porque no hay ninguno con ese nombre
                     if(hospitalSeleccionado10 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
                     }
-                    if(areas.isEmpty()) {
+                    //Si no hay areas en ese hospital pedimos que cree uno
+                    if(hospitalSeleccionado10.getAreas().isEmpty()) {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
+
+                    //Creamos un objeto nuevo de areas y le ejecutamos la funcion buscar area en el hospital seleccionado
                     Areas areaSeleccionada10 = buscarAreas(hospitalSeleccionado10);
+                    //Si returnea null es porque no hay ningun area con ese identificador
                     if(areaSeleccionada10 == null) {
                         System.out.println("No hay ningún área con ese identificador");
                         break;
                     }
 
+                    //Creamos la variable limite y el do-while mientras que el limite sea menor que 0
                     int limite;
                     do {
                         System.out.println("Di el límite máximo del área "+areaSeleccionada10.getNombre());
                         limite = s.nextInt();
                         s.nextLine();
+                        //Si el limite es menor a 0 mostramos el mensaje
                         if(limite < 0) {
                             System.out.println("El límite máximo no puede ser negativo");
                         }
                     } while(limite < 0);
 
+                    //Mostramos la capacidad restante del area con su funcion
                     System.out.println("Su capacidad restante es "+areaSeleccionada10.calcularCapacidadRestante(limite));
                     break;
+                //Caso 11 comparamos la cantidad de medicos en 2 areas
                 case 11:
+                    //Si no hay hospitales pedimos que cree uno
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
                         break;
                     }
+                    //Creamos el objeto del primer hospital y le ejecutamos la funcion buscar hospital
                     System.out.println("Primer Hospital:");
                     Hospital hospital1Seleccionado11 = buscarHospital();
+                    //Si returnea null es porque no hay ningun hospital con ese nombre
                     if(hospital1Seleccionado11 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
                     }
-                    if(areas.isEmpty()) {
+                    //Si no hay areas en ese hospital pedimos que cree uno
+                    if(hospital1Seleccionado11.getAreas().isEmpty()) {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
+                    //Creamos el objeto del primer area y le ejecutamos la funcion buscar area en el hospital seleccionado
                     System.out.println("Primer área:");
                     Areas area1Seleccionada11 = buscarAreas(hospital1Seleccionado11);
+                    //Si returnea null es porque no hay ningun area con ese identificador
                     if(area1Seleccionada11 == null) {
                         System.out.println("No hay ningún área en el hospital "+area1Seleccionada11.getHospital().getNombre()+" con ese identificador");
                         break;
                     }
+
+                    //Creamos un objeto nuevo para el segundo hospital y le ejecutamos la funcion de buscar hospital
                     System.out.println("Segundo Hospital:");
                     Hospital hospital2Seleccionado11 = buscarHospital();
+                    //Si returnea null es porque no hay ningun hospital con ese nombre
                     if(hospital2Seleccionado11 == null) {
                         System.out.println("No hay ningún hospital con ese nombre");
                         break;
                     }
-                    if(areas.isEmpty()) {
+                    //Si no hay areas en ese hospital pedimos que cree uno
+                    if(hospital2Seleccionado11.getAreas().isEmpty()) {
                         System.out.println("No hay áreas, primero crea una");
                         break;
                     }
+                    //Creamos un objeto nuevo de area para el segundo area y le ejecutamos la funcion de buscar area en el hospital seleccionado
                     System.out.println("Segundo área:");
                     Areas area2Seleccionada11 = buscarAreas(hospital2Seleccionado11);
+                    //Si returnea null es porque ningun area en ese hospital tiene ese identificador
                     if(area2Seleccionada11 == null) {
                         System.out.println("No hay ningún área en el hospital "+area1Seleccionada11.getHospital().getNombre()+" con ese identificador");
                         break;
                     }
 
+                    //Ejecutamos la funcion de comparar medicos entre la primera area y la segunda
                     area1Seleccionada11.compararMedicos(area2Seleccionada11);
                     break;
+                //Caso 12 mostramos los medicos que hay con contrato en x años
                 case 12:
+                    //Si no hay medicos pedimos que cree uon
                     if(medicos.isEmpty()) {
                         System.out.println("No hay médicos, primero crea uno");
                     }
 
+                    //Creamos las variables de existir y año y hacemos el do-while mientras no exista
                     boolean existe;
                     int año;
                     do {
+                        //Reiniciamos existe a falso y printeamos lo que tiene que hacer
                         existe = false;
                         System.out.println("Di un año para ver los médicos que tienen contrato de ese año");
                         año = s.nextInt();
                         s.nextLine();
 
+                        //Si el año introducido es menor a 0 mostramos el mensaje
                         if(año < 0) {
                             System.out.println("El año no puede ser negativo");
                         } else {
+                            //En caso contrario marcamos existe como true
                             existe = true;
                         }
                     } while(!existe);
 
+                    //Creamos la variable de si esta en ese año
                     boolean estaenaño = false;
+                    //Creamos un bucle para mostrar los medicos que hay con contrato en ese ñao
                     for (int i = 0; i < contratos.size(); i++) {
+                        //Usamos la funcion es de año para comprobar los años
                         if(contratos.get(i).esDeAnio(año)) {
                             System.out.printf("Médico: "+contratos.get(i).getMedico().getNombre()+" Fecha del contrato: "+contratos.get(i).getFechaCreacion()+"%n");
+                            //Cuando encuentre alguno marca esta en año como true
                             estaenaño = true;
                         }
                     }
 
+                    //Si al final del bucle no ha encontrado ninguno mostramos el mensaje
                     if(!estaenaño) {
                         System.out.println("No hay médicos de ese año");
                     }
                     break;
+                //Caso 0 salimos
                 case 0:
                     terminar = true;
                     break;
+                //Si elige una opcion no valida salimos tambien
                 default:
                     System.out.println("Opción no válida");
             }
         } while (!terminar);
     }
-
-
-
 }
