@@ -120,11 +120,7 @@ public class Medico {
 
     //Esta funcion es para ver si el medico en concreto es mayor de edad o no dependiendo de la variable introducida
     public boolean esMayorDeEdad(int mayoriaEdad) {
-        if(mayoriaEdad >= 18) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.edad >= mayoriaEdad;
     }
 
     //Esta funcion se para calcular el proximo aumento que va a tener el medico en concreto

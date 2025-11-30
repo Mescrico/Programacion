@@ -584,7 +584,7 @@ public class MenuGestor {
                     } while(edad <= 0);
 
                     //Llamamos a la funcion mayor de edad junto a la variable edad y dependiendo si es mayor o no nos mostrará un mensaje
-                    if(medicoSeleccionado8.esMayorDeEdad(edad)) {
+                    if(medicoSeleccionado8.esMayorDeEdad(edad) == true) {
                         System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es mayor de edad");
                     } else {
                         System.out.println("El médico "+medicoSeleccionado8.getNombre()+" es menor de edad");
@@ -669,6 +669,11 @@ public class MenuGestor {
                     //Si no hay hospitales pedimos que cree uno
                     if(hospitales.isEmpty()) {
                         System.out.println("No hay hospitales, primero crea uno");
+                        break;
+                    }
+                    //Si hay menos que dos tambien le pedimos que cree otro
+                    if(hospitales.size() < 2) {
+                        System.out.println("Solo hay un hospita, crea otro");
                         break;
                     }
                     //Creamos el objeto del primer hospital y le ejecutamos la funcion buscar hospital
