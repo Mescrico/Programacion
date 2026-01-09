@@ -6,3 +6,8 @@ public class Main {
         menu.menu();
     }
 }
+
+//crear clase equipamiento
+//atributos nombre codigo fechaadquisicion
+//agregar equipamiento relacion en clase area
+//Crear metodo en area si es antiguo si tiene mas de 10 años booleano

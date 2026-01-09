@@ -5,15 +5,16 @@ public class Areas {
     private int planta;
     private Hospital hospital;
     private int numMedicos;
-
+    private Equipamiento equipamiento;
     //Creamos el constructor de la clase area
-    public Areas(String nombre, String identificador, int planta, Hospital hospital) {
+    public Areas(String nombre, String identificador, int planta, Hospital hospital, Equipamiento equipamiento) {
         this.nombre = nombre;
         this.identificador = identificador;
         this.planta = planta;
         this.hospital = hospital;
         //Al crear un area empezará con el numero de medicos en 0
         this.numMedicos = 0;
+        this.equipamiento = equipamiento;
         //Agregamos en el hospital el area creada
         this.hospital.agregarArea(this);
     }
@@ -60,6 +61,14 @@ public class Areas {
         this.numMedicos = numMedicos;
     }
 
+    public Equipamiento getEquipamiento() {
+        return equipamiento;
+    }
+
+    public void setEquipamiento(Equipamiento equipamiento) {
+        this.equipamiento = equipamiento;
+    }
+
     //Creamos las funciones que va a tener la clase area
 
     //Esta funcion va a ir aumentando el numero de medicos en el area seleccionada
@@ -89,9 +98,25 @@ public class Areas {
         return capacidadMaxima - this.numMedicos;
     }
 
+    public boolean esAntiguo() {
+        if(this.getEquipamiento().getFechaAdquisicion() > 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     //Hacemos el paso  de parámetros a toString
     @Override
-    public String toString(){
-        return "Nombre: "+nombre+" Identificador: "+identificador+" Planta: "+planta+" Hospital: "+hospital.getNombre();
+    public String toString() {
+        return "Areas{" +
+                "nombre='" + nombre + '\'' +
+                ", identificador='" + identificador + '\'' +
+                ", planta=" + planta +
+                ", hospital=" + hospital +
+                ", numMedicos=" + numMedicos +
+                ", equipamiento=" + equipamiento +
+                '}';
     }
 }

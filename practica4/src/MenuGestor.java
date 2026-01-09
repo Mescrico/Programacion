@@ -10,12 +10,13 @@ public class MenuGestor {
     private ArrayList<Medico> medicos = new ArrayList<>();
     private ArrayList<Contrato> contratos = new ArrayList<>();
     Scanner s = new Scanner(System.in);
-
+    private ArrayList<Equipamiento> equipamientos = new ArrayList<>();
     //Creamos ya algunos objetos en las clases para que esten precargadas automaticamente al runnear el programa
     Direccion d1 = new Direccion("Es", 5, 11630, "Arcos", "Cádiz");
     Direccion d2 = new Direccion("Es", 5, 11630, "Arcos", "Cádiz");
     Hospital h1 = new Hospital("1", "1", d1);
-    Areas a1 = new Areas("1", "1", 2, h1);
+    Equipamiento e1 = new Equipamiento("Tijeras", 15, 2000);
+    Areas a1 = new Areas("1", "1", 2, h1, e1);
     Medico m1 = new Medico("1", "Mario", 18, "Hombre", 1000, 2000, a1, d2);
     Contrato c1 = new Contrato(m1.getAñosInicio(), m1, h1);
 
@@ -212,7 +213,7 @@ public class MenuGestor {
             //Creamos el objeto seleccion y le asignamos los valores de la opcion elegida
             Hospital seleccion = hospitales.get(opcion);
             //Creamos un nuevo area y asignamos los valores con los introducidos anteriormente
-            Areas nuevoArea = new Areas(nombre, identificador, planta, seleccion);
+            Areas nuevoArea = new Areas(nombre, identificador, planta, seleccion, e1);
             //Agregamos a la lista de areas ese nuevo area
             areas.add(nuevoArea);
 
@@ -314,7 +315,7 @@ public class MenuGestor {
         areas.add(a1);
         medicos.add(m1);
         contratos.add(c1);
-
+        equipamientos.add(e1);
         //Creamos el do-while para que muestre la tabla mientras no se haya terminado la accion, que es el numero 0
         boolean terminar = false;
         do {
@@ -769,6 +770,13 @@ public class MenuGestor {
                 //Caso 0 salimos
                 case 0:
                     terminar = true;
+                    break;
+                case 99:
+                    if(a1.esAntiguo() == true) {
+                        System.out.println("Es antiguo");
+                    } else {
+                        System.out.println("No es antiguo");
+                    };
                     break;
                 //Si elige una opcion no valida salimos tambien
                 default:
