@@ -32,9 +32,9 @@ public class Guerrero implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Grito de Guerra Revitalizante"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Hachazo Brutal"));
+        listahabilidades.add(new DañoADistancia("Lanzamiento de Hacha"));
         return listahabilidades;
     }
 }

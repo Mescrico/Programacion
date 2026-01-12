@@ -32,9 +32,9 @@ public class Picaro implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Vendaje Rápido"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Puñalada Precisa"));
+        listahabilidades.add(new DañoADistancia("Dardo Envenenado"));
         return listahabilidades;
     }
 }

@@ -31,9 +31,9 @@ public class Bardo implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Canto Sanador"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Ritmo Impactante"));
+        listahabilidades.add(new DañoADistancia("Flecha Musicalno"));
         return listahabilidades;
     }
 }

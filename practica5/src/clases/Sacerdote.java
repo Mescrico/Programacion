@@ -32,9 +32,9 @@ public class Sacerdote implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Sanación Bendita"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Golpe de Fe"));
+        listahabilidades.add(new DañoADistancia("Rayo Sagrado"));
         return listahabilidades;
     }
 }

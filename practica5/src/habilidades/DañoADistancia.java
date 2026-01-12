@@ -2,9 +2,14 @@ package habilidades;
 
 public class DañoADistancia implements Habilidades{
     private int usos = 1;
+    private String nombre;
+
+    public DañoADistancia(String nombre) {
+        this.nombre = nombre;
+    }
     @Override
-    public String nombre() {
-        return "Daño a distancia";
+    public String getNombre() {
+        return nombre;
     }
 
     @Override

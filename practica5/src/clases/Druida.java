@@ -33,9 +33,9 @@ public class Druida implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Toque de la Naturaleza"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Garra Salvaje"));
+        listahabilidades.add(new DañoADistancia("Espinas Proyectadas"));
         return listahabilidades;
     }
 }

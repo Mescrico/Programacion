@@ -6,7 +6,8 @@ import razas.Raza;
 
 import java.util.ArrayList;
 
-public abstract class Personaje {
+public class Personaje {
+    private String nombre;
     private Clase clase;
     private Raza raza;
     private ArrayList<Habilidades> habilidades;
@@ -15,7 +16,8 @@ public abstract class Personaje {
     private int destreza;
     private int vidaBase;
 
-    public Personaje(Clase clase, Raza raza, int fuerza, int inteligencia, int destreza, int vidaBase) {
+    public Personaje(String nombre, Clase clase, Raza raza) {
+        this.nombre = nombre;
         this.clase = clase;
         this.raza = raza;
         this.habilidades = new ArrayList<>();
@@ -23,6 +25,14 @@ public abstract class Personaje {
         this.inteligencia = raza.inteligenciaBase() + clase.bonoInteligencia();
         this.destreza = raza.destrezaBase() + clase.bonoDestreza();
         this.vidaBase = raza.vidaBase() + clase.vidaMaxima();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Clase getClase() {

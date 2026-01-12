@@ -1,11 +1,18 @@
 package habilidades;
 
+import clases.Picaro;
+import modelo.Personaje;
+
 public class DañoCuerpoACuerpo implements Habilidades{
     private int usos = 5;
+    private String nombre;
 
+    public DañoCuerpoACuerpo(String nombre) {
+        this.nombre = nombre;
+    }
     @Override
-    public String nombre() {
-        return "Daño cuerpo a cuerpo";
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
@@ -16,5 +23,10 @@ public class DañoCuerpoACuerpo implements Habilidades{
     @Override
     public int usosRestantes() {
         return usos;
+    }
+
+    @Override
+    public int usar(Personaje atacante, Personaje objetivo) {
+        if (atacante.getClase() ==);
     }
 }

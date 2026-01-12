@@ -32,9 +32,9 @@ public class Paladin implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Toque de Luz Sagrada"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Martillazo Divino"));
+        listahabilidades.add(new DañoADistancia("Lanza de Fe"));
         return listahabilidades;
     }
 }

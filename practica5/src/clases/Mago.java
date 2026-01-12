@@ -32,9 +32,9 @@ public class Mago implements Clase{
     @Override
     public ArrayList<Habilidades> habilidades() {
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
-        listahabilidades.add(new CuraCuerpoACuerpo());
-        listahabilidades.add(new DañoCuerpoACuerpo());
-        listahabilidades.add(new DañoADistancia());
+        listahabilidades.add(new CuraCuerpoACuerpo("Regeneración Arcana"));
+        listahabilidades.add(new DañoCuerpoACuerpo("Descarga Impactante"));
+        listahabilidades.add(new DañoADistancia("Proyectil Arcano"));
         return listahabilidades;
     }
 }

@@ -2,9 +2,14 @@ package habilidades;
 
 public class CuraCuerpoACuerpo implements Habilidades{
     private int usos = 3;
+    private String nombre;
+
+    public CuraCuerpoACuerpo(String nombre) {
+        this.nombre = nombre;
+    }
     @Override
-    public String nombre() {
-        return "Cura cuerpo a cuerpo";
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
