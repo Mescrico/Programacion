@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Picaro implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Vendaje Rápido"));
         listahabilidades.add(new DañoCuerpoACuerpo("Puñalada Precisa"));
         listahabilidades.add(new DañoADistancia("Dardo Envenenado"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

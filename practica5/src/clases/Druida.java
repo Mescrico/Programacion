@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -36,6 +33,7 @@ public class Druida implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Toque de la Naturaleza"));
         listahabilidades.add(new DañoCuerpoACuerpo("Garra Salvaje"));
         listahabilidades.add(new DañoADistancia("Espinas Proyectadas"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

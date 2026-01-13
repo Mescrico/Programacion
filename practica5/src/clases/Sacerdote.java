@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Sacerdote implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Sanación Bendita"));
         listahabilidades.add(new DañoCuerpoACuerpo("Golpe de Fe"));
         listahabilidades.add(new DañoADistancia("Rayo Sagrado"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

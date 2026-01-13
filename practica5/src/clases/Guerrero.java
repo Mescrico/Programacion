@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Guerrero implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Grito de Guerra Revitalizante"));
         listahabilidades.add(new DañoCuerpoACuerpo("Hachazo Brutal"));
         listahabilidades.add(new DañoADistancia("Lanzamiento de Hacha"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

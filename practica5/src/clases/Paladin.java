@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Paladin implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Toque de Luz Sagrada"));
         listahabilidades.add(new DañoCuerpoACuerpo("Martillazo Divino"));
         listahabilidades.add(new DañoADistancia("Lanza de Fe"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

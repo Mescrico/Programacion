@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -34,6 +31,7 @@ public class Bardo implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Canto Sanador"));
         listahabilidades.add(new DañoCuerpoACuerpo("Ritmo Impactante"));
         listahabilidades.add(new DañoADistancia("Flecha Musicalno"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

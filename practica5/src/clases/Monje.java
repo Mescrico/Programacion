@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Monje implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Palma Restauradora"));
         listahabilidades.add(new DañoCuerpoACuerpo("Puño del Dragón"));
         listahabilidades.add(new DañoADistancia("Onda de Chi"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }

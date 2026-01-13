@@ -1,6 +1,7 @@
 package modelo;
 
 import clases.Clase;
+import habilidades.Ataque;
 import habilidades.Habilidades;
 import razas.Raza;
 
@@ -21,12 +22,16 @@ public class Personaje {
         this.clase = clase;
         this.raza = raza;
         this.habilidades = new ArrayList<>();
+        habilidades.addAll(clase.habilidades());
         this.fuerza = raza.fuerzaBase() + clase.bonoFuerza();
         this.inteligencia = raza.inteligenciaBase() + clase.bonoInteligencia();
         this.destreza = raza.destrezaBase() + clase.bonoDestreza();
         this.vidaBase = raza.vidaBase() + clase.vidaMaxima();
     }
 
+    public int vidaInicial() {
+        return raza.vidaBase() + clase.vidaMaxima();
+    }
     public String getNombre() {
         return nombre;
     }
@@ -90,4 +95,22 @@ public class Personaje {
     public void setVidaBase(int vidaBase) {
         this.vidaBase = vidaBase;
     }
+
+    public void reducirVida(int daño) {
+        int vidaNueva = this.vidaBase - daño;
+        if(vidaNueva < 0) {
+            vidaNueva = 0;
+        }
+        this.setVidaBase(vidaNueva);
+    }
+
+    public void curacion(int cantidad) {
+        int vidaNueva = this.vidaBase + cantidad;
+        if(vidaNueva < this.vidaBase) {
+            vidaNueva = this.vidaBase;
+        }
+        this.setVidaBase(vidaNueva);
+    }
+
+
 }

@@ -1,9 +1,6 @@
 package clases;
 
-import habilidades.CuraCuerpoACuerpo;
-import habilidades.DañoADistancia;
-import habilidades.DañoCuerpoACuerpo;
-import habilidades.Habilidades;
+import habilidades.*;
 
 import java.util.ArrayList;
 
@@ -35,6 +32,7 @@ public class Mago implements Clase{
         listahabilidades.add(new CuraCuerpoACuerpo("Regeneración Arcana"));
         listahabilidades.add(new DañoCuerpoACuerpo("Descarga Impactante"));
         listahabilidades.add(new DañoADistancia("Proyectil Arcano"));
+        listahabilidades.add(new Ataque());
         return listahabilidades;
     }
 }
