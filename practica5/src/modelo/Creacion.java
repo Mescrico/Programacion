@@ -7,6 +7,7 @@ import razas.*;
 
 public class Creacion {
     private Carga carga;
+    private GestorPersonajes gestor;
     private ArrayList<Clase> clases = new ArrayList<>();
     private ArrayList<Raza> razas = new ArrayList<>();
     private ArrayList<Personaje> personajes = new ArrayList<>();
@@ -14,6 +15,7 @@ public class Creacion {
 
     public Creacion() {
         this.carga = new Carga();
+        this.gestor = new GestorPersonajes();
 
         clases.add(new Bardo());
         clases.add(new Druida());
@@ -28,7 +30,7 @@ public class Creacion {
         razas.add(new Enano());
         razas.add(new Humano());
 
-        personajes = carga.getPersonajes();
+        personajes = gestor.getPersonajes();
     }
     public void crearPersonaje(String nombre, int clase, int raza) {
         Clase clase1 = clases.get(clase);

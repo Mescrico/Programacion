@@ -36,14 +36,14 @@ public class DañoCuerpoACuerpo implements Habilidades{
         }
         if (atacante.getClase().getClass().getSimpleName().equals("Guerrero") || atacante.getClase().getClass().getSimpleName().equals("Paladin") || atacante.getClase().getClass().getSimpleName().equals("Monje") || atacante.getClase().getClass().getSimpleName().equals("Druida")) {
             usos--;
-            int daño = (int) (Math.random()*poder()+atacante.getFuerza() * 1.35);
+            int daño = (int) ((Math.random()*poder())+(atacante.getFuerza() * 1.35));
             objetivo.reducirVida(daño);
             System.out.println(objetivo.getNombre()+" ha recibido "+daño+" puntos de daño");
             System.out.println("-------------------------");
 
         } else {
             usos--;
-            int daño = (int) (Math.random()*poder()+atacante.getFuerza());
+            int daño = (int) ((Math.random()*poder())+atacante.getFuerza());
             objetivo.reducirVida(daño);
             System.out.println(objetivo.getNombre()+" ha recibido "+daño+" puntos de daño");
             System.out.println("-------------------------");

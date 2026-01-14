@@ -38,7 +38,7 @@ public class CuraCuerpoACuerpo implements Habilidades{
                 return;
             }
             usos--;
-            int cantidadCuracion = (int) (Math.random()*poder()+atacante.getInteligencia() * 1.35);
+            int cantidadCuracion = (int) ((Math.random()*poder())+(atacante.getInteligencia() * 1.35));
             atacante.curacion(cantidadCuracion);
             System.out.println(atacante.getNombre()+" ha recibido "+cantidadCuracion+" puntos de vida");
             System.out.println("-------------------------");
@@ -50,7 +50,7 @@ public class CuraCuerpoACuerpo implements Habilidades{
                 return;
             }
             usos--;
-            int cantidadCuracion = (int) (Math.random()*poder()+atacante.getInteligencia());
+            int cantidadCuracion = (int) ((Math.random()*poder())+(atacante.getInteligencia()));
             atacante.curacion(cantidadCuracion);
             System.out.println(atacante.getNombre()+" ha recibido "+cantidadCuracion+" puntos de vida");
             System.out.println("-------------------------");

@@ -80,21 +80,35 @@ public class Presentacion {
                     System.out.println("Introduce el nombre");
                     String nombre = s.next();
 
-                    System.out.println("Elige la raza");
-                    mostrarRazas();
-                    int opraza = s.nextInt();
-                    if (opraza < 0 || opraza >= creacion.getRazas().size()) {
-                        System.out.println("Elige un número de la lista");
-                        return;
-                    }
 
-                    System.out.println("Elige la clase");
-                    mostrarClases();
-                    int opclase = s.nextInt();
-                    if (opclase < 0 || opclase >= creacion.getClases().size()) {
-                        System.out.println("Elige un número de la lista");
-                        return;
-                    }
+                    boolean existe;
+                    int opraza;
+                    do {
+                        System.out.println("Elige la raza");
+                        mostrarRazas();
+                        existe = false;
+                        opraza = s.nextInt();
+                        if (opraza < 0 || opraza >= creacion.getRazas().size()) {
+                            System.out.println("Elige un número de la lista");
+                            System.out.println("-------------------------");
+                        } else {
+                            existe = true;
+                        }
+                    } while(!existe);
+
+                    int opclase;
+                    do{
+                        System.out.println("Elige la clase");
+                        mostrarClases();
+                        existe = false;
+                        opclase = s.nextInt();
+                        if (opclase < 0 || opclase >= creacion.getClases().size()) {
+                            System.out.println("Elige un número de la lista");
+                            System.out.println("-------------------------");
+                        } else {
+                            existe = true;
+                        }
+                    } while(!existe);
 
                     creacion.crearPersonaje(nombre, opclase, opraza);
 
