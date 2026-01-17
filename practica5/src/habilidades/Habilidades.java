@@ -8,4 +8,6 @@ public interface Habilidades {
     int usosRestantes();
     void usar(Personaje atacante, Personaje objetivo);
 
+    void reinicioUsos();
 }
+

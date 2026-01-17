@@ -30,6 +30,4 @@ public class Carga{
         personajes.add(personaje);
     }
 
-
 }
-//Cargamos los datos aqui

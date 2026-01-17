@@ -4,7 +4,6 @@ import modelo.Personaje;
 
 public class DañoCuerpoACuerpo implements Habilidades{
     private int usos = 5;
-    private int usosMaximo = 5;
     private String nombre;
 
     public DañoCuerpoACuerpo(String nombre) {
@@ -49,5 +48,10 @@ public class DañoCuerpoACuerpo implements Habilidades{
             System.out.println("-------------------------");
         }
 
+    }
+
+    @Override
+    public void reinicioUsos() {
+        this.usos = 5;
     }
 }

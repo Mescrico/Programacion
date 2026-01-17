@@ -59,9 +59,15 @@ public class Presentacion {
                     break;
                 case 2:
                     System.out.println("SELECCIONA DOS JUGADORES");
+                    System.out.println("-------------------------");
                     mostrarPersonajes();
+                    System.out.println("PRIMER JUGADOR:");
                     int jugador1 = s.nextInt();
+                    s.nextLine();
+                    System.out.println("SEGUNDO JUGADOR:");
                     int jugador2 = s.nextInt();
+                    s.nextLine();
+
 
                     if (jugador1 < 0 || jugador2 < 0 || jugador1 >= creacion.getPersonajes().size() || jugador2 >= creacion.getPersonajes().size()) {
                         System.out.println("Elige un numero de la lista");
@@ -76,25 +82,42 @@ public class Presentacion {
                     break;
                 case 3:
                     System.out.println("CREACIÓN DEL PERSONAJE");
+                    System.out.println("-------------------------");
 
                     System.out.println("Introduce el nombre");
                     String nombre = s.next();
 
-                    System.out.println("Elige la raza");
-                    mostrarRazas();
-                    int opraza = s.nextInt();
-                    if (opraza < 0 || opraza >= creacion.getRazas().size()) {
-                        System.out.println("Elige un número de la lista");
-                        return;
-                    }
+                    boolean elegir;
+                    int opraza;
+                    do {
+                        elegir = false;
+                        System.out.println("Elige la raza");
+                        mostrarRazas();
+                        opraza = s.nextInt();
+                        s.nextLine();
+                        if (opraza < 0 || opraza >= creacion.getRazas().size()) {
+                            System.out.println("Elige un número de la lista");
+                            System.out.println("-------------------------");
+                        } else {
+                            elegir = true;
+                        }
+                    } while(!elegir);
 
-                    System.out.println("Elige la clase");
-                    mostrarClases();
-                    int opclase = s.nextInt();
-                    if (opclase < 0 || opclase >= creacion.getClases().size()) {
-                        System.out.println("Elige un número de la lista");
-                        return;
-                    }
+                    int opclase;
+                    do {
+                        elegir = false;
+                        System.out.println("Elige la clase");
+                        mostrarClases();
+                        opclase = s.nextInt();
+                        s.nextLine();
+                        if (opclase < 0 || opclase >= creacion.getClases().size()) {
+                            System.out.println("Elige un número de la lista");
+                            System.out.println("-------------------------");
+                        } else {
+                            elegir = true;
+                        }
+                    } while(!elegir);
+
 
                     creacion.crearPersonaje(nombre, opclase, opraza);
 

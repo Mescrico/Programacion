@@ -16,6 +16,7 @@ public class Personaje {
     private int inteligencia;
     private int destreza;
     private int vidaBase;
+    private int vidaMaxima;
 
     public Personaje(String nombre, Clase clase, Raza raza) {
         this.nombre = nombre;
@@ -27,6 +28,7 @@ public class Personaje {
         this.inteligencia = raza.inteligenciaBase() + clase.bonoInteligencia();
         this.destreza = raza.destrezaBase() + clase.bonoDestreza();
         this.vidaBase = raza.vidaBase() + clase.vidaMaxima();
+        this.vidaMaxima = raza.vidaBase() + clase.vidaMaxima();
     }
 
     public int vidaInicial() {
@@ -106,10 +108,27 @@ public class Personaje {
 
     public void curacion(int cantidad) {
         int vidaNueva = this.vidaBase + cantidad;
-        if(vidaNueva < this.vidaBase) {
-            vidaNueva = this.vidaBase;
+        if(vidaNueva > vidaMaxima) {
+            this.vidaBase = vidaMaxima;
+        } else {
+            this.vidaBase = vidaNueva;
         }
-        this.setVidaBase(vidaNueva);
+    }
+
+    public void reinicio() {
+        this.setVidaBase(raza.vidaBase() + clase.vidaMaxima());
+        for (int i = 0; i < habilidades.size(); i++) {
+            habilidades.get(i).reinicioUsos();
+        }
+    }
+
+    public boolean tieneUsos() {
+        for (int i = 0; i < habilidades.size(); i++) {
+            if(habilidades.get(i).usosRestantes() > 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
