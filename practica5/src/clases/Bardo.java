@@ -8,6 +8,8 @@ public class Bardo implements Clase{
     public Bardo() {
     }
 
+    //Sobreescribo los atributos con lo indicado en la practica
+
     @Override
     public int bonoFuerza() {
         return 0;
@@ -30,6 +32,7 @@ public class Bardo implements Clase{
 
     @Override
     public ArrayList<Habilidades> habilidades() {
+        //Creo un nuevo arraylist y le añado las habilidades con los nombres correspondientes a cada clase
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
         listahabilidades.add(new CuraCuerpoACuerpo("Canto Sanador"));
         listahabilidades.add(new DañoCuerpoACuerpo("Ritmo Impactante"));

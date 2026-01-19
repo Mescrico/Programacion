@@ -8,6 +8,8 @@ public class Monje implements Clase{
     public Monje() {
     }
 
+    //Sobreescribo los atributos con lo indicado en la practica
+
     @Override
     public int bonoFuerza() {
         return 2;
@@ -30,6 +32,7 @@ public class Monje implements Clase{
 
     @Override
     public ArrayList<Habilidades> habilidades() {
+        //Creo un nuevo arraylist y le añado las habilidades con los nombres correspondientes a cada clase
         ArrayList<Habilidades> listahabilidades = new ArrayList<>();
         listahabilidades.add(new CuraCuerpoACuerpo("Palma Restauradora"));
         listahabilidades.add(new DañoCuerpoACuerpo("Puño del Dragón"));

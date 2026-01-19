@@ -4,6 +4,8 @@ public class Elfo implements Raza {
     public Elfo() {
     }
 
+    //Sobreescribo los atributos con lo indicado en la practica
+
     @Override
     public String nombre() {
         return "Elfo";

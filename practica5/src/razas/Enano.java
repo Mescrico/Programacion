@@ -4,6 +4,8 @@ public class Enano implements Raza{
     public Enano() {
     }
 
+    //Sobreescribo los atributos con lo indicado en la practica
+
     @Override
     public String nombre() {
         return "Enano";
