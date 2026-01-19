@@ -56,4 +56,9 @@ public class CuraCuerpoACuerpo implements Habilidades{
             System.out.println("-------------------------");
         }
     }
+
+    @Override
+    public void reinicioUsos() {
+        this.usos = 3;
+    }
 }

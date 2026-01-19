@@ -14,7 +14,7 @@ public class Ataque implements Habilidades{
 
     @Override
     public int poder() {
-        return 20;
+        return 25;
     }
 
     @Override
@@ -24,9 +24,13 @@ public class Ataque implements Habilidades{
 
     @Override
     public void usar(Personaje atacante, Personaje objetivo) {
-        int daño = (int) ((Math.random()*poder())+(atacante.getFuerza()+atacante.getDestreza()+atacante.getInteligencia()));
+        int daño = (int) (Math.random()*poder());
         objetivo.reducirVida(daño);
         System.out.println(objetivo.getNombre()+" ha recibido "+daño+" puntos de daño");
         System.out.println("-------------------------");
+    }
+
+    @Override
+    public void reinicioUsos() {
     }
 }
