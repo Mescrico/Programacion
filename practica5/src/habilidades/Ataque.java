@@ -14,7 +14,7 @@ public class Ataque implements Habilidades{
 
     @Override
     public int poder() {
-        return 25;
+        return 20;
     }
 
     @Override

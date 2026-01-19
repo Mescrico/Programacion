@@ -5,7 +5,8 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Druida implements Clase{
-
+    public Druida() {
+    }
 
     @Override
     public int bonoFuerza() {

@@ -5,6 +5,8 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Paladin implements Clase{
+    public Paladin() {
+    }
 
     @Override
     public int bonoFuerza() {

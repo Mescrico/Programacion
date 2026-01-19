@@ -29,7 +29,7 @@ public class DañoADistancia implements Habilidades{
 
     @Override
     public int poder() {
-        return 60;
+        return 65;
     }
 
     @Override

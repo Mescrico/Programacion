@@ -5,6 +5,8 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Sacerdote implements Clase{
+    public Sacerdote() {
+    }
 
     @Override
     public int bonoFuerza() {

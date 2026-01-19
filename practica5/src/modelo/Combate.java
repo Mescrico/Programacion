@@ -10,7 +10,6 @@ public class Combate {
     private Personaje personaje2;
 
     public Combate() {
-
     }
     public boolean acabado() {
         if(this.personaje1.getVidaBase() <= 0 || this.personaje2.getVidaBase() <= 0) {
@@ -75,22 +74,22 @@ public class Combate {
                                 } else {
                                     switch (opcion2) {
                                         case 1:
-                                            if(p2.getHabilidades().get(1).usosRestantes() <= 0) {
-                                                System.out.println("No quedan más usos de "+p2.getHabilidades().get(1).getNombre());
+                                            if(p1.getHabilidades().get(1).usosRestantes() <= 0) {
+                                                System.out.println("No quedan más usos de "+p1.getHabilidades().get(1).getNombre());
                                                 continue;
                                             }
                                             p1.getHabilidades().get(1).usar(p1, p2);
                                             break;
                                         case 2:
-                                            if(p2.getHabilidades().get(0).usosRestantes() <= 0) {
-                                                System.out.println("No quedan más usos de "+p2.getHabilidades().get(0).getNombre());
+                                            if(p1.getHabilidades().get(0).usosRestantes() <= 0) {
+                                                System.out.println("No quedan más usos de "+p1.getHabilidades().get(0).getNombre());
                                                 continue;
                                             }
                                             p1.getHabilidades().get(0).usar(p1, p2);
                                             break;
                                         case 3:
-                                            if(p2.getHabilidades().get(2).usosRestantes() <= 0) {
-                                                System.out.println("No quedan más usos de "+p2.getHabilidades().get(2).getNombre());
+                                            if(p1.getHabilidades().get(2).usosRestantes() <= 0) {
+                                                System.out.println("No quedan más usos de "+p1.getHabilidades().get(2).getNombre());
                                                 continue;
                                             }
                                             p1.getHabilidades().get(2).usar(p1, p2);

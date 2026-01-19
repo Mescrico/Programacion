@@ -5,6 +5,8 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Mago implements Clase{
+    public Mago() {
+    }
 
     @Override
     public int bonoFuerza() {

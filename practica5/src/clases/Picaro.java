@@ -5,6 +5,8 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Picaro implements Clase{
+    public Picaro() {
+    }
 
     @Override
     public int bonoFuerza() {

@@ -16,7 +16,7 @@ public class CuraCuerpoACuerpo implements Habilidades{
 
     @Override
     public int poder() {
-        return 40;
+        return 30;
     }
 
     @Override

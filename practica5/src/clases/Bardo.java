@@ -5,6 +5,9 @@ import habilidades.*;
 import java.util.ArrayList;
 
 public class Bardo implements Clase{
+    public Bardo() {
+    }
+
     @Override
     public int bonoFuerza() {
         return 0;
