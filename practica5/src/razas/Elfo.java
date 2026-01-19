@@ -1,6 +1,8 @@
 package razas;
 
 public class Elfo implements Raza {
+    public Elfo() {
+    }
 
     @Override
     public String nombre() {

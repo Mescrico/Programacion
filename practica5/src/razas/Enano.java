@@ -1,6 +1,8 @@
 package razas;
 
 public class Enano implements Raza{
+    public Enano() {
+    }
 
     @Override
     public String nombre() {

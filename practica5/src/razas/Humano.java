@@ -1,8 +1,8 @@
 package razas;
 
 public class Humano implements Raza{
-
-
+    public Humano() {
+    }
 
     @Override
     public String nombre() {
