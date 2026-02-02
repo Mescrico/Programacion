@@ -15,5 +15,6 @@ public class ejercicio6 {
             System.out.println("Sauron ha sido derrotado");
             nombresVillanos.remove("Sauron");
         }
+
     }
 }
