@@ -27,5 +27,6 @@ public class ejercicio10 {
                 System.out.println("Eliminado del gremio, miembros restantes: "+miembrosGremio.get(m));
             }
         }
+
     }
 }
