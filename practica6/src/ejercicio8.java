@@ -23,5 +23,6 @@ public class ejercicio8 {
                 System.out.println(lootMonstruo.get(m));
             }
         }
+
     }
 }
