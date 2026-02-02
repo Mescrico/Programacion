@@ -11,5 +11,6 @@ public class ejercicio2 {
         nombresVillanos.add("Morgoth");
 
         System.out.println(nombresVillanos.size());
+
     }
 }
