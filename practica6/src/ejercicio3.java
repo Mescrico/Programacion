@@ -9,5 +9,6 @@ public class ejercicio3 {
         cantidadOro.put("Mario", 10);
 
         System.out.println(cantidadOro.get("Josemi"));
+
     }
 }
