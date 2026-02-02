@@ -24,5 +24,6 @@ public class ejercicio9 {
         }
 
         System.out.println(estadisticasConan.get("Fuerza"));
+
     }
 }
