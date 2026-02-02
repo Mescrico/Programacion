@@ -15,5 +15,6 @@ public class ejercicio5 {
                 System.out.println("Hechizo: "+ m + " Mana: "+ costoMana.get(m));
             }
         }
+
     }
 }
