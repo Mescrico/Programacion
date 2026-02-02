@@ -11,5 +11,6 @@ public class ejercicio1 {
         registroCombate.add("Huido con exito");
 
         System.out.println(registroCombate.get(2));
+
     }
 }
