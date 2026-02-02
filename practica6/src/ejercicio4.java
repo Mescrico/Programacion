@@ -14,5 +14,6 @@ public class ejercicio4 {
         registroCombate.add("Dragón avistado");
 
         System.out.println(registroCombate.getLast());
+
     }
 }
