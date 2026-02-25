@@ -24,7 +24,7 @@ public class JsonHelper {
     }
 
     public <T> void writeList(String path, List<T> lista)  {
-        try(Writer writer = new FileWriter(path)) {
+        try(Writer writer = new FileWriter(path, true)) {
             Gson gson = new Gson();
             gson.toJson(lista, writer);
         } catch (Exception e) {

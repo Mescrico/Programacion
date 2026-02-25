@@ -44,4 +44,14 @@ public class Item {
     public void setValor(int valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
 }
