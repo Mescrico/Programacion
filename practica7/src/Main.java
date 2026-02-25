@@ -1,4 +1,6 @@
 import model.Item;
+import model.Personaje;
+import services.GestionMundo;
 import utils.JsonHelper;
 import utils.TxtHelper;
 
@@ -6,13 +8,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        TxtHelper a = new TxtHelper();
+        GestionMundo g = new GestionMundo();
 
-        a.cargarFichero();
+        g.cargarTodo();
 
-        JsonHelper ab = new JsonHelper();
+        g.crearPersonaje(List.of("W01", "P01", "AEA"));
 
-        List<Item> hola = List.of(new Item("25","Macarrones","Comida",20));
-        ab.writeList("practica7/Ficheros/items.json", hola);
+        g.guardarCambios();
     }
 }

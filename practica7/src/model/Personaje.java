@@ -9,11 +9,11 @@ public class Personaje {
     private int nivel;
     private List<Item> equipo;
 
-    public Personaje(String nombre, String raza, int nivel) {
+    public Personaje(String nombre, String raza, int nivel, List<Item> equipo) {
         this.nombre = nombre;
         this.raza = raza;
         this.nivel = nivel;
-        this.equipo = new ArrayList<Item>();
+        this.equipo = equipo;
     }
 
     public String getNombre() {
