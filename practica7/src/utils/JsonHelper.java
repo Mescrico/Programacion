@@ -2,6 +2,7 @@ package utils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import handler.RecursoNoEncontradoException;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -24,10 +25,10 @@ public class JsonHelper {
     }
 
     public <T> void writeList(String path, List<T> lista)  {
-        try(Writer writer = new FileWriter(path, true)) {
+        try(Writer writer = new FileWriter(path)) {
             Gson gson = new Gson();
             gson.toJson(lista, writer);
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("No se ha podido sobreescribir por "+e.getMessage());
         }
     }

@@ -27,8 +27,34 @@ public class GestionMundo {
         items = itemR.readList("practica7/Ficheros/items.json", Item.class);
 
         JsonHelper personajeR = new JsonHelper();
-        personajes = personajeR.readList("practica7/Ficheros/items.json", Personaje.class);
+        personajes = personajeR.readList("practica7/Ficheros/personajes.json", Personaje.class);
 
+        validar();
+
+    }
+
+    public void validar() {
+        HashMap<String, Item> mapaItems = new HashMap<>();
+        for(Item item : items) {
+            mapaItems.put(item.getId(), item);
+        }
+
+
+        for (Personaje personaje : personajes) {
+            ArrayList<Item> equipoPersonaje = new ArrayList<>();
+
+            if(personaje.getEquipoIds() != null) {
+                for (String id : personaje.getEquipoIds()) {
+                    if(mapaItems.containsKey(id)) {
+                        equipoPersonaje.add(mapaItems.get(id));
+                    } else {
+                        System.out.println("El item con id "+id+" no existe");
+                    }
+                }
+            }
+
+            personaje.setEquipo(equipoPersonaje);
+        }
     }
 
     public void crearPersonaje(List<String> idsItems) {
@@ -59,14 +85,18 @@ public class GestionMundo {
             }
         }
 
-        if(noExisten.isEmpty()) {
-            System.out.println("Todos los items existen");
-        } else {
-            System.out.println("Estos items no existen:");
+        ArrayList<String> equipoIDS = new ArrayList<>();
+        for (int i = 0; i < existen.size(); i++) {
+            equipoIDS.add(existen.get(i).getId());
+        }
+
+        System.out.println(existen);
+        if(!noExisten.isEmpty()) {
+            System.out.println();
             System.out.println(noExisten);
         }
 
-        Personaje nuevo = new Personaje(nombre, raza, 0, existen);
+        Personaje nuevo = new Personaje(nombre, raza, 0, equipoIDS);
         personajes.add(nuevo);
     }
 
