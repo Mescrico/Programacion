@@ -1,8 +1,1 @@
-[
-  {
-    "nombre": "Aragorn",
-    "raza": "Humano",
-    "nivel": 20,
-    "equipoIds": ["E01"]
-  }
-]
+[{"nombre":"Aragorn","raza":"Humano","nivel":20,"equipoIds":["E01"],"equipo":[]},{"nombre":"Legolas","raza":"34","nivel":0,"equipoIds":["W01","P01"],"equipo":[{"id":"W01","nombre":"Hacha Doble","tipo":"ARMA","valor":100},{"id":"P01","nombre":"Pocion","tipo":"CONSUMIBLE","valor":25}]},{"nombre":"mario","raza":"escr","nivel":0,"equipo":[]}]

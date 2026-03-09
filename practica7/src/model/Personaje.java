@@ -1,5 +1,9 @@
 package model;
 
+import handler.DatoInvalidoException;
+import utils.LoggerCustom;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +20,7 @@ public class Personaje {
         this.nivel = nivel;
         this.equipoIds = equipoIds;
         this.equipo = new ArrayList<>();
+
     }
 
     public String getNombre() {
@@ -39,7 +44,7 @@ public class Personaje {
     }
 
     public void setNivel(int nivel) {
-        this.nivel = nivel;
+       this.nivel = nivel;
     }
 
     public List<String> getEquipoIds() {

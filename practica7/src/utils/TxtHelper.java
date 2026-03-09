@@ -1,5 +1,6 @@
 package utils;
 
+import handler.DatoInvalidoException;
 import handler.FormatoInvalidoException;
 import model.Ciudad;
 import java.time.LocalDate;
@@ -19,7 +20,9 @@ public class TxtHelper {
         try (var file = new BufferedWriter(new FileWriter("practica7/Ficheros/errores.log", true))){
             List<String> lineas = Files.readAllLines(Paths.get("practica7/Ficheros/ciudades.txt"));
             if(lineas.isEmpty()) {
-                throw new FormatoInvalidoException("Formato invalido");
+                file.write("["+LocalDateTime.now()+"] ERROR: FormatoInvalidoException - Fichero vacío");
+                file.newLine();
+                throw new FormatoInvalidoException("Fichero vacío");
             }
             List<Ciudad> ciudades = new ArrayList<>();
             for (String linea : lineas) {
@@ -27,20 +30,22 @@ public class TxtHelper {
                     System.out.println(linea);
                     String[] lineaN = linea.split(";");
                     if(lineaN.length != 4) {
-                        file.write("["+LocalDate.now()+"] ERROR: ");
-                        file.newLine();
-                        throw new FormatoInvalidoException("Formato invalido");
+                        throw new DatoInvalidoException("Fichero Invalido");
                     }
                     Ciudad c = new Ciudad(lineaN[0], Integer.parseInt(lineaN[1]), lineaN[2], Integer.parseInt(lineaN[3]));
                     ciudades.add(c);
                 } catch (Exception e) {
-
+                    file.write("["+LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
+                    file.newLine();
                 }
 
             }
             return ciudades;
-        } catch (IOException | FormatoInvalidoException e) {
+        } catch (IOException e) {
             System.out.println("No se ha encontrado el fichero");
+            return List.of();
+        } catch (FormatoInvalidoException e) {
+            System.out.println("El fichero tiene un formato inválido");
             return List.of();
         }
     }

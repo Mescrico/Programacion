@@ -1,1 +1,22 @@
-[2026-03-04] ERROR: [2026-03-04T13:11:30.062233400] ERROR: 
+[2026-03-09T14:02:23.480180900] ERROR: DatoInvalidoException - Fichero Invalido
+[2026-03-09T14:02:23.604129700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:02:23.679129600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:10:40.638934400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:10:40.716913] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:10:44.676106300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:10:44.691071600] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:12:19.863692300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:12:19.966222700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:12:35.939930800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:12:35.947553300] ERROR: DatoInvalidoException - El nivel no puede ser negativo
+[2026-03-09T14:12:35.955560100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:17:59.968874800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:18:00.055114100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:18:12.036542800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:18:12.044422900] ERROR: DatoInvalidoException - El nivel no puede ser negativo
+[2026-03-09T14:18:12.055922200] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:25:05.349905800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:25:05.445571900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-09T14:25:18.323892100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-09T14:25:18.337607600] ERROR: DatoInvalidoException - El nivel no puede ser negativo
+[2026-03-09T14:25:18.347813100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json

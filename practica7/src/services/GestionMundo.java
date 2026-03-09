@@ -1,11 +1,14 @@
 package services;
 
+import handler.DatoInvalidoException;
 import model.Ciudad;
 import model.Item;
 import model.Personaje;
 import utils.JsonHelper;
+import utils.LoggerCustom;
 import utils.TxtHelper;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -64,7 +67,8 @@ public class GestionMundo {
         String nombre = s.nextLine();
         System.out.println("Raza:");
         String raza = s.nextLine();
-
+        System.out.println("Nivel");
+        int nivel = s.nextInt();
 
         List<Item> catalogo = json.readList("practica7/Ficheros/items.json", Item.class);
 
@@ -96,8 +100,15 @@ public class GestionMundo {
             System.out.println(noExisten);
         }
 
-        Personaje nuevo = new Personaje(nombre, raza, 0, equipoIDS);
-        personajes.add(nuevo);
+        try {
+            if(nivel<0) {
+                throw new DatoInvalidoException("El nivel no puede ser negativo");
+            }
+            Personaje nuevo = new Personaje(nombre, raza, nivel, equipoIDS);
+            personajes.add(nuevo);
+        } catch (DatoInvalidoException e) {
+            LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
+        }
     }
 
     public void guardarCambios() {
