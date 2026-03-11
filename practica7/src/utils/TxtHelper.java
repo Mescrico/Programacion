@@ -21,6 +21,7 @@ public class TxtHelper {
             List<String> lineas = Files.readAllLines(Paths.get("practica7/Ficheros/ciudades.txt"));
             try {
                 if(lineas.isEmpty()) {
+                    System.out.println("ciudades.txt vacio");
                     throw new FormatoInvalidoException("Fichero ciudades.txt vacío");
                 }
             } catch (FormatoInvalidoException e) {

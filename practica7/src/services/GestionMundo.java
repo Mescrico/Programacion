@@ -1,6 +1,7 @@
 package services;
 
 import handler.DatoInvalidoException;
+import handler.RecursoNoEncontradoException;
 import model.Ciudad;
 import model.Item;
 import model.Personaje;
@@ -8,6 +9,8 @@ import utils.JsonHelper;
 import utils.LoggerCustom;
 import utils.TxtHelper;
 
+import java.lang.reflect.Array;
+import java.sql.SQLOutput;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,19 +47,21 @@ public class GestionMundo {
 
 
         for (Personaje personaje : personajes) {
-            ArrayList<Item> equipoPersonaje = new ArrayList<>();
-
-            if(personaje.getEquipoIds() != null) {
+            try {
                 for (String id : personaje.getEquipoIds()) {
-                    if(mapaItems.containsKey(id)) {
-                        equipoPersonaje.add(mapaItems.get(id));
+                    if(!mapaItems.containsKey(id)) {
+                        System.out.println("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
+                        personaje.getEquipoIds().remove(id);
+                        throw new RecursoNoEncontradoException("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
                     } else {
-                        System.out.println("El item con id "+id+" no existe");
+                        LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Item "+id+" del personaje "+personaje.getNombre()+" validado");
                     }
                 }
+            } catch (RecursoNoEncontradoException e ) {
+                LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
+
             }
 
-            personaje.setEquipo(equipoPersonaje);
         }
     }
 
@@ -67,7 +72,7 @@ public class GestionMundo {
         String nombre = s.nextLine();
         System.out.println("Raza:");
         String raza = s.nextLine();
-        System.out.println("Nivel");
+        System.out.println("Nivel:");
         int nivel = s.nextInt();
 
         List<Item> catalogo = json.readList("practica7/Ficheros/items.json", Item.class);
@@ -77,34 +82,40 @@ public class GestionMundo {
             items.put(item.getId(), item);
         }
 
-        List<Item> existen = new ArrayList<>();
+        ArrayList<String> equipo = new ArrayList<>();
+        boolean acabar;
+        String id;
+        try {
+            do {
+                acabar = false;
+                System.out.println("Item por id:");
+                id = s.nextLine();
 
-        ArrayList<String> noExisten = new ArrayList<>();
+                if(items.containsKey(id)) {
+                    equipo.add(id);
+                    System.out.println("Item agregado, añadir otro? n para salir");
+                    id = s.nextLine();
 
-        for (String id : idsItems) {
-            if(!items.containsKey(id)) {
-                noExisten.add(id);
-            } else {
-                existen.add(items.get(id));
-            }
+                    if(id.equals("n")) {
+                        acabar = true;
+                    }
+                } else {
+                    System.out.println("Esa id no existe");
+                    throw new RecursoNoEncontradoException("El item con id "+id+" no existe");
+                }
+            } while(!acabar);
+        } catch (RecursoNoEncontradoException e) {
+            LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
         }
 
-        ArrayList<String> equipoIDS = new ArrayList<>();
-        for (int i = 0; i < existen.size(); i++) {
-            equipoIDS.add(existen.get(i).getId());
-        }
 
-        System.out.println(existen);
-        if(!noExisten.isEmpty()) {
-            System.out.println();
-            System.out.println(noExisten);
-        }
 
         try {
             if(nivel<0) {
-                throw new DatoInvalidoException("El nivel no puede ser negativo");
+                System.out.println("El nivel no puede ser negativo");
+                throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
             }
-            Personaje nuevo = new Personaje(nombre, raza, nivel, equipoIDS);
+            Personaje nuevo = new Personaje(nombre, raza, nivel, equipo);
             personajes.add(nuevo);
         } catch (DatoInvalidoException e) {
             LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());

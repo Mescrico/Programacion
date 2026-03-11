@@ -12,15 +12,12 @@ public class Personaje {
     private String raza;
     private int nivel;
     private List<String> equipoIds;
-    private List<Item> equipo;
 
     public Personaje(String nombre, String raza, int nivel, List<String> equipoIds) {
         this.nombre = nombre;
         this.raza = raza;
         this.nivel = nivel;
         this.equipoIds = equipoIds;
-        this.equipo = new ArrayList<>();
-
     }
 
     public String getNombre() {
@@ -55,11 +52,4 @@ public class Personaje {
         this.equipoIds = equipoIds;
     }
 
-    public List<Item> getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(List<Item> equipo) {
-        this.equipo = equipo;
-    }
 }

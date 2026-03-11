@@ -34,3 +34,60 @@
 [2026-03-11T10:38:09.525632200] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
 [2026-03-11T10:38:09.729875700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
 [2026-03-11T10:38:09.838258900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:12:08.238832400] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:12:08.378802500] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:12:08.514190900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:12:25.081741500] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:12:25.098008200] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:18:59.627874900] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:18:59.785823600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:18:59.865959400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:19:05.339332900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:19:05.352718] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:27:15.288054400] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:27:15.396452900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:27:15.468895100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:39:58.844612700] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:39:58.970866300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:39:59.027538800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:39:59.033029800] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe
+[2026-03-11T13:39:59.033029800] INFO: Item W01 del personaje Mario validado
+[2026-03-11T13:39:59.034102600] INFO: Item P01 del personaje Mario validado
+[2026-03-11T13:45:16.306040200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:45:16.317309100] ERROR: DatoInvalidoException - El nivel no puede ser negativo
+[2026-03-11T13:45:16.324343200] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:55:20.295543100] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:55:20.405035] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:55:20.473466900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:55:20.477452400] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe
+[2026-03-11T13:55:20.478592500] INFO: Item W01 del personaje Mario validado
+[2026-03-11T13:55:20.479229700] INFO: Item P01 del personaje Mario validado
+[2026-03-11T13:56:03.126020400] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T13:56:03.334741] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T13:56:03.436280200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T13:56:03.442150] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe
+[2026-03-11T13:56:03.442150] INFO: Item W01 del personaje Mario validado
+[2026-03-11T13:56:03.443224300] INFO: Item P01 del personaje Mario validado
+[2026-03-11T14:00:21.978633100] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T14:00:22.125118200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T14:00:22.187424900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T14:00:22.192647700] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe
+[2026-03-11T14:00:22.193265100] INFO: Item W01 del personaje Mario validado
+[2026-03-11T14:00:22.193265100] INFO: Item P01 del personaje Mario validado
+[2026-03-11T14:25:04.760257900] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T14:25:04.942670600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T14:25:05.017856700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T14:25:05.022926500] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-11T14:25:05.024070] INFO: Item W01 del personaje Mario validado
+[2026-03-11T14:25:05.024070] INFO: Item P01 del personaje Mario validado
+[2026-03-11T14:25:12.008750200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T14:25:12.011912400] ERROR: RecursoNoEncontradoException - El item con id  no existe
+[2026-03-11T14:25:12.018262900] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T14:26:45.198291] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T14:26:45.320326400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T14:26:45.413813400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T14:26:45.420725500] INFO: Item W01 del personaje Mario validado
+[2026-03-11T14:26:45.421762500] INFO: Item P01 del personaje Mario validado
+[2026-03-11T14:26:49.561992100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T14:26:49.564160800] ERROR: RecursoNoEncontradoException - El item con id  no existe
+[2026-03-11T14:26:49.571063800] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
