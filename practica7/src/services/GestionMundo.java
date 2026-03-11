@@ -129,7 +129,6 @@ public class GestionMundo {
                 System.out.println("El nivel no puede ser negativo");
                 throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
             }
-
             System.out.println("Personaje "+nombre+" creado");
             LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Se ha creado el personaje "+nombre);
 

@@ -218,3 +218,57 @@
 [2026-03-11T18:34:59.394208400] INFO: Item P01 del personaje Rachel validado
 [2026-03-11T18:34:59.395719900] INFO: Item W01 del personaje Rachel validado
 [2026-03-11T18:34:59.395719900] INFO: Item P01 del personaje Legolas validado
+[2026-03-11T19:05:29.006442200] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T19:05:29.012509100] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T19:05:29.012509100] INFO: Todas las ciudades se han leido
+[2026-03-11T19:05:29.035557900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:05:29.052833900] INFO: Todos los items se han leido
+[2026-03-11T19:05:29.052833900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:05:29.054344200] INFO: Todos los personajes se han leido
+[2026-03-11T19:05:29.055852300] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T19:05:29.055852300] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T19:05:29.055852300] INFO: Item P01 del personaje Legolas validado
+[2026-03-11T19:12:15.189454400] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T19:12:15.194008800] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T19:12:15.194008800] INFO: Todas las ciudades se han leido
+[2026-03-11T19:12:15.219769700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:12:15.235911500] INFO: Todos los items se han leido
+[2026-03-11T19:12:15.237422100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:12:15.238930800] INFO: Todos los personajes se han leido
+[2026-03-11T19:12:15.238930800] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T19:12:15.239965500] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T19:12:15.239965500] INFO: Item P01 del personaje Legolas validado
+[2026-03-11T19:13:32.746731200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:13:59.148756200] ERROR: RecursoNoEncontradoException - El item con id JU3 no existe
+[2026-03-11T19:13:59.149756800] INFO: Se ha creado el personaje Josemi
+[2026-03-11T19:13:59.149756800] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:16:56.575777600] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T19:16:56.579778800] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T19:16:56.579778800] INFO: Todas las ciudades se han leido
+[2026-03-11T19:16:56.602777700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:16:56.618778500] INFO: Todos los items se han leido
+[2026-03-11T19:16:56.619778100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:16:56.620778] INFO: Todos los personajes se han leido
+[2026-03-11T19:16:56.620778] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-11T19:17:05.867558800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:17:10.917863600] INFO: Se ha creado el personaje Josemi
+[2026-03-11T19:17:10.917863600] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:17:16.854578] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T19:17:16.858578100] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T19:17:16.859577900] INFO: Todas las ciudades se han leido
+[2026-03-11T19:17:16.883583400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:17:16.900089400] INFO: Todos los items se han leido
+[2026-03-11T19:17:16.901089900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:17:16.902090] INFO: Todos los personajes se han leido
+[2026-03-11T19:17:16.902090] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-11T19:17:22.684918100] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T19:17:22.689918200] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T19:17:22.689918200] INFO: Todas las ciudades se han leido
+[2026-03-11T19:17:22.712918800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:17:22.728922700] INFO: Todos los items se han leido
+[2026-03-11T19:17:22.729922600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T19:17:22.729922600] INFO: Todos los personajes se han leido
+[2026-03-11T19:17:22.731499100] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-11T19:17:25.187889200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T19:17:30.124883] INFO: Se ha creado el personaje a
+[2026-03-11T19:17:30.124883] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
