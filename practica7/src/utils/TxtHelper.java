@@ -17,35 +17,35 @@ public class TxtHelper {
     public TxtHelper() {};
 
     public List<Ciudad> cargarFichero() {
-        try (var file = new BufferedWriter(new FileWriter("practica7/Ficheros/errores.log", true))){
+        try{
             List<String> lineas = Files.readAllLines(Paths.get("practica7/Ficheros/ciudades.txt"));
-            if(lineas.isEmpty()) {
-                file.write("["+LocalDateTime.now()+"] ERROR: FormatoInvalidoException - Fichero vacío");
-                file.newLine();
-                throw new FormatoInvalidoException("Fichero vacío");
+            try {
+                if(lineas.isEmpty()) {
+                    throw new FormatoInvalidoException("Fichero ciudades.txt vacío");
+                }
+            } catch (FormatoInvalidoException e) {
+                LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             }
+
             List<Ciudad> ciudades = new ArrayList<>();
             for (String linea : lineas) {
                 try {
                     System.out.println(linea);
                     String[] lineaN = linea.split(";");
                     if(lineaN.length != 4) {
-                        throw new DatoInvalidoException("Fichero Invalido");
+                        throw new DatoInvalidoException("Fichero ciudades.txt Invalido");
                     }
                     Ciudad c = new Ciudad(lineaN[0], Integer.parseInt(lineaN[1]), lineaN[2], Integer.parseInt(lineaN[3]));
                     ciudades.add(c);
-                } catch (Exception e) {
-                    file.write("["+LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
-                    file.newLine();
+                    System.out.println(ciudades);
+                } catch (DatoInvalidoException e) {
+                    LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                 }
 
             }
             return ciudades;
         } catch (IOException e) {
-            System.out.println("No se ha encontrado el fichero");
-            return List.of();
-        } catch (FormatoInvalidoException e) {
-            System.out.println("El fichero tiene un formato inválido");
+            LoggerCustom.log("[" + LocalDateTime.now() + "] ERROR: " + e.getClass().getSimpleName() + " - " + e.getMessage());
             return List.of();
         }
     }

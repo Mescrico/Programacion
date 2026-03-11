@@ -20,3 +20,17 @@
 [2026-03-09T14:25:18.323892100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
 [2026-03-09T14:25:18.337607600] ERROR: DatoInvalidoException - El nivel no puede ser negativo
 [2026-03-09T14:25:18.347813100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T10:25:57.179717300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T10:25:57.311631700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T10:26:12.422703400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T10:26:12.435688700] ERROR: DatoInvalidoException - El nivel no puede ser negativo
+[2026-03-11T10:26:12.446477700] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T10:33:27.742182500] ERROR: FormatoInvalidoException - Fichero vacío
+[2026-03-11T10:33:27.895603100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T10:33:27.977776700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T10:34:45.331934700] ERROR: FormatoInvalidoException - Fichero vacío
+[2026-03-11T10:34:45.472264100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T10:34:45.556410800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T10:38:09.525632200] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T10:38:09.729875700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T10:38:09.838258900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
