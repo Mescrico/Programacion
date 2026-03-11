@@ -9,8 +9,6 @@ import utils.JsonHelper;
 import utils.LoggerCustom;
 import utils.TxtHelper;
 
-import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,18 +47,23 @@ public class GestionMundo {
 
     }
 
+    //Funcion validar para comprobar que existen los items que tienen los personajes al cargarlos
     public void validar() {
-        HashMap<String, Item> mapaItems = new HashMap<>();
+        //Creamos un hashmap para guardar cada item con su id
+        HashMap<String, Item> idItems = new HashMap<>();
         for(Item item : items) {
-            mapaItems.put(item.getId(), item);
+            idItems.put(item.getId(), item);
         }
 
-
+        //Para cada personaje se hace lo siguiente
         for (Personaje personaje : personajes) {
             try {
+                //Para cada id del equipo del personaje
                 for (String id : personaje.getEquipoIds()) {
-                    if(!mapaItems.containsKey(id)) {
+                    //Si no esta esa id en el hashmap anterior es que no existe
+                    if(!idItems.containsKey(id)) {
                         System.out.println("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
+                        //La borramos del personaje
                         personaje.getEquipoIds().remove(id);
                         throw new RecursoNoEncontradoException("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
                     } else {
@@ -122,11 +125,9 @@ public class GestionMundo {
 
 
         try {
-            if(nivel<0 || equipo.isEmpty()) {
-                if(nivel<0) {
-                    System.out.println("El nivel no puede ser negativo");
-                    throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
-                }
+            if(nivel<0) {
+                System.out.println("El nivel no puede ser negativo");
+                throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
             }
 
             System.out.println("Personaje "+nombre+" creado");
