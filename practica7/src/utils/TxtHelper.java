@@ -18,6 +18,7 @@ public class TxtHelper {
 
     public List<Ciudad> cargarFichero() {
         try{
+            //Creamos una lista String de todas las lineas del archivo que le pasamos
             List<String> lineas = Files.readAllLines(Paths.get("practica7/Ficheros/ciudades.txt"));
             try {
                 if(lineas.isEmpty()) {
@@ -31,14 +32,15 @@ public class TxtHelper {
             List<Ciudad> ciudades = new ArrayList<>();
             for (String linea : lineas) {
                 try {
-                    System.out.println(linea);
+                    //Para cada linea de la lista la metemos en un array de String en el que separamos cada parametro por ; usando .split()
                     String[] lineaN = linea.split(";");
                     if(lineaN.length != 4) {
                         throw new DatoInvalidoException("Fichero ciudades.txt Invalido");
                     }
                     Ciudad c = new Ciudad(lineaN[0], Integer.parseInt(lineaN[1]), lineaN[2], Integer.parseInt(lineaN[3]));
                     ciudades.add(c);
-                    System.out.println(ciudades);
+                    LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Ciudad "+c+" leida correctamente");
+
                 } catch (DatoInvalidoException e) {
                     LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                 }

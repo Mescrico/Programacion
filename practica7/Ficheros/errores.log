@@ -91,3 +91,130 @@
 [2026-03-11T14:26:49.561992100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
 [2026-03-11T14:26:49.564160800] ERROR: RecursoNoEncontradoException - El item con id  no existe
 [2026-03-11T14:26:49.571063800] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:08:40.712567400] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:08:40.744396400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:08:40.765165] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:08:40.767693500] INFO: Item W01 del personaje Mario validado
+[2026-03-11T18:08:40.767693500] INFO: Item P01 del personaje Mario validado
+[2026-03-11T18:08:53.368822400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:08:53.368822400] ERROR: RecursoNoEncontradoException - El item con id  no existe
+[2026-03-11T18:08:53.371843200] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:09:56.149238300] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:09:56.176570600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:09:56.193730600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:09:56.195241400] INFO: Item W01 del personaje Mario validado
+[2026-03-11T18:09:56.195241400] INFO: Item P01 del personaje Mario validado
+[2026-03-11T18:10:00.314259100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:10:23.138842400] ERROR: RecursoNoEncontradoException - El item con id POD no existe
+[2026-03-11T18:10:23.141876100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:11:38.193481600] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:11:38.220829400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:11:38.237482200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:11:38.238995600] INFO: Item W01 del personaje Mario validado
+[2026-03-11T18:11:38.240507300] INFO: Item P01 del personaje Mario validado
+[2026-03-11T18:11:44.509387700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:11:47.969335700] ERROR: RecursoNoEncontradoException - El item con id uFd no existe
+[2026-03-11T18:11:47.969335700] ERROR: DatoInvalidoException - El nivel del personaje Pepe negativo
+[2026-03-11T18:11:47.970852600] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:21:13.508374900] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:21:13.535621500] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:21:13.551879600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:21:51.573629300] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:21:51.603510800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:21:51.622238100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:21:51.623746900] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-11T18:24:58.024122700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:25:04.605153300] ERROR: RecursoNoEncontradoException - El item con id PO1 no existe
+[2026-03-11T18:25:04.606660100] INFO: Se ha creado el personaje Mario
+[2026-03-11T18:25:04.607665100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:25:19.933783] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:25:19.963554800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:25:19.982145400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:25:31.282771300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:25:52.405883600] INFO: Se ha creado el personaje Rachel
+[2026-03-11T18:25:52.408431] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:26:38.900975800] ERROR: FormatoInvalidoException - Fichero ciudades.txt vacío
+[2026-03-11T18:26:38.929244300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:26:38.945971500] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:26:38.947991] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:26:38.948498800] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:26:47.138195200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:26:53.790520] ERROR: DatoInvalidoException - El nivel del personaje Pedro negativo
+[2026-03-11T18:26:53.793541100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:27:28.594159100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:27:28.615399300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:27:28.617915200] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:27:28.618926600] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:27:33.224611300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:27:33.246001] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:27:33.248033] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:27:33.249051500] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:27:34.749293100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:27:34.772202500] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:27:34.773712300] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:27:34.775225] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:28:39.198357600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:28:39.216723300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:28:39.218239] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:28:39.220064200] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:29:24.224011400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:29:24.242297800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:29:24.243812900] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:29:24.243812900] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:30:24.434047300] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-11T18:30:24.439605500] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-11T18:30:24.463300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:30:24.479275400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:30:24.480785600] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:30:24.482296400] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:30:37.049617] INFO: Ciudad [Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3}] leida correctamente
+[2026-03-11T18:30:37.055658600] INFO: Ciudad [Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8}] leida correctamente
+[2026-03-11T18:30:37.077851600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:30:37.095186700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:30:37.095186700] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:30:37.096695700] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:30:42.959022] INFO: Ciudad aCiudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3}] leida correctamente
+[2026-03-11T18:30:42.963553600] INFO: Ciudad aCiudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8}] leida correctamente
+[2026-03-11T18:30:42.988185900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:30:43.003827300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:30:43.005337100] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:30:43.006847500] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:30:57.470754100] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-11T18:30:57.475297600] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-11T18:30:57.498997300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:30:57.515155200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:30:57.516667700] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:30:57.516667700] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:31:14.719369900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:31:19.242077100] INFO: Se ha creado el personaje Legolas
+[2026-03-11T18:31:19.245093700] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:34:41.847965200] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T18:34:41.852439] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T18:34:41.852439] INFO: Todas las ciudades se han leido
+[2026-03-11T18:34:41.875443700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:34:41.890591200] INFO: Todos los items se han leido
+[2026-03-11T18:34:41.890591200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:34:41.892104200] INFO: Todos los personajes se han leido
+[2026-03-11T18:34:41.893612300] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:34:41.893612300] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:34:41.893612300] INFO: Item P01 del personaje Legolas validado
+[2026-03-11T18:34:54.138713] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T18:34:54.142860300] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T18:34:54.142860300] INFO: Todas las ciudades se han leido
+[2026-03-11T18:34:54.167122200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:34:54.184248100] INFO: Todos los items se han leido
+[2026-03-11T18:34:54.184248100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:34:54.185757600] INFO: Todos los personajes se han leido
+[2026-03-11T18:34:54.185757600] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:34:54.187267400] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:34:54.187267400] INFO: Item P01 del personaje Legolas validado
+[2026-03-11T18:34:59.346946300] INFO: Ciudad model.Ciudad@13221655 leida correctamente
+[2026-03-11T18:34:59.350991300] INFO: Ciudad model.Ciudad@1218025c leida correctamente
+[2026-03-11T18:34:59.350991300] INFO: Todas las ciudades se han leido
+[2026-03-11T18:34:59.374567900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-11T18:34:59.392693200] INFO: Todos los items se han leido
+[2026-03-11T18:34:59.392693200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-11T18:34:59.394208400] INFO: Todos los personajes se han leido
+[2026-03-11T18:34:59.394208400] INFO: Item P01 del personaje Rachel validado
+[2026-03-11T18:34:59.395719900] INFO: Item W01 del personaje Rachel validado
+[2026-03-11T18:34:59.395719900] INFO: Item P01 del personaje Legolas validado

@@ -29,11 +29,21 @@ public class GestionMundo {
         TxtHelper ciudadesR = new TxtHelper();
         ciudades = ciudadesR.cargarFichero();
 
+        System.out.println("Ciudades leídas");
+        LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Todas las ciudades se han leido");
+
         JsonHelper itemR = new JsonHelper();
         items = itemR.readList("practica7/Ficheros/items.json", Item.class);
 
+        System.out.println("Items leidos");
+        LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Todos los items se han leido");
+
         JsonHelper personajeR = new JsonHelper();
         personajes = personajeR.readList("practica7/Ficheros/personajes.json", Personaje.class);
+
+        System.out.println("Personajes leidos");
+        LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Todos los personajes se han leido");
+
 
         validar();
 
@@ -65,7 +75,7 @@ public class GestionMundo {
         }
     }
 
-    public void crearPersonaje(List<String> idsItems) {
+    public void crearPersonaje() {
         Scanner s = new Scanner(System.in);
         JsonHelper json = new JsonHelper();
         System.out.println("Nombre:");
@@ -74,6 +84,7 @@ public class GestionMundo {
         String raza = s.nextLine();
         System.out.println("Nivel:");
         int nivel = s.nextInt();
+        s.nextLine();
 
         List<Item> catalogo = json.readList("practica7/Ficheros/items.json", Item.class);
 
@@ -111,10 +122,16 @@ public class GestionMundo {
 
 
         try {
-            if(nivel<0) {
-                System.out.println("El nivel no puede ser negativo");
-                throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
+            if(nivel<0 || equipo.isEmpty()) {
+                if(nivel<0) {
+                    System.out.println("El nivel no puede ser negativo");
+                    throw new DatoInvalidoException("El nivel del personaje "+nombre+" negativo");
+                }
             }
+
+            System.out.println("Personaje "+nombre+" creado");
+            LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Se ha creado el personaje "+nombre);
+
             Personaje nuevo = new Personaje(nombre, raza, nivel, equipo);
             personajes.add(nuevo);
         } catch (DatoInvalidoException e) {

@@ -12,7 +12,7 @@ public class Main {
 
         g.cargarTodo();
 
-        g.crearPersonaje(List.of("W01", "P01", "AEA"));
+        g.crearPersonaje();
 
         g.guardarCambios();
     }
