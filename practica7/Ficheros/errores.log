@@ -272,3 +272,58 @@
 [2026-03-11T19:17:25.187889200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
 [2026-03-11T19:17:30.124883] INFO: Se ha creado el personaje a
 [2026-03-11T19:17:30.124883] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:38:24.671536200] INFO: Ciudad model.Ciudad@1b28cdfa leida correctamente
+[2026-03-12T09:38:24.682276] INFO: Ciudad model.Ciudad@4eec7777 leida correctamente
+[2026-03-12T09:38:24.683414900] INFO: Todas las ciudades se han leido
+[2026-03-12T09:38:24.793756100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:38:24.910638800] INFO: Todos los items se han leido
+[2026-03-12T09:38:24.915824600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:38:24.923433400] INFO: Todos los personajes se han leido
+[2026-03-12T09:38:24.924534] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-12T09:38:34.486411800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:38:38.549506100] INFO: Se ha creado el personaje Mario
+[2026-03-12T09:38:52.892345700] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:40:23.230659100] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-12T09:40:23.251277300] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-12T09:40:23.252424] INFO: Todas las ciudades se han leido
+[2026-03-12T09:40:23.396815] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:40:23.463928400] INFO: Todos los items se han leido
+[2026-03-12T09:40:23.465082] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:40:23.469755300] INFO: Todos los personajes se han leido
+[2026-03-12T09:40:23.470880] INFO: Item P01 del personaje Mario validado
+[2026-03-12T09:42:41.964021900] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-12T09:42:41.982493100] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-12T09:42:41.982493100] INFO: Todas las ciudades se han leido
+[2026-03-12T09:42:42.072333400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:42:42.149467] INFO: Todos los items se han leido
+[2026-03-12T09:42:42.151219800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:42:42.154571800] INFO: Todos los personajes se han leido
+[2026-03-12T09:42:42.155214] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-12T09:43:16.871427800] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-12T09:43:16.890087700] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-12T09:43:16.891236600] INFO: Todas las ciudades se han leido
+[2026-03-12T09:43:17.001427] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:43:17.064888900] INFO: Todos los items se han leido
+[2026-03-12T09:43:17.066005300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:43:17.069865500] INFO: Todos los personajes se han leido
+[2026-03-12T09:43:17.070973300] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-12T09:43:48.618309] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-12T09:43:48.684742] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-12T09:43:48.684742] INFO: Todas las ciudades se han leido
+[2026-03-12T09:43:48.822351] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:43:48.954463] INFO: Todos los items se han leido
+[2026-03-12T09:43:48.956205400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:43:48.961203500] INFO: Todos los personajes se han leido
+[2026-03-12T09:43:48.962939400] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-12T09:44:23.180755500] INFO: Ciudad Ciudad{nombre='Minas Tirith', poblacion=20000, clima='Soleado', nivelRiesgo=3} leida correctamente
+[2026-03-12T09:44:23.201331400] INFO: Ciudad Ciudad{nombre='Isengard', poblacion=5000, clima='Nublado', nivelRiesgo=8} leida correctamente
+[2026-03-12T09:44:23.202469] INFO: Todas las ciudades se han leido
+[2026-03-12T09:44:23.304607700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:44:23.397526600] INFO: Todos los items se han leido
+[2026-03-12T09:44:23.399788900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:44:23.401595600] INFO: Todos los personajes se han leido
+[2026-03-12T09:44:23.412140] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-12T09:44:23.413274200] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-12T09:44:53.829078100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-12T09:45:04.133217] INFO: Se ha creado el personaje Legolas
+[2026-03-12T09:45:11.735227100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json

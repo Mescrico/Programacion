@@ -44,4 +44,14 @@ public class Ciudad {
     public void setNivelRiesgo(int nivelRiesgo) {
         this.nivelRiesgo = nivelRiesgo;
     }
+
+    @Override
+    public String toString() {
+        return "Ciudad{" +
+                "nombre='" + nombre + '\'' +
+                ", poblacion=" + poblacion +
+                ", clima='" + clima + '\'' +
+                ", nivelRiesgo=" + nivelRiesgo +
+                '}';
+    }
 }

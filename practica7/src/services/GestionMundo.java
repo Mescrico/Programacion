@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GestionMundo {
+    Scanner s = new Scanner(System.in);
     private List<Personaje> personajes;
     private List<Ciudad> ciudades;
     private List<Item> items;
@@ -58,6 +59,7 @@ public class GestionMundo {
         //Para cada personaje se hace lo siguiente
         for (Personaje personaje : personajes) {
             try {
+                JsonHelper guardar = new JsonHelper();
                 //Para cada id del equipo del personaje
                 for (String id : personaje.getEquipoIds()) {
                     //Si no esta esa id en el hashmap anterior es que no existe
@@ -65,10 +67,12 @@ public class GestionMundo {
                         System.out.println("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
                         //La borramos del personaje
                         personaje.getEquipoIds().remove(id);
+                        guardar.writeList("practica7/Ficheros/personajes.json", personajes);
                         throw new RecursoNoEncontradoException("El item con id "+id+" del personaje "+personaje.getNombre()+" no existe, se ha eliminado");
                     } else {
                         LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Item "+id+" del personaje "+personaje.getNombre()+" validado");
                     }
+
                 }
             } catch (RecursoNoEncontradoException e ) {
                 LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
@@ -143,5 +147,48 @@ public class GestionMundo {
         JsonHelper guardar = new JsonHelper();
 
         guardar.writeList("practica7/Ficheros/personajes.json", personajes);
+    }
+
+    public void menu() {
+        boolean salir = false;
+        do {
+            System.out.println("Menu");
+            System.out.println("1- Crear personaje");
+            System.out.println("2- Guardar cambios");
+            System.out.println("3- Listar personajes");
+            System.out.println("4- Listar ciudades");
+            System.out.println("5- Listar items");
+            System.out.println("0- Salir");
+
+            int opcion = s.nextInt();
+            switch (opcion) {
+                case 1: crearPersonaje();
+                    break;
+                case 2: guardarCambios();
+                    break;
+                case 3:
+                    for (int i = 0; i < personajes.size(); i++) {
+                        System.out.println(i+1+"- "+personajes.get(i).getNombre()+" - "+personajes.get(i).getEquipoIds());
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < ciudades.size(); i++) {
+                        System.out.println(i+1+"- "+ciudades.get(i).getNombre());
+                    }
+                    break;
+                case 5:
+                    for (int i = 0; i < items.size(); i++) {
+                        System.out.println(i+1+"- "+items.get(i).getNombre()+" - "+items.get(i).getId());
+                    }
+                    break;
+                case 0:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Pon una opcion valida");
+                    break;
+            }
+        } while (!salir);
+
     }
 }
