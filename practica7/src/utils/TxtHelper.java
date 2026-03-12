@@ -39,7 +39,7 @@ public class TxtHelper {
                     }
                     Ciudad c = new Ciudad(lineaN[0], Integer.parseInt(lineaN[1]), lineaN[2], Integer.parseInt(lineaN[3]));
                     ciudades.add(c);
-                    LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Ciudad "+c+" leida correctamente");
+                    LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Ciudad "+c.getNombre()+" leida correctamente");
 
                 } catch (DatoInvalidoException e) {
                     LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
