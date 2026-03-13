@@ -10,10 +10,7 @@ import utils.LoggerCustom;
 import utils.TxtHelper;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class GestionMundo {
     Scanner s = new Scanner(System.in);
@@ -40,6 +37,14 @@ public class GestionMundo {
         JsonHelper personajeR = new JsonHelper();
         personajes = personajeR.readList("practica7/Ficheros/personajes.json", Personaje.class);
 
+        try {
+
+        } catch (RuntimeException e) {
+            System.out.println("a");
+        } catch (Exception e) {
+            System.out.println("b");
+        }
+
         System.out.println("Personajes leidos");
         LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Todos los personajes se han leido");
 
@@ -52,8 +57,13 @@ public class GestionMundo {
     public void validar() {
         //Creamos un hashmap para guardar cada item con su id
         HashMap<String, Item> idItems = new HashMap<>();
+        HashMap<String, Ciudad> nombreCiudades = new HashMap<>();
         for(Item item : items) {
             idItems.put(item.getId(), item);
+        }
+
+        for(Ciudad ciudad : ciudades) {
+            nombreCiudades.put(ciudad.getNombre(), ciudad);
         }
 
         //Para cada personaje se hace lo siguiente
@@ -78,7 +88,37 @@ public class GestionMundo {
                 LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
 
             }
+        }
 
+        HashSet<Personaje> borrar = new HashSet<>();
+
+        for (Personaje personaje : personajes) {
+            try {
+
+                if(personaje.getRaza().equalsIgnoreCase("humano")) {
+                    if(nombreCiudades.get(personaje.getCiudad()).getClima().equalsIgnoreCase("Desertico")){
+                        borrar.add(personaje);
+                        System.out.println("Personaje "+personaje.getNombre()+" se ha eliminado de la lista");
+                        throw new DatoInvalidoException("El personaje "+personaje.getNombre()+" al ser humano no puede estar en una ciudad con clima "+nombreCiudades.get(personaje.getCiudad()).getClima());
+                    }
+
+                }
+
+                if(personaje.getEquipoIds().contains("H01")) {
+                    if(nombreCiudades.get(personaje.getCiudad()).getClima().equalsIgnoreCase("volcanico")){
+                        borrar.add(personaje);
+                        System.out.println("Personaje "+personaje.getNombre()+" se ha eliminado de la lista");
+                        throw new DatoInvalidoException("El personaje "+personaje.getNombre()+" no puede tener un objeto Hielo - "+idItems.get("H01").getId()+" - en una ciudad con clima "+nombreCiudades.get(personaje.getCiudad()).getClima());
+
+                    }
+                }
+            } catch (DatoInvalidoException e) {
+                LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
+            }
+        }
+
+        for(Personaje personaje : borrar) {
+            personajes.remove(personaje);
         }
     }
 
@@ -126,7 +166,25 @@ public class GestionMundo {
             LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
         }
 
+        Boolean valido = false;
+        int opcion;
+        do {
+            valido = false;
+            System.out.println("Ciudad:");
+            for (int i = 0; i < ciudades.size(); i++) {
+                System.out.println(i+"- "+ciudades.get(i));
+            }
+            opcion = s.nextInt();
 
+            if(opcion < 0 || opcion > ciudades.size()) {
+                System.out.println("No es valido");
+            } else {
+                valido = true;
+            }
+        } while (!valido);
+
+
+        String ciudad = ciudades.get(opcion).getNombre();
 
         try {
             if(nivel<0) {
@@ -136,7 +194,7 @@ public class GestionMundo {
             System.out.println("Personaje "+nombre+" creado");
             LoggerCustom.log("["+ LocalDateTime.now()+"] INFO: Se ha creado el personaje "+nombre);
 
-            Personaje nuevo = new Personaje(nombre, raza, nivel, equipo);
+            Personaje nuevo = new Personaje(nombre, raza, nivel, equipo, ciudad);
             personajes.add(nuevo);
         } catch (DatoInvalidoException e) {
             LoggerCustom.log("["+ LocalDateTime.now()+"] ERROR: "+e.getClass().getSimpleName()+" - "+e.getMessage());
@@ -168,7 +226,7 @@ public class GestionMundo {
                     break;
                 case 3:
                     for (int i = 0; i < personajes.size(); i++) {
-                        System.out.println(i+1+"- "+personajes.get(i).getNombre()+" - "+personajes.get(i).getEquipoIds());
+                        System.out.println(i+1+"- "+personajes.get(i).getNombre()+" - "+personajes.get(i).getRaza()+" - "+personajes.get(i).getEquipoIds()+" - "+personajes.get(i).getCiudad());
                     }
                     break;
                 case 4:

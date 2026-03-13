@@ -12,12 +12,14 @@ public class Personaje {
     private String raza;
     private int nivel;
     private List<String> equipoIds;
+    private String ciudad;
 
-    public Personaje(String nombre, String raza, int nivel, List<String> equipoIds) {
+    public Personaje(String nombre, String raza, int nivel, List<String> equipoIds, String ciudad) {
         this.nombre = nombre;
         this.raza = raza;
         this.nivel = nivel;
         this.equipoIds = equipoIds;
+        this.ciudad = ciudad;
     }
 
     public String getNombre() {
@@ -52,4 +54,11 @@ public class Personaje {
         this.equipoIds = equipoIds;
     }
 
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
 }

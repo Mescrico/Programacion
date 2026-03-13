@@ -327,3 +327,458 @@
 [2026-03-12T09:44:53.829078100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
 [2026-03-12T09:45:04.133217] INFO: Se ha creado el personaje Legolas
 [2026-03-12T09:45:11.735227100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:12:53.436397500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:12:53.490921300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:12:53.492022300] INFO: Todas las ciudades se han leido
+[2026-03-13T09:13:15.812795100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:13:15.933163] INFO: Todos los items se han leido
+[2026-03-13T09:13:25.239102700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:13:25.256486600] INFO: Todos los personajes se han leido
+[2026-03-13T09:13:25.271315900] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:13:25.273108600] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-13T09:13:25.276008200] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:13:25.276008200] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:13:25.277156500] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:14:02.228254200] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:14:02.280238800] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:14:02.280238800] INFO: Todas las ciudades se han leido
+[2026-03-13T09:14:04.711438] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:14:04.819713600] INFO: Todos los items se han leido
+[2026-03-13T09:14:22.669435800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:14:22.676962400] INFO: Todos los personajes se han leido
+[2026-03-13T09:14:22.678068200] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:14:22.680914600] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:14:22.680914600] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:16:09.507198200] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:16:09.571555800] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:16:09.572613] INFO: Todas las ciudades se han leido
+[2026-03-13T09:16:09.704587400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:16:09.781503500] INFO: Todos los items se han leido
+[2026-03-13T09:16:09.784380500] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:16:09.790364300] INFO: Todos los personajes se han leido
+[2026-03-13T09:16:09.791536900] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:16:09.794489700] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:16:09.795150600] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:16:43.427814700] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:16:43.439653100] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:16:43.440775800] INFO: Todas las ciudades se han leido
+[2026-03-13T09:16:43.531481800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:16:43.604655500] INFO: Todos los items se han leido
+[2026-03-13T09:16:43.606430600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:16:43.611510400] INFO: Todos los personajes se han leido
+[2026-03-13T09:16:43.611510400] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:16:43.614357600] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:16:43.614357600] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:16:54.826452300] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:16:54.844999600] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:16:54.846277400] INFO: Todas las ciudades se han leido
+[2026-03-13T09:16:54.945407700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:16:55.016875400] INFO: Todos los items se han leido
+[2026-03-13T09:16:55.018643700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:16:55.022649300] INFO: Todos los personajes se han leido
+[2026-03-13T09:16:55.023723400] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:16:55.025449] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:16:55.026610100] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:17:16.596241100] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:17:16.617002500] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:17:16.618668] INFO: Todas las ciudades se han leido
+[2026-03-13T09:17:16.737892] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:17:16.813046500] INFO: Todos los items se han leido
+[2026-03-13T09:17:16.816278300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:17:16.825896300] INFO: Todos los personajes se han leido
+[2026-03-13T09:17:16.826984] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:17:16.831590900] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:17:16.831590900] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:18:59.979079500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:18:59.995824200] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:18:59.996485400] INFO: Todas las ciudades se han leido
+[2026-03-13T09:19:00.081650200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:19:00.180063] INFO: Todos los items se han leido
+[2026-03-13T09:19:00.182315800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:19:00.190002900] INFO: Todos los personajes se han leido
+[2026-03-13T09:19:00.191167800] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:19:00.193655700] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:19:00.194791500] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:19:38.538404] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:19:38.548239100] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:19:38.548889300] INFO: Todas las ciudades se han leido
+[2026-03-13T09:19:38.670999400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:19:38.742574400] INFO: Todos los items se han leido
+[2026-03-13T09:19:38.743181500] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:19:38.748229300] INFO: Todos los personajes se han leido
+[2026-03-13T09:19:38.751171] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:19:38.758822300] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:19:38.758822300] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:19:48.050781] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:19:48.100944300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:19:48.101615400] INFO: Todas las ciudades se han leido
+[2026-03-13T09:19:48.231818700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:19:48.331260800] INFO: Todos los items se han leido
+[2026-03-13T09:20:14.257977100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:20:20.235397300] INFO: Todos los personajes se han leido
+[2026-03-13T09:20:20.236466700] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:20:20.240145800] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:20:20.241197300] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:20:29.479423200] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:20:29.521821400] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:20:29.522529900] INFO: Todas las ciudades se han leido
+[2026-03-13T09:20:29.681477100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:20:29.784308900] INFO: Todos los items se han leido
+[2026-03-13T09:20:46.205304600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:20:46.213231700] INFO: Todos los personajes se han leido
+[2026-03-13T09:20:46.213813500] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:20:46.215953200] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:20:46.215953200] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:21:26.640250] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:21:26.680393500] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:21:26.681045] INFO: Todas las ciudades se han leido
+[2026-03-13T09:21:26.805136] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:21:26.891882800] INFO: Todos los items se han leido
+[2026-03-13T09:21:26.893069200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:21:26.898854800] INFO: Todos los personajes se han leido
+[2026-03-13T09:21:26.899916800] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:21:26.902814300] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:21:26.903961300] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:24:05.162935500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:24:05.203272900] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:24:05.203950800] INFO: Todas las ciudades se han leido
+[2026-03-13T09:24:05.341888700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:24:05.429696400] INFO: Todos los items se han leido
+[2026-03-13T09:24:05.431493300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:24:05.434518] ERROR: JsonSyntaxException - com.google.gson.stream.MalformedJsonException: Unexpected value at line 1 column 22 path $[0].raza
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+[2026-03-13T09:24:05.437336500] INFO: Todos los personajes se han leido
+[2026-03-13T09:25:55.742422300] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:25:55.790379800] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:25:55.792140900] INFO: Todas las ciudades se han leido
+[2026-03-13T09:25:55.935699] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:25:56.025878500] INFO: Todos los items se han leido
+[2026-03-13T09:27:34.421663700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:27:34.432586300] INFO: Todos los personajes se han leido
+[2026-03-13T09:27:34.433735800] INFO: Item P01 del personaje Mario validado
+[2026-03-13T09:27:34.436449900] INFO: Item W01 del personaje Oscar validado
+[2026-03-13T09:27:34.436449900] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T09:34:07.798745600] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:34:07.820441800] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:34:07.820441800] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T09:34:07.821042400] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T09:34:07.822154500] INFO: Todas las ciudades se han leido
+[2026-03-13T09:34:07.921872400] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:34:07.992072500] INFO: Todos los items se han leido
+[2026-03-13T09:34:07.993165100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:34:07.998131600] ERROR: JsonSyntaxException - com.google.gson.stream.MalformedJsonException: Unterminated object at line 1 column 48 path $[0].equipoIds
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+[2026-03-13T09:34:07.999837100] INFO: Todos los personajes se han leido
+[2026-03-13T09:34:33.130067600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:34:37.610376500] INFO: Se ha creado el personaje Juan
+[2026-03-13T09:35:11.156397900] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:35:11.170267100] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:35:11.170267100] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T09:35:11.171442] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T09:35:11.172089200] INFO: Todas las ciudades se han leido
+[2026-03-13T09:35:11.256412300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:35:11.334061900] INFO: Todos los items se han leido
+[2026-03-13T09:35:11.335139600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:35:11.336285400] INFO: Todos los personajes se han leido
+[2026-03-13T09:37:54.320391500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:37:54.332041200] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:37:54.332041200] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T09:37:54.332041200] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T09:37:54.333141300] INFO: Todas las ciudades se han leido
+[2026-03-13T09:37:54.448114] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:37:54.516838] INFO: Todos los items se han leido
+[2026-03-13T09:37:54.517521900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:37:54.522314500] ERROR: JsonSyntaxException - com.google.gson.stream.MalformedJsonException: Expected ':' at line 1 column 58 path $[0].ciudad
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+[2026-03-13T09:37:54.527433900] INFO: Todos los personajes se han leido
+[2026-03-13T09:38:07.722780300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:38:11.498773700] INFO: Se ha creado el personaje as
+[2026-03-13T09:38:36.408247500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T09:38:36.423198700] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T09:38:36.423198700] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T09:38:36.423198700] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T09:38:36.424368500] INFO: Todas las ciudades se han leido
+[2026-03-13T09:38:36.520754100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:38:36.596904600] INFO: Todos los items se han leido
+[2026-03-13T09:38:36.597965] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T09:38:36.602665300] ERROR: JsonSyntaxException - com.google.gson.stream.MalformedJsonException: Expected ':' at line 1 column 58 path $[0].ciudad
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+[2026-03-13T09:38:36.605772300] INFO: Todos los personajes se han leido
+[2026-03-13T09:38:42.378930800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T09:38:45.339257200] INFO: Se ha creado el personaje a
+[2026-03-13T10:03:06.665854500] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:03:06.678248300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:03:06.679312200] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:03:06.680385200] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:03:06.682538] INFO: Todas las ciudades se han leido
+[2026-03-13T10:03:06.790851900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:03:06.849271500] INFO: Todos los items se han leido
+[2026-03-13T10:03:06.850417200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:03:06.854392900] INFO: Todos los personajes se han leido
+[2026-03-13T10:03:06.861149200] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:03:06.862849100] ERROR: RecursoNoEncontradoException - El item con id E01 del personaje Aragorn no existe, se ha eliminado
+[2026-03-13T10:03:29.393569] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:03:42.034710300] INFO: Se ha creado el personaje Mario
+[2026-03-13T10:03:59.362473800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:07:10.597921600] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:07:10.611531200] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:07:10.612636500] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:07:10.613217300] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:07:10.613217300] INFO: Todas las ciudades se han leido
+[2026-03-13T10:07:10.742582700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:07:10.813570500] INFO: Todos los items se han leido
+[2026-03-13T10:07:10.815825800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:07:10.830237600] INFO: Todos los personajes se han leido
+[2026-03-13T10:07:23.154426700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:07:49.299316100] INFO: Se ha creado el personaje Mario
+[2026-03-13T10:07:58.915195200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:08:07.186947] INFO: Se ha creado el personaje Oscar
+[2026-03-13T10:08:12.539239100] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:09:05.356975600] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:09:05.368706900] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:09:05.368706900] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:09:05.369807200] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:09:05.369807200] INFO: Todas las ciudades se han leido
+[2026-03-13T10:09:05.469113100] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:09:05.541673100] INFO: Todos los items se han leido
+[2026-03-13T10:09:05.542778700] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:09:05.546705] INFO: Todos los personajes se han leido
+[2026-03-13T10:09:05.547305300] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:09:05.549460900] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:09:05.549460900] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:10:01.568363200] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:10:01.578247400] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:10:01.579396800] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:10:01.580047900] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:10:01.580047900] INFO: Todas las ciudades se han leido
+[2026-03-13T10:10:01.675664] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:10:01.754032500] INFO: Todos los items se han leido
+[2026-03-13T10:10:01.755814200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:10:01.760812800] INFO: Todos los personajes se han leido
+[2026-03-13T10:10:01.761948100] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:10:01.764860900] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:10:01.765552100] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:11:24.833366300] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:11:24.849912700] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:11:24.849912700] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:11:24.851694200] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:11:24.852793900] INFO: Todas las ciudades se han leido
+[2026-03-13T10:11:24.972207700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:11:25.040224800] INFO: Todos los items se han leido
+[2026-03-13T10:11:25.041272900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:11:25.047087500] INFO: Todos los personajes se han leido
+[2026-03-13T10:11:25.048136900] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:11:25.050762700] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:11:25.051798100] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:11:34.477107300] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:11:34.531719800] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:11:34.532854700] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:11:34.533505500] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:11:34.534659700] INFO: Todas las ciudades se han leido
+[2026-03-13T10:11:34.670658700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:11:34.785867900] INFO: Todos los items se han leido
+[2026-03-13T10:11:34.787682900] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:11:34.795511500] INFO: Todos los personajes se han leido
+[2026-03-13T10:11:34.796649900] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:11:34.801362100] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:11:34.801362100] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:13:49.784510] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:13:49.797046300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:13:49.798747400] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:13:49.799814] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:13:49.800891] INFO: Todas las ciudades se han leido
+[2026-03-13T10:13:49.912086300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:13:49.991440400] INFO: Todos los items se han leido
+[2026-03-13T10:13:49.993175600] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:13:49.998219500] INFO: Todos los personajes se han leido
+[2026-03-13T10:13:49.999310] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:13:50.001002100] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:13:50.002117] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:13:50.007717100] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - Item{id='H01', nombre='Hielo', tipo='OBJETO', valor=5} - en una ciudad con clima Volcanico
+[2026-03-13T10:15:37.064073400] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:15:37.083620700] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:15:37.083620700] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:15:37.084762300] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:15:37.085377500] INFO: Todas las ciudades se han leido
+[2026-03-13T10:15:37.193906800] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:15:37.279824700] INFO: Todos los items se han leido
+[2026-03-13T10:15:37.280920300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:15:37.284868500] INFO: Todos los personajes se han leido
+[2026-03-13T10:15:37.286016] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:15:37.288869700] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:15:37.288869700] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:15:37.289499200] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:16:27.520438700] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:16:27.537860400] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:16:27.537860400] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:16:27.538941900] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:16:27.540683200] INFO: Todas las ciudades se han leido
+[2026-03-13T10:16:27.639583600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:16:27.697155300] INFO: Todos los items se han leido
+[2026-03-13T10:16:27.699259800] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:16:27.703039100] INFO: Todos los personajes se han leido
+[2026-03-13T10:16:27.703039100] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:16:27.705717400] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:16:27.705717400] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:16:27.706784500] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:16:44.879906600] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:16:44.947137300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:16:44.948235100] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:16:44.948235100] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:16:44.949326600] INFO: Todas las ciudades se han leido
+[2026-03-13T10:16:45.081915200] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:16:45.195128400] INFO: Todos los items se han leido
+[2026-03-13T10:16:45.197374100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:16:45.203169] INFO: Todos los personajes se han leido
+[2026-03-13T10:16:45.204913700] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:16:45.209846700] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:16:45.210935400] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:17:49.723365500] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:19:03.032806] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:19:03.077676300] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:19:03.077676300] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:19:03.078727400] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:19:03.078727400] INFO: Todas las ciudades se han leido
+[2026-03-13T10:19:03.209485] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:19:03.298292600] INFO: Todos los items se han leido
+[2026-03-13T10:19:03.300531300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:19:03.307230700] INFO: Todos los personajes se han leido
+[2026-03-13T10:19:03.307230700] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:19:03.310179500] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:19:03.311321300] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:20:08.680732] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:20:34.730971300] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:20:34.787765] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:20:34.788892600] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:20:34.788892600] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:20:34.789556400] INFO: Todas las ciudades se han leido
+[2026-03-13T10:20:34.929108900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:20:35.040772300] INFO: Todos los items se han leido
+[2026-03-13T10:20:35.054343] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:20:35.076504300] INFO: Todos los personajes se han leido
+[2026-03-13T10:20:35.077640100] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:20:35.091550600] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:20:35.092696100] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:20:50.087268200] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:20:58.430846] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:20:58.493977700] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:20:58.493977700] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:20:58.495067400] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:20:58.495067400] INFO: Todas las ciudades se han leido
+[2026-03-13T10:20:58.623948900] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:20:58.733268700] INFO: Todos los items se han leido
+[2026-03-13T10:20:58.734338300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:20:58.741118100] INFO: Todos los personajes se han leido
+[2026-03-13T10:20:58.741118100] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:20:58.745066300] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:20:58.745066300] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:21:05.258488300] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:21:15.917145700] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:21:15.963999400] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:21:15.965150500] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:21:15.965798700] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:21:15.965798700] INFO: Todas las ciudades se han leido
+[2026-03-13T10:21:16.100765300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:21:16.211956800] INFO: Todos los items se han leido
+[2026-03-13T10:21:16.214029400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:21:16.219869300] INFO: Todos los personajes se han leido
+[2026-03-13T10:21:16.220927] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:21:16.223548400] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:21:16.224620500] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:21:24.981718200] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:27:24.659038800] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:27:24.679420900] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:27:24.680485300] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:27:24.680485300] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:27:24.681564800] INFO: Todas las ciudades se han leido
+[2026-03-13T10:27:24.777280700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:27:24.838967200] INFO: Todos los items se han leido
+[2026-03-13T10:27:24.839689200] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:27:24.842549300] INFO: Todos los personajes se han leido
+[2026-03-13T10:27:24.843678500] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:27:24.846598] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:27:24.847741400] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:27:24.848462400] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:27:24.848462400] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:28:00.874308700] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:28:00.887212400] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:28:00.887212400] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:28:00.887212400] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:28:00.888308800] INFO: Todas las ciudades se han leido
+[2026-03-13T10:28:00.981153300] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:28:01.049206400] INFO: Todos los items se han leido
+[2026-03-13T10:28:01.050231300] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:28:01.057083100] INFO: Todos los personajes se han leido
+[2026-03-13T10:28:01.058116900] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:28:01.060220500] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:28:01.060774500] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:28:01.061805700] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:28:01.061805700] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:28:53.657510800] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:28:53.675407100] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:28:53.676144100] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:28:53.676144100] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:28:53.676144100] INFO: Todas las ciudades se han leido
+[2026-03-13T10:28:53.770034600] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:28:53.839109] INFO: Todos los items se han leido
+[2026-03-13T10:28:53.841191400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:28:53.846014300] INFO: Todos los personajes se han leido
+[2026-03-13T10:28:53.846014300] INFO: Item H01 del personaje Josemi validado
+[2026-03-13T10:28:53.848878600] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T10:28:53.856058300] INFO: Se ha escrito el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:28:53.856686600] ERROR: RecursoNoEncontradoException - El item con id  del personaje Aragorn no existe, se ha eliminado
+[2026-03-13T10:28:53.856686600] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:28:53.857759500] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:28:53.857759500] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:28:53.857759500] ERROR: DatoInvalidoException - El personaje Josemi no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:28:53.859528500] ERROR: DatoInvalidoException - El personaje Aragorn al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:28:53.859528500] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:28:53.860642500] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:29:38.388399700] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:29:38.404923900] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:29:38.407140500] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:29:38.407772800] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:29:38.411029800] INFO: Todas las ciudades se han leido
+[2026-03-13T10:29:38.510259] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:29:38.595384700] INFO: Todos los items se han leido
+[2026-03-13T10:29:38.598405100] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:29:38.603108300] INFO: Todos los personajes se han leido
+[2026-03-13T10:29:38.603108300] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T10:29:38.605959800] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:29:38.605959800] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:29:38.607090400] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:29:38.607090400] ERROR: DatoInvalidoException - El personaje Aragorn al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:29:38.608179900] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:29:38.609229200] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:30:45.230014] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:30:45.241903200] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:30:45.242955100] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:30:45.242955100] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:30:45.244019300] INFO: Todas las ciudades se han leido
+[2026-03-13T10:30:45.356280700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:30:45.418917100] INFO: Todos los items se han leido
+[2026-03-13T10:30:45.420654400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:30:45.424606100] INFO: Todos los personajes se han leido
+[2026-03-13T10:30:45.425799] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T10:30:45.427556900] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:30:45.428681] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:30:45.428681] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:30:45.429338600] ERROR: DatoInvalidoException - El personaje Aragorn al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:30:45.430470] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:30:45.430470] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:34:29.397630100] INFO: Ciudad Minas Tirith leida correctamente
+[2026-03-13T10:34:29.410195600] INFO: Ciudad Isengard leida correctamente
+[2026-03-13T10:34:29.410195600] INFO: Ciudad Volcan leida correctamente
+[2026-03-13T10:34:29.411265500] INFO: Ciudad Desierto leida correctamente
+[2026-03-13T10:34:29.411265500] INFO: Todas las ciudades se han leido
+[2026-03-13T10:34:29.504050700] INFO: Se ha leído el archivo practica7/Ficheros/items.json
+[2026-03-13T10:34:29.565667100] INFO: Todos los items se han leido
+[2026-03-13T10:34:29.567443400] INFO: Se ha leído el archivo practica7/Ficheros/personajes.json
+[2026-03-13T10:34:29.572126] INFO: Todos los personajes se han leido
+[2026-03-13T10:34:29.572126] INFO: Item W01 del personaje Josemi validado
+[2026-03-13T10:34:29.575522200] INFO: Item H01 del personaje Mario validado
+[2026-03-13T10:34:29.576154500] INFO: Item W01 del personaje Mario validado
+[2026-03-13T10:34:29.576154500] INFO: Item P01 del personaje Oscar validado
+[2026-03-13T10:34:29.577231400] ERROR: DatoInvalidoException - El personaje Aragorn al ser humano no puede estar en una ciudad con clima Desertico
+[2026-03-13T10:34:29.578342900] ERROR: DatoInvalidoException - El personaje Mario no puede tener un objeto Hielo - H01 - en una ciudad con clima Volcanico
+[2026-03-13T10:34:29.579450200] ERROR: DatoInvalidoException - El personaje Oscar al ser humano no puede estar en una ciudad con clima Desertico

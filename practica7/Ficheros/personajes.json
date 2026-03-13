@@ -1,8 +1,1 @@
-[
-  {
-    "nombre": "Aragorn",
-    "raza": "Humano",
-    "nivel": 20,
-    "equipoIds": ["E01"]
-  }
-]
+[{"nombre":"Josemi","raza":"Humano","nivel":6,"equipoIds":["W01"],"ciudad":"Volcan"},{"nombre":"Aragorn","raza":"Humano","nivel":20,"equipoIds":[],"ciudad":"Desierto"},{"nombre":"Mario","raza":"Humano","nivel":6,"equipoIds":["H01","W01"],"ciudad":"Volcan"},{"nombre":"Oscar","raza":"Humano","nivel":7,"equipoIds":["P01"],"ciudad":"Desierto"}]
