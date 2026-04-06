@@ -8,4 +8,28 @@ public class Clases_RPG {
         this.idClasesRPG = idClasesRPG;
         this.nombre = nombre;
     }
+
+    public int getIdClasesRPG() {
+        return idClasesRPG;
+    }
+
+    public void setIdClasesRPG(int idClasesRPG) {
+        this.idClasesRPG = idClasesRPG;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Clases_RPG{" +
+                "idClasesRPG=" + idClasesRPG +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }
