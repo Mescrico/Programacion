@@ -38,8 +38,6 @@ public class ItemDAO {
 
                 Items item = new Items(id, nombre, tipo, precio_oro, bonificador_ataque, bonificador_defensa);
                 items.add(item);
-
-
             }
             System.out.println(items);
         } catch (SQLException e) {
