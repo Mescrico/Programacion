@@ -130,10 +130,10 @@ public class PersonajeDAO {
     }
 
     public void crearPersonaje() {
-        System.out.println("Pon el nombre del personaje");
-        s.nextLine();
-        System.out.println("Razas disponibles:");
         try {
+            System.out.println("Pon el nombre del personaje:");
+            String nombrePersonaje = s.next();
+            System.out.println("Razas disponibles:");
             Statement st1 = connection.createStatement();
             ResultSet rs1 = st1.executeQuery("SELECT * FROM RAZAS");
 
@@ -146,12 +146,73 @@ public class PersonajeDAO {
                 System.out.println("ID: "+idRaza+" - "+nombreRaza+" - Bonificador Vida: "+bonificadorVida+" - Bonificador Fuerza: "+bonificadorFuerza);
             }
 
+            boolean bien = false;
+            Razas raza = null;
+            while (!bien) {
+                System.out.println("Elige por id:");
+                int opcion = s.nextInt();
 
+                Statement st2 = connection.createStatement();
+                ResultSet rs2 = st2.executeQuery("SELECT * FROM RAZAS WHERE id = "+opcion);
+
+                if(rs2.next()) {
+                    int idRaza = rs2.getInt("id");
+                    String nombreRaza = rs2.getString("nombre");
+                    int bonificadorVida = rs2.getInt("bonificador_vida");
+                    int bonificadorFuerza = rs2.getInt("bonificador_fuerza");
+
+                    raza = new Razas(idRaza, nombreRaza, bonificadorVida, bonificadorFuerza);
+                    bien = true;
+                } else {
+                    System.out.println("Esa id no existe");
+                }
+            }
+
+            System.out.println("Clases disponibles:");
+
+            Statement st3 = connection.createStatement();
+            ResultSet rs3 = st3.executeQuery("SELECT * FROM CLASES_RPG");
+
+            while(rs3.next()) {
+                int idClase = rs3.getInt("id");
+                String nombreClase = rs3.getString("nombre");
+
+                System.out.println("ID: "+idClase+" - "+nombreClase);
+            }
+
+            boolean correcto = false;
+            Clases_RPG clase = null;
+
+            while (!correcto) {
+                System.out.println("Elige por id:");
+                int opcion = s.nextInt();
+
+                Statement st4 = connection.createStatement();
+                ResultSet rs4 = st4.executeQuery("SELECT * FROM CLASES_RPG WHERE id = "+opcion);
+
+                if(rs4.next()) {
+                    int idClase = rs4.getInt("id");
+                    String nombreClase = rs4.getString("nombre");
+
+                    clase = new Clases_RPG(idClase, nombreClase);
+                    correcto = true;
+                } else {
+                    System.out.println("Esa id no existe");
+                }
+            }
+
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, id_raza, id_clase, id_ciudad_actual)" + "VALUES (?, 1, 100, ?, ?, 1)");
+
+            ps.setString(1, nombrePersonaje);
+            ps.setInt(2, raza.getIdRaza());
+            ps.setInt(3, clase.getIdClasesRPG());
+
+            ps.executeUpdate();
+            System.out.println("Personaje "+nombrePersonaje+" creado");
+            cargarPersonajes();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
 
 
 
