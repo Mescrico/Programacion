@@ -37,6 +37,7 @@ public class HabilidadesDAO {
 
                 Habilidades habilidad = new Habilidades(id, nombre, dano_base, usos_maximos, id_clase);
                 habilidades.add(habilidad);
+                System.out.println(habilidad);
             }
         } catch (SQLException e) {
             e.printStackTrace();

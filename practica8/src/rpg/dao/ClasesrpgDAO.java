@@ -29,9 +29,11 @@ public class ClasesrpgDAO {
           Statement st1 = connection.createStatement();
           Statement st2 = connection.createStatement();
           ResultSet rs1 = st1.executeQuery("SELECT * FROM CLASES_RPG");
-          ArrayList<Habilidades> listahabilidades = new ArrayList<>();
+
 
           while(rs1.next()) {
+
+            ArrayList<Habilidades> listahabilidades = new ArrayList<>();
             int id = rs1.getInt("id");
             String nombre = rs1.getString("nombre");
 
@@ -53,6 +55,7 @@ public class ClasesrpgDAO {
             claseRPG.setListahabilidades(listahabilidades);
 
             clases.add(claseRPG);
+            System.out.println(claseRPG);
           }
         } catch (SQLException e) {
             throw new RuntimeException(e);

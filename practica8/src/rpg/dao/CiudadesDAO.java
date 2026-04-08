@@ -35,6 +35,7 @@ public class CiudadesDAO {
 
                 Ciudades ciudad = new Ciudades(id, nombre, nivel_minimo_acceso);
                 ciudades.add(ciudad);
+                System.out.println(ciudad);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -5,8 +5,10 @@ import rpg.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class PersonajeDAO {
+    private Scanner s = new Scanner(System.in);
     private Connection connection;
     private ArrayList<Personajes> personajes = new ArrayList<>();
 
@@ -94,7 +96,7 @@ public class PersonajeDAO {
                     Habilidades habilidadesPersonaje = new Habilidades(id_habilidad, nombre_habilidad, dano_base, usos_maximos, id_clase_habilidad);
 
                     habilidadEquipada.put(habilidadesPersonaje, equipada_combate);
-                    p.addHabilidad(habilidadesPersonaje);
+                    p.addHabilidad(habilidadEquipada);
                 }
 
                 ResultSet rsInventario = statement3.executeQuery("SELECT * FROM INVENTARIOS AS i INNER JOIN ITEMS AS it ON i.id_item = it.id WHERE i.id_personaje ="+ id);
@@ -125,5 +127,33 @@ public class PersonajeDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void crearPersonaje() {
+        System.out.println("Pon el nombre del personaje");
+        s.nextLine();
+        System.out.println("Razas disponibles:");
+        try {
+            Statement st1 = connection.createStatement();
+            ResultSet rs1 = st1.executeQuery("SELECT * FROM RAZAS");
+
+            while(rs1.next()) {
+                int idRaza = rs1.getInt("id");
+                String nombreRaza = rs1.getString("nombre");
+                int bonificadorVida = rs1.getInt("bonificador_vida");
+                int bonificadorFuerza = rs1.getInt("bonificador_fuerza");
+
+                System.out.println("ID: "+idRaza+" - "+nombreRaza+" - Bonificador Vida: "+bonificadorVida+" - Bonificador Fuerza: "+bonificadorFuerza);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
     }
 }
