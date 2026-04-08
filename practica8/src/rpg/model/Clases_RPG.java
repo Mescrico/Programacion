@@ -46,6 +46,7 @@ public class Clases_RPG {
         return "Clases_RPG{" +
                 "idClasesRPG=" + idClasesRPG +
                 ", nombre='" + nombre + '\'' +
+                ", listahabilidades=" + listahabilidades.size() +
                 '}';
     }
 }
