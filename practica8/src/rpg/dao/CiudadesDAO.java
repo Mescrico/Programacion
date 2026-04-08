@@ -41,4 +41,8 @@ public class CiudadesDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public ArrayList<Ciudades> getCiudades() {
+        return ciudades;
+    }
 }

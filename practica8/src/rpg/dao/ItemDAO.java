@@ -1,5 +1,6 @@
 package rpg.dao;
 
+import rpg.model.Clases_RPG;
 import rpg.model.Items;
 
 import java.sql.*;
@@ -43,7 +44,9 @@ public class ItemDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
-
+    public ArrayList<Items> getItems() {
+        return items;
     }
 }

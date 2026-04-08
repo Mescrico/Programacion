@@ -5,6 +5,7 @@ import rpg.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class PersonajeDAO {
@@ -208,13 +209,74 @@ public class PersonajeDAO {
             ps.setInt(3, clase.getIdClasesRPG());
 
             ps.executeUpdate();
+
+            Personajes personaje = new Personajes(id)
             System.out.println("Personaje "+nombrePersonaje+" creado");
-            cargarPersonajes();
+            personajes.add(p)
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    public void viajarDeCiudad() {
+        System.out.println("ID del personaje que va a cambiar de ciudad");
+        int id = s.nextInt();
 
+        if(personajes.contains(id)) {
+            Personajes personaje = null;
+            for (int i = 0; i < personajes.size(); i++) {
+                if(personajes.get(i).getIdPersonaje() == id) {
+                    personaje = personajes.get(i);
+                }
+            }
 
+            System.out.println("Nueva ciudad del personaje? (Antigua: "+personaje.getCiudad().getNombre()+")");
+            CiudadesDAO c = new CiudadesDAO();
+            List<Ciudades> ciudades = c.getCiudades();
+            for (int i = 0; i < ciudades.size(); i++) {
+                System.out.println("ID:"+ciudades.get(i).getIdCiudades()+" - Nombre: "+ciudades.get(i).getNombre()+" - Nivel minimo: "+ciudades.get(i).getNivel_minimo_acceso());
+            }
+
+            boolean bien = false;
+            Ciudades ciudad = null;
+            while(!bien) {
+                System.out.println("Elige por id");
+                int opcion = s.nextInt();
+
+                if(ciudades.contains(opcion)) {
+                    for (int i = 0; i < ciudades.size(); i++) {
+                        if(ciudades.get(i).getIdCiudades() == opcion) {
+                            ciudad = ciudades.get(i);
+
+                            if(ciudad.getNivel_minimo_acceso() > personaje.getNivel()) {
+                                System.out.println("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudad.getNivel_minimo_acceso());
+                            } else {
+                                try {
+                                    PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
+
+                                    ps1.setInt(1, ciudad.getIdCiudades());
+                                    ps1.setInt(2, personaje.getIdPersonaje());
+
+                                    ps1.executeUpdate();
+
+                                    personaje.setCiudad(ciudad);
+
+                                    System.out.println(personaje.getNombre()+" a viajado a "+ciudad.getNombre());
+                                    bien = true;
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println("Esa id no existe");
+                }
+            }
+
+        } else {
+            System.out.println("Esa id no existe");
+        }
     }
 }

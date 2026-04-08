@@ -1,5 +1,6 @@
 package rpg.dao;
 
+import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
 
 import java.sql.*;
@@ -42,5 +43,9 @@ public class HabilidadesDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Habilidades> getHabilidades() {
+        return habilidades;
     }
 }

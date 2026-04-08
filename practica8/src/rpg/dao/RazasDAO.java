@@ -1,5 +1,6 @@
 package rpg.dao;
 
+import rpg.model.Clases_RPG;
 import rpg.model.Razas;
 
 import java.sql.*;
@@ -42,5 +43,9 @@ public class RazasDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ArrayList<Razas> getRazas() {
+        return razas;
     }
 }

@@ -1,5 +1,6 @@
 package rpg.dao;
 
+import rpg.model.Ciudades;
 import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
 
@@ -60,5 +61,9 @@ public class ClasesrpgDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public ArrayList<Clases_RPG> getClases() {
+        return clases;
     }
 }
