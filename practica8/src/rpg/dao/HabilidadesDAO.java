@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class HabilidadesDAO {
     private Connection connection;
-    private ArrayList<Habilidades> habilidades = new ArrayList<>();
 
     public HabilidadesDAO() {
         try {
@@ -26,6 +25,7 @@ public class HabilidadesDAO {
 
     public void cargarHabilidades() {
         try {
+            ArrayList<Habilidades> habilidades = new ArrayList<>();
             Statement st1 = connection.createStatement();
             ResultSet rs1 = st1.executeQuery("SELECT * FROM HABILIDADES");
 
@@ -43,9 +43,5 @@ public class HabilidadesDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public ArrayList<Habilidades> getHabilidades() {
-        return habilidades;
     }
 }
