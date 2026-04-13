@@ -1,14 +1,16 @@
 package rpg.dao;
 
+import rpg.model.Ciudades;
 import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
+import rpg.model.Items;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class HabilidadesDAO {
     private Connection connection;
-
+    ArrayList<Habilidades> habilidades = new ArrayList<>();
     public HabilidadesDAO() {
         try {
             String url = "jdbc:postgresql://localhost:5432/XRPG";
@@ -26,7 +28,6 @@ public class HabilidadesDAO {
 
     public void cargarHabilidades() {
         try {
-            ArrayList<Habilidades> habilidades = new ArrayList<>();
             Statement st1 = connection.createStatement();
             ResultSet rs1 = st1.executeQuery("SELECT * FROM HABILIDADES");
 
@@ -45,4 +46,18 @@ public class HabilidadesDAO {
             e.printStackTrace();
         }
     }
+
+    public Habilidades buscarHabilidadId(int id) {
+        for (Habilidades h : habilidades) {
+            if(h.getIdHabilidades() == id) {
+                return h;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Habilidades> getHabilidades() {
+        return habilidades;
+    }
+
 }

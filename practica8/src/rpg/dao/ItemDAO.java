@@ -47,6 +47,15 @@ public class ItemDAO {
         }
     }
 
+    public Items buscarItemId(int id) {
+        for (Items i : items) {
+            if(i.getIdItem() == id) {
+                return i;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Items> getItems() {
         return items;
     }

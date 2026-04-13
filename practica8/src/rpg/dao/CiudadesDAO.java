@@ -1,6 +1,7 @@
 package rpg.dao;
 
 import rpg.model.Ciudades;
+import rpg.model.Items;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -41,6 +42,15 @@ public class CiudadesDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Ciudades buscarCiudadId(int id) {
+        for (Ciudades c : ciudades) {
+            if(c.getIdCiudades() == id) {
+                return c;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Ciudades> getCiudades() {

@@ -3,6 +3,7 @@ package rpg.dao;
 import rpg.model.Ciudades;
 import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
+import rpg.model.Items;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -62,6 +63,15 @@ public class ClasesrpgDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Clases_RPG buscarClasesId(int id) {
+        for (Clases_RPG c : clases) {
+            if(c.getIdClasesRPG() == id) {
+                return c;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Clases_RPG> getClases() {

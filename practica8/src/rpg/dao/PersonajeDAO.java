@@ -235,15 +235,12 @@ public class PersonajeDAO {
         while(!existe) {
             System.out.println("ID del personaje que va a cambiar de ciudad");
             int id = s.nextInt();
-            for (int i = 0; i < personajes.size(); i++) {
-                if(personajes.get(i).getIdPersonaje() == id) {
-                    personaje = personajes.get(i);
-                    existe = true;
-                }
-            }
+            personaje = buscarPersonajeId(id);
 
             if(personaje == null) {
                 System.out.println("Esa id no existe");
+            } else {
+                existe = true;
             }
 
         }
@@ -266,12 +263,7 @@ public class PersonajeDAO {
             System.out.println("Elige por id");
             int opcion = s.nextInt();
 
-            for (int i = 0; i < ciudades.size(); i++) {
-                if(ciudades.get(i).getIdCiudades() == opcion) {
-                    ciudadE = ciudades.get(i);
-                    break;
-                }
-            }
+            ciudadE = c.buscarCiudadId(opcion);
 
             if (ciudadE == null) {
                 System.out.println("Esa id no existe");
@@ -304,4 +296,18 @@ public class PersonajeDAO {
             }
         }
     }
+
+    public Personajes buscarPersonajeId(int id) {
+        for (Personajes p : personajes) {
+            if(p.getIdPersonaje() == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Personajes> getPersonajes() {
+        return personajes;
+    }
+
 }
