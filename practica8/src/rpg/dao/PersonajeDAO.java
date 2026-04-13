@@ -13,8 +13,6 @@ public class PersonajeDAO {
     private Scanner s = new Scanner(System.in);
     private Connection connection;
     private ArrayList<Personajes> personajes = new ArrayList<>();
-    private CiudadesDAO c = new CiudadesDAO();
-    private ArrayList<Ciudades> ciudades = c.getCiudades();
     public PersonajeDAO() {
         try {
             String url = "jdbc:postgresql://localhost:5432/XRPG";
@@ -104,8 +102,7 @@ public class PersonajeDAO {
                 }
 
                 ResultSet rsInventario = statement3.executeQuery("SELECT * FROM INVENTARIOS AS i INNER JOIN ITEMS AS it ON i.id_item = it.id WHERE i.id_personaje ="+ id);
-                HashMap<Items, Integer> itemCantidad = new HashMap<>();
-
+                HashMap<Items, Integer> inv = new HashMap<>();
                 while (rsInventario.next()) {
                     int id_item = rsInventario.getInt("id_item");
                     Items item = null;
@@ -118,9 +115,10 @@ public class PersonajeDAO {
                     item = new Items(id_item, nombreItem, tipoItem, precio_oroItem, bonificador_ataqueItem, bonificador_defensaItem);
                     int cantidad = rsInventario.getInt("cantidad");
 
-                    itemCantidad.put(item, cantidad);
+                    inv.put(item, cantidad);
 
-                    p.addInventario(itemCantidad);
+                    p.setInventario(inv);
+
                 }
 
                 personajes.add(p);
@@ -133,169 +131,6 @@ public class PersonajeDAO {
         }
     }
 
-    public void crearPersonaje() {
-        try {
-            System.out.println("Pon el nombre del personaje:");
-            String nombrePersonaje = s.next();
-            System.out.println("Razas disponibles:");
-            Statement st1 = connection.createStatement();
-            ResultSet rs1 = st1.executeQuery("SELECT * FROM RAZAS");
-
-            while(rs1.next()) {
-                int idRaza = rs1.getInt("id");
-                String nombreRaza = rs1.getString("nombre");
-                int bonificadorVida = rs1.getInt("bonificador_vida");
-                int bonificadorFuerza = rs1.getInt("bonificador_fuerza");
-
-                System.out.println("ID: "+idRaza+" - "+nombreRaza+" - Bonificador Vida: "+bonificadorVida+" - Bonificador Fuerza: "+bonificadorFuerza);
-            }
-
-            boolean bien = false;
-            Razas raza = null;
-            while (!bien) {
-                System.out.println("Elige por id:");
-                int opcion = s.nextInt();
-
-                Statement st2 = connection.createStatement();
-                ResultSet rs2 = st2.executeQuery("SELECT * FROM RAZAS WHERE id = "+opcion);
-
-                if(rs2.next()) {
-                    int idRaza = rs2.getInt("id");
-                    String nombreRaza = rs2.getString("nombre");
-                    int bonificadorVida = rs2.getInt("bonificador_vida");
-                    int bonificadorFuerza = rs2.getInt("bonificador_fuerza");
-
-                    raza = new Razas(idRaza, nombreRaza, bonificadorVida, bonificadorFuerza);
-                    bien = true;
-                } else {
-                    System.out.println("Esa id no existe");
-                }
-            }
-
-            System.out.println("Clases disponibles:");
-
-            Statement st3 = connection.createStatement();
-            ResultSet rs3 = st3.executeQuery("SELECT * FROM CLASES_RPG");
-
-            while(rs3.next()) {
-                int idClase = rs3.getInt("id");
-                String nombreClase = rs3.getString("nombre");
-
-                System.out.println("ID: "+idClase+" - "+nombreClase);
-            }
-
-            boolean correcto = false;
-            Clases_RPG clase = null;
-
-            while (!correcto) {
-                System.out.println("Elige por id:");
-                int opcion = s.nextInt();
-
-                Statement st4 = connection.createStatement();
-                ResultSet rs4 = st4.executeQuery("SELECT * FROM CLASES_RPG WHERE id = "+opcion);
-
-                if(rs4.next()) {
-                    int idClase = rs4.getInt("id");
-                    String nombreClase = rs4.getString("nombre");
-
-                    clase = new Clases_RPG(idClase, nombreClase);
-                    correcto = true;
-                } else {
-                    System.out.println("Esa id no existe");
-                }
-            }
-
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, id_raza, id_clase, id_ciudad_actual) VALUES (?, 1, 100, ?, ?, 1)");
-
-            ps.setString(1, nombrePersonaje);
-            ps.setInt(2, raza.getIdRaza());
-            ps.setInt(3, clase.getIdClasesRPG());
-
-            ps.executeUpdate();
-
-            ResultSet rs2 = ps.getGeneratedKeys();
-            int idPersonaje = 0;
-
-            if(rs2.next()) {
-                idPersonaje = rs2.getInt("id");
-            }
-
-            Personajes personaje = new Personajes(idPersonaje, nombrePersonaje, 1, 100, 100 + raza.getBonificador_vida(), raza, clase, ciudades.getFirst());
-            System.out.println("Personaje "+nombrePersonaje+" creado");
-            personajes.add(personaje);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void viajarDeCiudad() {
-
-        boolean existe = false;
-        Personajes personaje = null;
-        while(!existe) {
-            System.out.println("ID del personaje que va a cambiar de ciudad");
-            int id = s.nextInt();
-            personaje = buscarPersonajeId(id);
-
-            if(personaje == null) {
-                System.out.println("Esa id no existe");
-            } else {
-                existe = true;
-            }
-
-        }
-        String nombreCiudadPersonaje;
-        if(personaje.getCiudad() == null) {
-            nombreCiudadPersonaje = "Ciudad no existe";
-        } else {
-            nombreCiudadPersonaje = personaje.getCiudad().getNombre();
-        }
-
-
-        System.out.println("Nueva ciudad del personaje? (Antigua: "+nombreCiudadPersonaje+")");
-        for (int i = 0; i < ciudades.size(); i++) {
-            System.out.println("ID:"+ciudades.get(i).getIdCiudades()+" - Nombre: "+ciudades.get(i).getNombre()+" - Nivel minimo: "+ciudades.get(i).getNivel_minimo_acceso());
-        }
-
-        boolean bien = false;
-        Ciudades ciudadE = null;
-        while(!bien) {
-            System.out.println("Elige por id");
-            int opcion = s.nextInt();
-
-            ciudadE = c.buscarCiudadId(opcion);
-
-            if (ciudadE == null) {
-                System.out.println("Esa id no existe");
-            } else {
-                try {
-                    if(ciudadE.getNivel_minimo_acceso() > personaje.getNivel()) {
-                        System.out.println("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
-                        throw new FondosInsuficientesException("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
-                    } else {
-                        try {
-                            PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
-
-                            ps1.setInt(1, ciudadE.getIdCiudades());
-                            ps1.setInt(2, personaje.getIdPersonaje());
-
-                            ps1.executeUpdate();
-
-                            personaje.setCiudad(ciudadE);
-
-                            System.out.println(personaje.getNombre()+" a viajado a "+ciudadE.getNombre());
-                            bien = true;
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                } catch (FondosInsuficientesException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
     public Personajes buscarPersonajeId(int id) {
         for (Personajes p : personajes) {
