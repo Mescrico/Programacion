@@ -1,5 +1,6 @@
 package rpg.dao;
 
+import rpg.exception.FondosInsuficientesException;
 import rpg.model.*;
 
 import java.sql.*;
@@ -275,25 +276,30 @@ public class PersonajeDAO {
             if (ciudadE == null) {
                 System.out.println("Esa id no existe");
             } else {
-                if(ciudadE.getNivel_minimo_acceso() > personaje.getNivel()) {
-                    System.out.println("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
-                } else {
-                    try {
-                        PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
+                try {
+                    if(ciudadE.getNivel_minimo_acceso() > personaje.getNivel()) {
+                        System.out.println("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
+                        throw new FondosInsuficientesException("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
+                    } else {
+                        try {
+                            PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
 
-                        ps1.setInt(1, ciudadE.getIdCiudades());
-                        ps1.setInt(2, personaje.getIdPersonaje());
+                            ps1.setInt(1, ciudadE.getIdCiudades());
+                            ps1.setInt(2, personaje.getIdPersonaje());
 
-                        ps1.executeUpdate();
+                            ps1.executeUpdate();
 
-                        personaje.setCiudad(ciudadE);
+                            personaje.setCiudad(ciudadE);
 
-                        System.out.println(personaje.getNombre()+" a viajado a "+ciudadE.getNombre());
-                        bien = true;
-                    } catch (SQLException e) {
-                        e.printStackTrace();
+                            System.out.println(personaje.getNombre()+" a viajado a "+ciudadE.getNombre());
+                            bien = true;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
                     }
-
+                } catch (FondosInsuficientesException e) {
+                    e.printStackTrace();
                 }
             }
         }
