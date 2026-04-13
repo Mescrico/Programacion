@@ -7,8 +7,6 @@ import rpg.ui.Menu;
 public class Main {
     public static void main(String[] args) {
         GestionMundo g = new GestionMundo();
-
-        Menu m = new Menu();
-        m.menu();
+        g.menu();
     }
 }

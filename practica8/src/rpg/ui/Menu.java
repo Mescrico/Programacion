@@ -5,7 +5,14 @@ import rpg.dao.PersonajeDAO;
 import java.util.Scanner;
 
 public class Menu {
-    private PersonajeDAO personajeDAO = new PersonajeDAO();
+    private PersonajeDAO personajeDAO;
+
+    public Menu() {
+        personajeDAO = new PersonajeDAO();
+
+        menu();
+
+    }
 
     public void menu() {
         Scanner s = new Scanner(System.in);
@@ -17,8 +24,12 @@ public class Menu {
         int opcion = s.nextInt();
 
         switch (opcion) {
-            case 1: personajeDAO.crearPersonaje();
-            case 2: personajeDAO.viajarDeCiudad();
+            case 1:
+                personajeDAO.crearPersonaje();
+                break;
+            case 2:
+                personajeDAO.viajarDeCiudad();
+                break;
             default:
                 System.out.println("Opcion no valida");
         }
