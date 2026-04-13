@@ -22,6 +22,7 @@ public class RazasDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
+        cargarRazas();
     }
 
     public void cargarRazas() {

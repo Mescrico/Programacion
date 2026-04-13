@@ -2,9 +2,11 @@ package rpg.logic;
 
 import rpg.dao.*;
 import rpg.model.*;
+import rpg.ui.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GestionMundo {
     private List<Ciudades> ciudades;
@@ -20,6 +22,9 @@ public class GestionMundo {
     private ItemDAO itemDAO;
     private PersonajeDAO personajeDAO;
     private RazasDAO razasDAO;
+
+
+    private Menu m;
 
     public GestionMundo() {
         ciudades = new ArrayList<>();
@@ -42,5 +47,7 @@ public class GestionMundo {
         itemDAO.cargarItems();
         personajeDAO.cargarPersonajes();
         razasDAO.cargarRazas();
+
+        m = new Menu();
     }
 }

@@ -21,6 +21,7 @@ public class CiudadesDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
+        cargarCiudades();
     }
 
     public void cargarCiudades() {

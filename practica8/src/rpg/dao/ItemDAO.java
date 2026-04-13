@@ -22,6 +22,7 @@ public class ItemDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
+        cargarItems();
     }
 
     public void cargarItems() {

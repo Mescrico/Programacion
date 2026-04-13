@@ -21,6 +21,7 @@ public class HabilidadesDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
+        cargarHabilidades();
     }
 
     public void cargarHabilidades() {
