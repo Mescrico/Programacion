@@ -7,6 +7,7 @@ import rpg.ui.Menu;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -71,6 +72,30 @@ public class GestionMundo {
         personajes = personajeDAO.getPersonajes();
         razas = razasDAO.getRazas();
 
+    }
+
+    public List<Ciudades> getCiudades() {
+        return ciudades;
+    }
+
+    public List<Clases_RPG> getClases_rpgs() {
+        return clases_rpgs;
+    }
+
+    public List<Habilidades> getHabilidades() {
+        return habilidades;
+    }
+
+    public List<Items> getItems() {
+        return items;
+    }
+
+    public List<Personajes> getPersonajes() {
+        return personajes;
+    }
+
+    public List<Razas> getRazas() {
+        return razas;
     }
 
     public void crearPersonaje() {
@@ -187,7 +212,7 @@ public class GestionMundo {
         }
         String nombreCiudadPersonaje;
         if(personaje.getCiudad() == null) {
-            nombreCiudadPersonaje = "Ciudad no existe";
+            nombreCiudadPersonaje = "Desterrado";
         } else {
             nombreCiudadPersonaje = personaje.getCiudad().getNombre();
         }
@@ -323,6 +348,45 @@ public class GestionMundo {
 
         } else {
             System.out.println(personaje.getNombre()+" no tiene oro suficiente "+personaje.getOro()+" - "+item.getPrecio_oro());
+        }
+    }
+
+    public void cobroImpuestos(List<Personajes> personajesCiudad) {
+        if(personajesCiudad.isEmpty()) {
+            System.out.println("No hay personajes en esa ciudad");
+
+        } else {
+            Iterator<Personajes> iterator = personajesCiudad.iterator();
+            while(iterator.hasNext()) {
+                try {
+                    PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
+                    Personajes personaje = iterator.next();
+                    int oroActual = personaje.getOro();
+                    personaje.setOro(oroActual-20);
+
+                    if(personaje.getOro() < 0) {
+                        System.out.println("El personaje "+personaje.getNombre()+" a sido desterrado");
+
+                        PreparedStatement psDesterrado = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
+                        psDesterrado.setNull(1, java.sql.Types.INTEGER);
+                        psDesterrado.setInt(2, personaje.getIdPersonaje());
+                        personaje.setCiudad(null);
+                        iterator.remove();
+                        psDesterrado.executeUpdate();
+                    } else {
+                        ps.setInt(1, personaje.getOro());
+                        ps.setInt(2, personaje.getIdPersonaje());
+                        System.out.println("Se ha cobrado el impuesto a "+personaje.getNombre());
+
+                        ps.executeUpdate();
+                    }
+
+
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
         }
     }
 }
