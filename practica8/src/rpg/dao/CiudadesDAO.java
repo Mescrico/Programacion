@@ -22,10 +22,10 @@ public class CiudadesDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
-        cargarCiudades();
     }
 
     public void cargarCiudades() {
+        ciudades.clear();
         try {
             Statement st1 = connection.createStatement();
             ResultSet rs1 = st1.executeQuery("SELECT * FROM CIUDADES");

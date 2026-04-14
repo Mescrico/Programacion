@@ -24,10 +24,10 @@ public class ClasesrpgDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
-        cargarClases();
     }
 
     public void cargarClases() {
+        clases.clear();
         try {
           Statement st1 = connection.createStatement();
           Statement st2 = connection.createStatement();

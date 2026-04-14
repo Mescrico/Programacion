@@ -22,10 +22,10 @@ public class RazasDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
-        cargarRazas();
     }
 
     public void cargarRazas() {
+        razas.clear();
         try {
             Statement st1 = connection.createStatement();
             ResultSet rs1 = st1.executeQuery("SELECT * FROM RAZAS");

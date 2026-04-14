@@ -25,10 +25,10 @@ public class PersonajeDAO {
             System.out.println("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
-        cargarPersonajes();
     }
 
     public void cargarPersonajes() {
+        personajes.clear();
         try {
             Statement statement = connection.createStatement();
             Statement stRaza = connection.createStatement();
