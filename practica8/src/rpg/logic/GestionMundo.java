@@ -254,9 +254,11 @@ public class GestionMundo {
 
         }
 
+        System.out.println("Saldo de "+personaje.getNombre()+": "+personaje.getOro());
+
         System.out.println("Tienda:");
         for (int i = 0; i < items.size(); i++) {
-            System.out.println("ID: "+items.get(i).getIdItem()+" - Nombre: "+items.get(i).getNombre()+" - Tipo: "+items.get(i).getTipo()+" - Precio: "+items.get(i).getTipo()+" - Bonificador ataque: "+items.get(i).getBonificador_ataque()+" - Bonificador defensa: "+items.get(i).getBonificador_defensa());
+            System.out.println("ID: "+items.get(i).getIdItem()+" - Nombre: "+items.get(i).getNombre()+" - Tipo: "+items.get(i).getTipo()+" - Precio: "+items.get(i).getPrecio_oro()+" - Bonificador ataque: "+items.get(i).getBonificador_ataque()+" - Bonificador defensa: "+items.get(i).getBonificador_defensa());
         }
 
         boolean idIExiste = false;
@@ -276,13 +278,25 @@ public class GestionMundo {
         if(personaje.getOro() >= item.getPrecio_oro()) {
             System.out.println(personaje.getNombre()+" a comprado "+item.getNombre());
 
-
             personaje.setOro(personaje.getOro() - item.getPrecio_oro());
+
+            int cantidadOro = personaje.getOro();
+            System.out.println("Saldo de "+personaje.getNombre()+": "+cantidadOro);
+
+            try {
+                PreparedStatement psOro = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = "+personaje.getIdPersonaje());
+                psOro.setInt(1, cantidadOro);
+
+                psOro.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
 
             if(personaje.getInventario().containsKey(item)) {
                 try {
                     PreparedStatement ps = connection.prepareStatement("UPDATE inventarios iv SET cantidad = ? WHERE iv.id_item = ? AND iv.id_personaje = ?");
-                    ps.setInt(1, personaje.getInventario().get(item));
+                    ps.setInt(1, personaje.getInventario().get(item)+1);
                     ps.setInt(2, item.getIdItem());
                     ps.setInt(3, personaje.getIdPersonaje());
 

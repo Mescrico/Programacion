@@ -1,5 +1,7 @@
 package rpg.model;
 
+import java.util.Objects;
+
 public class Items {
     private int idItem;
     private String nombre;
