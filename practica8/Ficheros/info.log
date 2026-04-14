@@ -1,0 +1,57 @@
+[2026-04-14T21:18:05.491834983] INFO: Items cargados
+[2026-04-14T21:18:05.538417351] INFO: Ciudades cargadas
+[2026-04-14T21:18:05.544436518] INFO: ClasesRPG cargados
+[2026-04-14T21:18:05.545542094] INFO: Habilidades cargadas
+[2026-04-14T21:18:05.558376803] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:18:05.558464264] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:18:05.558508374] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:18:05.559641642] INFO: Inventario personaje ID: 1 cargado
+[2026-04-14T21:18:05.559710249] INFO: Inventario personaje ID: 1 cargado
+[2026-04-14T21:18:05.566441097] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:18:05.566530905] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:18:05.566617292] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:18:05.567231989] INFO: Inventario personaje ID: 2 cargado
+[2026-04-14T21:18:05.567300837] INFO: Inventario personaje ID: 2 cargado
+[2026-04-14T21:18:05.568433924] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:18:05.568504577] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:18:05.568549382] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:18:05.568945238] INFO: Inventario personaje ID: 7 cargado
+[2026-04-14T21:18:05.569298946] INFO: Personajes cargados
+[2026-04-14T21:18:05.570949956] INFO: Razas cargadas
+[2026-04-14T21:18:38.859042353] INFO: Oscar a viajado a Villa Inicio
+[2026-04-14T21:18:49.621934982] INFO: Impuesto cobrado a Eldara Sabia - ID: 2
+[2026-04-14T21:18:49.624207809] INFO: Impuesto cobrado a Oscar - ID: 8
+[2026-04-14T21:21:26.861441460] INFO: Items cargados
+[2026-04-14T21:21:26.924318787] INFO: Ciudades cargadas
+[2026-04-14T21:21:26.942137904] INFO: ClasesRPG cargados
+[2026-04-14T21:21:26.943387255] INFO: Habilidades cargadas
+[2026-04-14T21:21:26.954554514] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:21:26.954644318] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:21:26.954819485] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-14T21:21:26.956541923] INFO: Inventario personaje ID: 1 cargado
+[2026-04-14T21:21:26.956619294] INFO: Inventario personaje ID: 1 cargado
+[2026-04-14T21:21:26.965861212] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:21:26.965947162] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:21:26.965995805] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-14T21:21:26.966516612] INFO: Inventario personaje ID: 7 cargado
+[2026-04-14T21:21:26.968293466] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:21:26.968360215] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:21:26.968401355] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-14T21:21:26.969108898] INFO: Inventario personaje ID: 2 cargado
+[2026-04-14T21:21:26.969170979] INFO: Inventario personaje ID: 2 cargado
+[2026-04-14T21:21:26.971078745] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-14T21:21:26.971149770] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-14T21:21:26.971191090] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-14T21:21:26.971711631] INFO: Personajes cargados
+[2026-04-14T21:21:26.973028429] INFO: Razas cargadas
+[2026-04-14T21:21:32.577327375] INFO: Insertado el personaje Jaime
+[2026-04-14T21:21:32.579878789] INFO: Insertado las habilidades de Jaime
+[2026-04-14T21:21:32.581142344] INFO: Insertado las habilidades de Jaime
+[2026-04-14T21:21:32.584285294] INFO: Insertado las habilidades de Jaime
+[2026-04-14T21:21:32.584559911] INFO: Jaime creado
+[2026-04-14T21:22:24.566748445] INFO: Jaime a comprado Espada de Madera
+[2026-04-14T21:22:42.832370071] INFO: Insertado el personaje Ismael
+[2026-04-14T21:22:42.834653946] INFO: Insertado las habilidades de Ismael
+[2026-04-14T21:22:42.838132986] INFO: Insertado las habilidades de Ismael
+[2026-04-14T21:22:42.841395401] INFO: Insertado las habilidades de Ismael
+[2026-04-14T21:22:42.841494796] INFO: Ismael creado

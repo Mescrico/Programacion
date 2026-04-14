@@ -4,8 +4,10 @@ import rpg.dao.*;
 import rpg.exception.FondosInsuficientesException;
 import rpg.model.*;
 import rpg.ui.Menu;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -29,9 +31,6 @@ public class GestionMundo {
     private PersonajeDAO personajeDAO;
     private RazasDAO razasDAO;
 
-
-    private Menu m;
-
     public GestionMundo() {
         try {
             String url = "jdbc:postgresql://localhost:5432/XRPG";
@@ -42,6 +41,7 @@ public class GestionMundo {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
         ciudades = new ArrayList<>();
@@ -190,6 +190,7 @@ public class GestionMundo {
 
             psPersonaje.executeUpdate();
 
+            LoggerCustom.logInfo("Insertado el personaje "+nombrePersonaje);
             ResultSet rs2 = psPersonaje.getGeneratedKeys();
             int idPersonaje = 0;
 
@@ -204,18 +205,20 @@ public class GestionMundo {
                 psHabilidades.setBoolean(3, false);
 
                 psHabilidades.executeUpdate();
+                LoggerCustom.logInfo("Insertado las habilidades de "+nombrePersonaje);
             }
 
             Personajes personaje = new Personajes(idPersonaje, nombrePersonaje, 1, 100, 100 + raza.getBonificador_vida(), raza, clase, ciudades.getFirst());
-            System.out.println("Personaje "+nombrePersonaje+" creado");
+            System.out.println("Personaje "+nombrePersonaje+" ID: "+personaje.getIdPersonaje()+" creado");
             personajes.add(personaje);
+            LoggerCustom.logInfo("Personaje "+personaje.getNombre()+" creado");
         } catch (SQLException e) {
+            LoggerCustom.logError("Creando Personaje: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             e.printStackTrace();
         }
     }
 
     public void viajarDeCiudad() {
-
         boolean existe = false;
         Personajes personaje = null;
         while(!existe) {
@@ -237,7 +240,6 @@ public class GestionMundo {
             nombreCiudadPersonaje = personaje.getCiudad().getNombre();
         }
 
-
         System.out.println("Nueva ciudad del personaje? (Antigua: "+nombreCiudadPersonaje+")");
         for (int i = 0; i < ciudades.size(); i++) {
             System.out.println("ID:"+ciudades.get(i).getIdCiudades()+" - Nombre: "+ciudades.get(i).getNombre()+" - Nivel minimo: "+ciudades.get(i).getNivel_minimo_acceso());
@@ -256,8 +258,9 @@ public class GestionMundo {
             } else {
                 try {
                     if(ciudadE.getNivel_minimo_acceso() > personaje.getNivel()) {
-                        System.out.println("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
-                        throw new FondosInsuficientesException("El personaje tiene menos nivel "+personaje.getNivel()+" que el requerido "+ciudadE.getNivel_minimo_acceso());
+                        System.out.println("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
+                        LoggerCustom.logError("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
+                        throw new FondosInsuficientesException("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
                     } else {
                         try {
                             PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
@@ -270,8 +273,10 @@ public class GestionMundo {
                             personaje.setCiudad(ciudadE);
 
                             System.out.println(personaje.getNombre()+" a viajado a "+ciudadE.getNombre());
+                            LoggerCustom.logInfo(personaje.getNombre()+" a viajado a "+ciudadE.getNombre());
                             bien = true;
                         } catch (SQLException e) {
+                            LoggerCustom.logError("Actualizando tabla PERSONAJES: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                             e.printStackTrace();
                         }
 
@@ -322,6 +327,7 @@ public class GestionMundo {
 
         if(personaje.getOro() >= item.getPrecio_oro()) {
             System.out.println(personaje.getNombre()+" a comprado "+item.getNombre());
+            LoggerCustom.logInfo(personaje.getNombre()+" a comprado "+item.getNombre());
 
             personaje.setOro(personaje.getOro() - item.getPrecio_oro());
 
@@ -334,6 +340,7 @@ public class GestionMundo {
 
                 psOro.executeUpdate();
             } catch (SQLException e) {
+                LoggerCustom.logError("Actualizando tabla PERSONAJES: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                 throw new RuntimeException(e);
             }
 
@@ -348,6 +355,7 @@ public class GestionMundo {
                     ps.executeUpdate();
 
                 } catch (SQLException e) {
+                    LoggerCustom.logError("Actualizando tabla INVENTARIOS: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                     throw new RuntimeException(e);
                 }
             } else {
@@ -360,14 +368,14 @@ public class GestionMundo {
 
                     ps.executeUpdate();
                 } catch (SQLException e) {
+                    LoggerCustom.logError("Insertando en tabla INVENTARIOS: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                     throw new RuntimeException(e);
                 }
             }
 
-
-
         } else {
             System.out.println(personaje.getNombre()+" no tiene oro suficiente "+personaje.getOro()+" - "+item.getPrecio_oro());
+            LoggerCustom.logError(personaje.getNombre()+" no tiene oro suficiente "+personaje.getOro()+" - "+item.getPrecio_oro());
         }
     }
 
@@ -392,17 +400,17 @@ public class GestionMundo {
                         psDesterrado.setInt(2, personaje.getIdPersonaje());
                         personaje.setCiudad(null);
                         iterator.remove();
+                        LoggerCustom.logInfo("Ciudad del personaje "+personaje.getNombre()+" - ID: "+personaje.getIdPersonaje()+" actualizada a null");
                         psDesterrado.executeUpdate();
                     } else {
                         ps.setInt(1, personaje.getOro());
                         ps.setInt(2, personaje.getIdPersonaje());
-                        System.out.println("Se ha cobrado el impuesto a "+personaje.getNombre());
-
+                        System.out.println("Se ha cobrado el impuesto a "+personaje.getNombre()+" - ID: "+personaje.getIdPersonaje());
+                        LoggerCustom.logInfo("Impuesto cobrado a "+personaje.getNombre()+" - ID: "+personaje.getIdPersonaje());
                         ps.executeUpdate();
                     }
-
-
                 } catch (SQLException e) {
+                    LoggerCustom.logError("Actualizando tabla PERSONAJES: "+e.getClass().getSimpleName()+" - "+e.getMessage());
                     throw new RuntimeException(e);
                 }
 

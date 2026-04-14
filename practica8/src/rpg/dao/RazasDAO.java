@@ -2,8 +2,10 @@ package rpg.dao;
 
 import rpg.model.Clases_RPG;
 import rpg.model.Razas;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class RazasDAO {
@@ -20,6 +22,7 @@ public class RazasDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Error en la conexión de la base de datos");
             e.printStackTrace();
         }
     }
@@ -40,8 +43,9 @@ public class RazasDAO {
                 razas.add(raza);
                 System.out.println(raza);
             }
-
+            LoggerCustom.logInfo("Razas cargadas");
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando Razas: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             throw new RuntimeException(e);
         }
     }

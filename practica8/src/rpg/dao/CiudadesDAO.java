@@ -2,8 +2,10 @@ package rpg.dao;
 
 import rpg.model.Ciudades;
 import rpg.model.Items;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class CiudadesDAO {
@@ -20,6 +22,7 @@ public class CiudadesDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Conexión de la base de datos");
             e.printStackTrace();
         }
     }
@@ -39,8 +42,11 @@ public class CiudadesDAO {
                 ciudades.add(ciudad);
                 System.out.println(ciudad);
             }
+            LoggerCustom.logInfo("Ciudades cargadas");
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando ciudades: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             throw new RuntimeException(e);
+
         }
     }
 

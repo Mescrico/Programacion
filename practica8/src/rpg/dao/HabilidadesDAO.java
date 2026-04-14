@@ -4,13 +4,16 @@ import rpg.model.Ciudades;
 import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
 import rpg.model.Items;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class HabilidadesDAO {
     private Connection connection;
-    ArrayList<Habilidades> habilidades = new ArrayList<>();
+    private ArrayList<Habilidades> habilidades = new ArrayList<>();
+
     public HabilidadesDAO() {
         try {
             String url = "jdbc:postgresql://localhost:5432/XRPG";
@@ -21,6 +24,7 @@ public class HabilidadesDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Conexión de la base de datos");
             e.printStackTrace();
         }
     }
@@ -40,9 +44,10 @@ public class HabilidadesDAO {
 
                 Habilidades habilidad = new Habilidades(id, nombre, dano_base, usos_maximos, id_clase);
                 habilidades.add(habilidad);
-                System.out.println(habilidad);
             }
+            LoggerCustom.logInfo("Habilidades cargadas");
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando Habilidades: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             e.printStackTrace();
         }
     }

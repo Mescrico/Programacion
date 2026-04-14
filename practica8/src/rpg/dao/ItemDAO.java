@@ -2,8 +2,10 @@ package rpg.dao;
 
 import rpg.model.Clases_RPG;
 import rpg.model.Items;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ItemDAO {
@@ -20,8 +22,10 @@ public class ItemDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Conexión de la base de datos");
             e.printStackTrace();
         }
+        LoggerCustom.logInfo("Items cargados");
     }
 
     public void cargarItems() {
@@ -43,6 +47,7 @@ public class ItemDAO {
             }
             System.out.println(items);
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando Items: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             e.printStackTrace();
         }
     }

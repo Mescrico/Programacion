@@ -2,8 +2,10 @@ package rpg.dao;
 
 import rpg.exception.FondosInsuficientesException;
 import rpg.model.*;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ public class PersonajeDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Conexión de la base de datos");
             e.printStackTrace();
         }
     }
@@ -99,6 +102,8 @@ public class PersonajeDAO {
 
                     habilidadEquipada.put(habilidadesPersonaje, equipada_combate);
                     p.addHabilidad(habilidadEquipada);
+                    LoggerCustom.logInfo("Habilidades personaje ID: "+p.getIdPersonaje()+" cargadas");
+
                 }
 
                 ResultSet rsInventario = statement3.executeQuery("SELECT * FROM INVENTARIOS AS i INNER JOIN ITEMS AS it ON i.id_item = it.id WHERE i.id_personaje ="+ id);
@@ -118,6 +123,7 @@ public class PersonajeDAO {
                     inv.put(item, cantidad);
 
                     p.setInventario(inv);
+                    LoggerCustom.logInfo("Inventario personaje ID: "+p.getIdPersonaje()+" cargado");
 
                 }
 
@@ -125,8 +131,9 @@ public class PersonajeDAO {
 
                 System.out.println(p);
             }
-
+            LoggerCustom.logInfo("Personajes cargados");
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando Personajes: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             e.printStackTrace();
         }
     }

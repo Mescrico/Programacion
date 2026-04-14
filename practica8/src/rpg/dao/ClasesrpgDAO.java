@@ -4,8 +4,10 @@ import rpg.model.Ciudades;
 import rpg.model.Clases_RPG;
 import rpg.model.Habilidades;
 import rpg.model.Items;
+import rpg.utils.LoggerCustom;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ClasesrpgDAO {
@@ -22,6 +24,7 @@ public class ClasesrpgDAO {
 
         } catch (SQLException e) {
             System.out.println("Error en la conexión de la base de datos");
+            LoggerCustom.logError("Conexión de la base de datos");
             e.printStackTrace();
         }
     }
@@ -61,8 +64,10 @@ public class ClasesrpgDAO {
             System.out.println(claseRPG);
           }
         } catch (SQLException e) {
+            LoggerCustom.logError("Cargando ClasesRPG: "+e.getClass().getSimpleName()+" - "+e.getMessage());
             throw new RuntimeException(e);
         }
+        LoggerCustom.logInfo("ClasesRPG cargados");
     }
 
     public Clases_RPG buscarClasesId(int id) {
