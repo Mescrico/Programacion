@@ -164,26 +164,46 @@ public class GestionMundo {
                     String nombreClase = rs4.getString("nombre");
 
                     clase = new Clases_RPG(idClase, nombreClase);
+
+                    ArrayList<Habilidades> habilidadesClase = new ArrayList<>();
+
+                    for(Habilidades h : habilidades) {
+                        if(h.getId_clase() == idClase) {
+                            habilidadesClase.add(h);
+                        }
+                    }
+
+                    clase.setListahabilidades(habilidadesClase);
+
                     correcto = true;
                 } else {
                     System.out.println("Esa id no existe");
                 }
             }
 
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES (?, 1, 100, ?, ?, ?, 1)");
+            PreparedStatement psPersonaje = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES (?, 1, 100, ?, ?, ?, 1)", Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, nombrePersonaje);
-            ps.setInt(2, 100+raza.getBonificador_vida());
-            ps.setInt(3, raza.getIdRaza());
-            ps.setInt(4, clase.getIdClasesRPG());
+            psPersonaje.setString(1, nombrePersonaje);
+            psPersonaje.setInt(2, 100+raza.getBonificador_vida());
+            psPersonaje.setInt(3, raza.getIdRaza());
+            psPersonaje.setInt(4, clase.getIdClasesRPG());
 
-            ps.executeUpdate();
+            psPersonaje.executeUpdate();
 
-            ResultSet rs2 = ps.getGeneratedKeys();
+            ResultSet rs2 = psPersonaje.getGeneratedKeys();
             int idPersonaje = 0;
 
             if(rs2.next()) {
                 idPersonaje = rs2.getInt("id");
+            }
+
+            PreparedStatement psHabilidades = connection.prepareStatement("INSERT INTO PERSONAJES_HABILIDADES VALUES(?,?,?)");
+            for (int i = 0; i < clase.getListahabilidades().size(); i++) {
+                psHabilidades.setInt(1, idPersonaje);
+                psHabilidades.setInt(2, clase.getListahabilidades().get(i).getIdHabilidades());
+                psHabilidades.setBoolean(3, false);
+
+                psHabilidades.executeUpdate();
             }
 
             Personajes personaje = new Personajes(idPersonaje, nombrePersonaje, 1, 100, 100 + raza.getBonificador_vida(), raza, clase, ciudades.getFirst());
