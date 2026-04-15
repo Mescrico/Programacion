@@ -15,7 +15,7 @@ public class Personajes {
     private Ciudades ciudad;
 
     private HashMap<Items, Integer> inventario;
-    private List<HashMap<Habilidades, Boolean>> habilidades;
+    private HashMap<Habilidades, Boolean> habilidades;
 
     public Personajes(int idPersonaje, String nombre, int nivel, int oro, int vida_actual, Razas raza, Clases_RPG clase, Ciudades ciudad) {
         this.idPersonaje = idPersonaje;
@@ -27,7 +27,7 @@ public class Personajes {
         this.clase = clase;
         this.ciudad = ciudad;
 
-        this.habilidades = new ArrayList<>();
+        this.habilidades = new HashMap<>();
         this.inventario = new HashMap<>();
     }
 
@@ -108,14 +108,14 @@ public class Personajes {
     }
 
     public void addHabilidad(HashMap<Habilidades, Boolean> h) {
-        habilidades.add(h);
+        habilidades.putAll(h);
     }
 
-    public List<HashMap<Habilidades, Boolean>> getHabilidades() {
+    public HashMap<Habilidades, Boolean> getHabilidades() {
         return habilidades;
     }
 
-    public void setHabilidades(List<HashMap<Habilidades, Boolean>> habilidades) {
+    public void setHabilidades(HashMap<Habilidades, Boolean> habilidades) {
         this.habilidades = habilidades;
     }
 

@@ -101,10 +101,10 @@ public class PersonajeDAO {
                     Habilidades habilidadesPersonaje = new Habilidades(id_habilidad, nombre_habilidad, dano_base, usos_maximos, id_clase_habilidad);
 
                     habilidadEquipada.put(habilidadesPersonaje, equipada_combate);
-                    p.addHabilidad(habilidadEquipada);
                     LoggerCustom.logInfo("Habilidades personaje ID: "+p.getIdPersonaje()+" cargadas");
 
                 }
+                p.addHabilidad(habilidadEquipada);
 
                 ResultSet rsInventario = statement3.executeQuery("SELECT * FROM INVENTARIOS AS i INNER JOIN ITEMS AS it ON i.id_item = it.id WHERE i.id_personaje ="+ id);
                 HashMap<Items, Integer> inv = new HashMap<>();

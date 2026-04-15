@@ -55,6 +55,9 @@ public class Menu {
                 case 7:
                     gestionMundo.censo();
                     break;
+                case 5:
+                    gestionMundo.equiparHabilidades();
+                    break;
                 case 0:
                     salir = true;
                 default:

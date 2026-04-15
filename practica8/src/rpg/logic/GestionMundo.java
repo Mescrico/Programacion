@@ -1,14 +1,12 @@
 package rpg.logic;
 
 import rpg.dao.*;
-import rpg.exception.FondosInsuficientesException;
+import rpg.exception.LimiteHabilidadesException;
 import rpg.exception.NivelInsuficienteException;
 import rpg.model.*;
-import rpg.ui.Menu;
 import rpg.utils.LoggerCustom;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class GestionMundo {
@@ -445,5 +443,79 @@ public class GestionMundo {
         for(String r : recuento.keySet()) {
             System.out.println(r+": "+recuento.get(r));
         }
+    }
+
+    public void equiparHabilidades() {
+        boolean idPExiste = false;
+        Personajes personaje = null;
+        while(!idPExiste) {
+            System.out.println("ID del personaje para equipar sus habilidades");
+            int id = s.nextInt();
+            personaje = personajeDAO.buscarPersonajeId(id);
+
+            if (personaje == null) {
+                System.out.println("Esa id no existe");
+            } else {
+                idPExiste = true;
+            }
+        }
+
+        try {
+            boolean idHExiste = false;
+            Habilidades habilidad = null;
+            while(!idHExiste) {
+                for (Map.Entry<Habilidades, Boolean> entrada : personaje.getHabilidades().entrySet()) {
+                    System.out.println("ID: "+entrada.getKey().getIdHabilidades()+" - "+entrada.getKey().getNombre()+": "+entrada.getValue());
+                }
+                System.out.println("ID de la habilidad para equipar");
+                int id = s.nextInt();
+                habilidad = habilidadesDAO.buscarHabilidadId(id);
+
+                if (habilidad == null) {
+                    System.out.println("Esa id no existe");
+                } else {
+                    idHExiste = true;
+                }
+            }
+
+
+            if(personaje.getHabilidades().containsKey(habilidad)) {
+                boolean estaEquipada = personaje.getHabilidades().get(habilidad);
+
+                if(estaEquipada) {
+                    System.out.println("La habilidad "+habilidad.getNombre()+"ya estaba equipada");
+                } else {
+                    try {
+                        PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES_HABILIDADES SET equipada_combate = ? WHERE id_habilidad = ? AND id_personaje = ?");
+                        ps.setBoolean(1, true);
+                        ps.setInt(2, habilidad.getIdHabilidades());
+                        ps.setInt(3, personaje.getIdPersonaje());
+                        personaje.getHabilidades().put(habilidad, true);
+                        System.out.println(personaje.getNombre()+" se ha equipado la habilidad "+habilidad.getNombre());
+                        LoggerCustom.logInfo(personaje.getNombre()+" se ha equipado la habilidad "+habilidad.getNombre());
+
+                        ps.executeUpdate();
+                    } catch (SQLException e) {
+                        LoggerCustom.logError("Actualizando habilidades de "+personaje.getNombre());
+                        throw new RuntimeException(e);
+                    }
+
+                }
+            } else {
+                if(!habilidades.contains(habilidad)) {
+                    System.out.println("Esa id no existe");
+                    LoggerCustom.logError(personaje.getNombre()+" ha intentado equipar una habilidad que no existe");
+                    throw new LimiteHabilidadesException(personaje.getNombre()+" ha intentado equipar una habilidad que no existe");
+                } else {
+                    System.out.println("No se puede elegir una habilidad que no este en su clase");
+                    LoggerCustom.logError(personaje.getNombre()+" ha intentado equipar una habilidad que no es de su clase");
+                    throw new LimiteHabilidadesException(personaje.getNombre()+" ha intentado equipar una habilidad que no es de su clase");
+                }
+            }
+        } catch (LimiteHabilidadesException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

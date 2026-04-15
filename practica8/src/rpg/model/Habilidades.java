@@ -1,5 +1,7 @@
 package rpg.model;
 
+import java.util.Objects;
+
 public class Habilidades {
     private int idHabilidades;
     private String nombre;
@@ -53,6 +55,19 @@ public class Habilidades {
 
     public void setId_clase(int id_clase) {
         this.id_clase = id_clase;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Habilidades that = (Habilidades) o;
+        return idHabilidades == that.idHabilidades;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idHabilidades);
     }
 
     @Override
