@@ -30,6 +30,8 @@ public class Menu {
             System.out.println("2.- Viajar de Ciudad");
             System.out.println("3.- Comprar Items");
             System.out.println("4.- Cobrar Impuestos");
+            System.out.println("6.- Personajes más Ricos");
+            System.out.println("7.- Censo de Clases");
             System.out.println("----------------------");
             System.out.println("Selecciona una opcion");
             int opcion = s.nextInt();
@@ -46,6 +48,12 @@ public class Menu {
                     break;
                 case 4:
                     gestionMundo.cobroImpuestos(menuCobroImpuestos());
+                    break;
+                case 6:
+                    gestionMundo.jugadoresRicos();
+                    break;
+                case 7:
+                    gestionMundo.censo();
                     break;
                 case 0:
                     salir = true;

@@ -8,10 +8,7 @@ import rpg.utils.LoggerCustom;
 
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class GestionMundo {
     private Connection connection;
@@ -415,6 +412,37 @@ public class GestionMundo {
                 }
 
             }
+        }
+    }
+
+    public void jugadoresRicos() {
+        List<Personajes> ordenados = getPersonajes().stream()
+                .sorted(Comparator.comparingInt(Personajes::getOro).reversed()).toList();
+
+        LoggerCustom.logInfo("Personajes ordenados de mayor a menor oro");
+
+        System.out.println("Los 3 personajes más ricos son:");
+        for (int i = 0; i < ordenados.size(); i++) {
+            if(i == 3) {
+                break;
+            }
+            System.out.println(i+1+".- "+ordenados.get(i).getNombre()+" - ID: "+ordenados.get(i).getIdPersonaje()+" - Oro: "+ordenados.get(i).getOro());
+        }
+
+    }
+
+    public void censo() {
+        List<Personajes> personajes = getPersonajes();
+        HashMap<String, Integer> recuento = new HashMap<>();
+
+        for (int i = 0; i < personajes.size(); i++) {
+            recuento.put(personajes.get(i).getClase().getNombre(), recuento.getOrDefault(personajes.get(i).getClase().getNombre(), 1)+1);
+        }
+
+        LoggerCustom.logInfo("Recuento del censo hecho");
+
+        for(String r : recuento.keySet()) {
+            System.out.println(r+": "+recuento.get(r));
         }
     }
 }
