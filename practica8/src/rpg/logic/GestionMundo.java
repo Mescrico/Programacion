@@ -2,6 +2,7 @@ package rpg.logic;
 
 import rpg.dao.*;
 import rpg.exception.FondosInsuficientesException;
+import rpg.exception.NivelInsuficienteException;
 import rpg.model.*;
 import rpg.ui.Menu;
 import rpg.utils.LoggerCustom;
@@ -257,7 +258,7 @@ public class GestionMundo {
                     if(ciudadE.getNivel_minimo_acceso() > personaje.getNivel()) {
                         System.out.println("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
                         LoggerCustom.logError("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
-                        throw new FondosInsuficientesException("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
+                        throw new NivelInsuficienteException("El personaje tiene menos nivel ("+personaje.getNivel()+") que el requerido ("+ciudadE.getNivel_minimo_acceso()+")");
                     } else {
                         try {
                             PreparedStatement ps1 = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ? WHERE id = ?");
@@ -278,7 +279,7 @@ public class GestionMundo {
                         }
 
                     }
-                } catch (FondosInsuficientesException e) {
+                } catch (NivelInsuficienteException e) {
                     e.printStackTrace();
                 }
             }
