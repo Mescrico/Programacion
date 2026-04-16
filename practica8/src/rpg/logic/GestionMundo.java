@@ -217,6 +217,9 @@ public class GestionMundo {
     public void viajarDeCiudad() {
         boolean existe = false;
         Personajes personaje = null;
+        for (Personajes p : personajes) {
+            System.out.println("ID: " + p.getIdPersonaje() + " - Nombre: " + p.getNombre());
+        }
         while(!existe) {
             System.out.println("ID del personaje que va a cambiar de ciudad");
             int id = s.nextInt();
@@ -287,6 +290,9 @@ public class GestionMundo {
     public void comprarItems() {
         boolean idPExiste = false;
         Personajes personaje = null;
+        for (Personajes p : personajes) {
+            System.out.println("ID: " + p.getIdPersonaje() + " - Nombre: " + p.getNombre());
+        }
         while(!idPExiste) {
             System.out.println("ID del personaje que va a comprar");
             int id = s.nextInt();
@@ -448,6 +454,9 @@ public class GestionMundo {
     public void equiparHabilidades() {
         boolean idPExiste = false;
         Personajes personaje = null;
+        for (Personajes p : personajes) {
+            System.out.println("ID: " + p.getIdPersonaje() + " - Nombre: " + p.getNombre());
+        }
         while(!idPExiste) {
             System.out.println("ID del personaje para equipar sus habilidades");
             int id = s.nextInt();

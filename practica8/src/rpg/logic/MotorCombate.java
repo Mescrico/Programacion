@@ -33,6 +33,9 @@ public class MotorCombate {
     }
 
     public void combate(Personajes jugador1, Personajes jugador2) {
+        int vidaAntes1 = jugador1.getVida_actual();
+        int vidaAntes2 = jugador2.getVida_actual();
+
         int ataqueTotal1 = jugador1.getRaza().getBonificador_fuerza();
         int defensaTotal1 = 0;
 
@@ -74,6 +77,8 @@ public class MotorCombate {
         }
 
         System.out.println("Empieza el combate");
+        System.out.println(jugador1.getNombre()+" - Vida: "+jugador1.getVida_actual());
+        System.out.println(jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
         boolean salir = false;
         do {
             System.out.println("Turno de "+jugador1.getNombre()+" - Vida: "+jugador1.getVida_actual());
@@ -87,12 +92,15 @@ public class MotorCombate {
                 switch (opcion1) {
                     case 1:
                         int dañoRealizadoA = ataqueTotal1 - (defensaTotal2 / 2);
+                        jugador2.setVida_actual(jugador2.getVida_actual()- dañoRealizadoA);
+
                         System.out.println(jugador1.getNombre()+" ha hecho "+dañoRealizadoA+" puntos de daño");
                         if(jugador2.getVida_actual() <= 0) {
                             jugador2.setVida_actual(0);
                         }
                         System.out.println("Vida actual de "+jugador2.getNombre()+": "+jugador2.getVida_actual());
                         elegir1 = true;
+                        break;
                     case 2:
                         System.out.println("Habilidades:");
                         for (Map.Entry<Habilidades, Integer> entrada : usosRestantes1.entrySet()) {
@@ -119,12 +127,15 @@ public class MotorCombate {
                             if(usosActuales <= 0) {
                                 System.out.println("No quedan usos para "+habilidadElegida.getNombre()+" se va a atacar normal");
                                 int dañoRealizadoB = ataqueTotal1 - (defensaTotal2 / 2);
+                                jugador2.setVida_actual(jugador2.getVida_actual()- dañoRealizadoB);
+
                                 System.out.println(jugador1.getNombre()+" ha hecho "+dañoRealizadoB+" puntos de daño");
                                 if(jugador2.getVida_actual() <= 0) {
                                     jugador2.setVida_actual(0);
                                 }
                                 System.out.println("Vida actual de "+jugador2.getNombre()+": "+jugador2.getVida_actual());
                                 elegir1 = true;
+                                break;
                             } else {
                                 usosRestantes1.put(habilidadElegida, usosActuales - 1);
 
@@ -141,6 +152,7 @@ public class MotorCombate {
                                 System.out.println("Vida actual de "+jugador2.getNombre()+": "+jugador2.getVida_actual());
 
                                 elegir1 = true;
+                                break;
                             }
                         }
                 }
@@ -149,6 +161,7 @@ public class MotorCombate {
 
             if(jugador2.getVida_actual() <= 0) {
                 salir = true;
+                break;
             }
 
             System.out.println("Turno de "+jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
@@ -162,15 +175,19 @@ public class MotorCombate {
                 switch (opcion2) {
                     case 1:
                         int dañoRealizadoA = ataqueTotal2 - (defensaTotal1 / 2);
+
+                        jugador1.setVida_actual(jugador1.getVida_actual()- dañoRealizadoA);
+
                         System.out.println(jugador2.getNombre()+" ha hecho "+dañoRealizadoA+" puntos de daño");
                         if(jugador1.getVida_actual() <= 0) {
                             jugador1.setVida_actual(0);
                         }
                         System.out.println("Vida actual de "+jugador1.getNombre()+": "+jugador1.getVida_actual());
                         elegir2 = true;
+                        break;
                     case 2:
                         System.out.println("Habilidades:");
-                        for (Map.Entry<Habilidades, Integer> entrada : usosRestantes1.entrySet()) {
+                        for (Map.Entry<Habilidades, Integer> entrada : usosRestantes2.entrySet()) {
                             Habilidades hab = entrada.getKey();
                             int usos = entrada.getValue();
                             System.out.println("ID: "+hab.getIdHabilidades()+" - "+hab.getNombre()+" - Usos restantes: " + usos);
@@ -180,7 +197,7 @@ public class MotorCombate {
                         int idElegido = s.nextInt();
 
                         Habilidades habilidadElegida = null;
-                        for (Habilidades h : usosRestantes1.keySet()) {
+                        for (Habilidades h : usosRestantes2.keySet()) {
                             if (h.getIdHabilidades() == idElegido) {
                                 habilidadElegida = h;
                                 break;
@@ -194,12 +211,18 @@ public class MotorCombate {
                             if(usosActuales <= 0) {
                                 System.out.println("No quedan usos para "+habilidadElegida.getNombre()+" se va a atacar normal");
                                 int dañoRealizadoB = ataqueTotal2 - (defensaTotal1 / 2);
+
+                                jugador1.setVida_actual(jugador1.getVida_actual()- dañoRealizadoB);
+
                                 System.out.println(jugador2.getNombre()+" ha hecho "+ dañoRealizadoB +" puntos de daño");
                                 if(jugador1.getVida_actual() <= 0) {
                                     jugador1.setVida_actual(0);
                                 }
+
                                 System.out.println("Vida actual de "+jugador1.getNombre()+": "+jugador1.getVida_actual());
+
                                 elegir2 = true;
+                                break;
                             } else {
                                 usosRestantes2.put(habilidadElegida, usosActuales - 1);
 
@@ -213,11 +236,18 @@ public class MotorCombate {
                                 if(jugador1.getVida_actual() <= 0) {
                                     jugador1.setVida_actual(0);
                                 }
+
                                 System.out.println("Vida actual de "+jugador1.getNombre()+": "+jugador1.getVida_actual());
 
                                 elegir2 = true;
+                                break;
                             }
                         }
+                }
+
+                if(jugador1.getVida_actual() <= 0) {
+                    salir = true;
+                    break;
                 }
             } while (!elegir2);
         } while (!salir);
@@ -225,17 +255,68 @@ public class MotorCombate {
         System.out.println("Final del combate");
 
         if(jugador1.getVida_actual() == 0) {
-            System.out.println("Ha ganado "+jugador2.getNombre());
+            LoggerCustom.logInfo("El combate a terminado y ha ganado"+jugador2.getNombre());
+            System.out.println("Ha ganado "+jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
             int oroRobado = (int) (jugador1.getOro() * 0.2);
 
             System.out.println(jugador2.getNombre()+" recibe "+oroRobado+" monedas de oro por ganar");
 
+            int oroAntesG = jugador2.getOro();
+            int oroAntesP = jugador1.getOro();
+
+            jugador2.setOro(oroAntesG+oroRobado);
+            jugador1.setOro(oroAntesP-oroRobado);
+            try {
+                PreparedStatement psG = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
+
+                psG.setInt(1, oroAntesG +oroRobado);
+                psG.setInt(2, jugador2.getIdPersonaje());
+
+                psG.executeUpdate();
+
+                PreparedStatement psP = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
+
+                psP.setInt(1, oroAntesP-oroRobado);
+                psP.setInt(2, jugador1.getIdPersonaje());
+
+                psP.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         } else {
-            System.out.println("Ha ganado "+jugador1.getNombre());
+            LoggerCustom.logInfo("El combate a terminado y ha ganado"+jugador1.getNombre());
+            System.out.println("Ha ganado "+jugador1.getNombre()+" - Vida: "+jugador1.getVida_actual());
             int oroRobado = (int) (jugador2.getOro() * 0.2);
 
             System.out.println(jugador1.getNombre()+" recibe "+oroRobado+" monedas de oro por ganar");
 
+            int oroAntesG = jugador1.getOro();
+            int oroAntesP = jugador2.getOro();
+
+            jugador1.setOro(oroAntesG+oroRobado);
+            jugador2.setOro(oroAntesP-oroRobado);
+            try {
+                PreparedStatement psG = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
+
+                psG.setInt(1, oroAntesG +oroRobado);
+                psG.setInt(2, jugador1.getIdPersonaje());
+
+                psG.executeUpdate();
+
+                PreparedStatement psP = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
+
+                psP.setInt(1, oroAntesP-oroRobado);
+                psP.setInt(2, jugador2.getIdPersonaje());
+
+                psP.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
+
+        jugador1.setVida_actual(vidaAntes1);
+        jugador2.setVida_actual(vidaAntes2);
+
     }
 }

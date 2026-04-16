@@ -539,3 +539,309 @@
 [2026-04-15T19:16:52.908002670] INFO: Personajes cargados
 [2026-04-15T19:16:52.909116212] INFO: Razas cargadas
 [2026-04-15T19:17:00.226877758] INFO: Oscar se ha equipado la habilidad Castigo Divino
+[2026-04-16T19:19:15.140503760] INFO: Items cargados
+[2026-04-16T19:19:15.179517533] INFO: Ciudades cargadas
+[2026-04-16T19:19:15.194536118] INFO: ClasesRPG cargados
+[2026-04-16T19:19:15.196388714] INFO: Habilidades cargadas
+[2026-04-16T19:19:15.215908714] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:15.216163576] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:15.216212039] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:15.219501769] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:19:15.219584728] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:19:15.242592729] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:15.242691876] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:15.242780775] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:15.243637698] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:19:15.247056772] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:15.247209403] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:15.247363420] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:15.248441851] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:19:15.248514672] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:19:15.252050774] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:15.252142260] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:15.252196056] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:15.256220590] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:15.256324616] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:15.256375532] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:15.257693620] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:19:15.260826610] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:15.260909600] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:15.261040939] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:15.261975454] INFO: Personajes cargados
+[2026-04-16T19:19:15.263581569] INFO: Razas cargadas
+[2026-04-16T19:19:36.864710623] INFO: Items cargados
+[2026-04-16T19:19:36.901720069] INFO: Ciudades cargadas
+[2026-04-16T19:19:36.905273759] INFO: ClasesRPG cargados
+[2026-04-16T19:19:36.906284853] INFO: Habilidades cargadas
+[2026-04-16T19:19:36.917853709] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:36.917938313] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:36.917980270] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:19:36.919144635] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:19:36.919220441] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:19:36.926108730] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:36.926216145] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:36.926276795] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:19:36.927010674] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:19:36.931674444] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:36.931840138] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:36.931894525] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:19:36.932589408] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:19:36.932713937] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:19:36.936955172] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:36.937034701] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:36.937075039] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:19:36.941364528] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:36.941448737] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:36.941535747] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:19:36.942578264] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:19:36.945339977] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:36.945418173] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:36.945457084] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:19:36.946265637] INFO: Personajes cargados
+[2026-04-16T19:19:36.947612349] INFO: Razas cargadas
+[2026-04-16T19:19:48.721646957] INFO: Jaime se ha equipado la habilidad Dardo de Hielo
+[2026-04-16T19:20:08.315875398] INFO: Jaime se ha equipado la habilidad Relampago
+[2026-04-16T19:20:17.212307059] INFO: Oscar se ha equipado la habilidad Luz Cegadora
+[2026-04-16T19:21:28.969699071] INFO: Items cargados
+[2026-04-16T19:21:29.003480149] INFO: Ciudades cargadas
+[2026-04-16T19:21:29.010218214] INFO: ClasesRPG cargados
+[2026-04-16T19:21:29.011636904] INFO: Habilidades cargadas
+[2026-04-16T19:21:29.028620442] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:29.028709846] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:29.028756624] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:29.030639399] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:21:29.030714760] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:21:29.039801075] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:29.039895341] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:29.039942745] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:29.040631319] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:21:29.043182608] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:29.043256505] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:29.043317027] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:29.044214109] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:21:29.044452713] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:21:29.048251193] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:29.048327903] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:29.048372697] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:29.052722257] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:29.052806064] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:29.052849270] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:29.055054014] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:21:29.057594898] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:29.057667606] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:29.057707071] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:29.058681298] INFO: Personajes cargados
+[2026-04-16T19:21:29.060060972] INFO: Razas cargadas
+[2026-04-16T19:21:58.679649733] INFO: Items cargados
+[2026-04-16T19:21:58.724830760] INFO: Ciudades cargadas
+[2026-04-16T19:21:58.730525832] INFO: ClasesRPG cargados
+[2026-04-16T19:21:58.731577119] INFO: Habilidades cargadas
+[2026-04-16T19:21:58.741572260] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:58.741653692] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:58.741695940] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:21:58.746470441] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:21:58.746548685] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:21:58.756934803] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:58.757023360] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:58.757110303] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:21:58.757812918] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:21:58.760051321] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:58.760122219] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:58.760177200] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:21:58.760717740] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:21:58.760766861] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:21:58.762342466] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:58.762412205] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:58.762451366] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:21:58.765397363] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:58.765462733] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:58.765505655] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:21:58.768758798] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:21:58.770729801] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:58.770800308] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:58.770838381] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:21:58.771927439] INFO: Personajes cargados
+[2026-04-16T19:21:58.773186169] INFO: Razas cargadas
+[2026-04-16T19:24:59.060956501] INFO: Items cargados
+[2026-04-16T19:24:59.097000287] INFO: Ciudades cargadas
+[2026-04-16T19:24:59.102951810] INFO: ClasesRPG cargados
+[2026-04-16T19:24:59.104113822] INFO: Habilidades cargadas
+[2026-04-16T19:24:59.113680014] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:24:59.113767049] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:24:59.113807202] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:24:59.115159131] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:24:59.115524327] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:24:59.123918734] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:24:59.124022904] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:24:59.124261468] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:24:59.125220036] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:24:59.127307199] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:24:59.127437387] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:24:59.127482922] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:24:59.127970937] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:24:59.128039031] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:24:59.130153136] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:24:59.130221636] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:24:59.130260252] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:24:59.132771410] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:24:59.132988075] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:24:59.133075124] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:24:59.133798291] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:24:59.135033966] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:24:59.135091568] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:24:59.135128530] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:24:59.136045511] INFO: Personajes cargados
+[2026-04-16T19:24:59.138095035] INFO: Razas cargadas
+[2026-04-16T19:26:04.151372892] INFO: Items cargados
+[2026-04-16T19:26:04.184348943] INFO: Ciudades cargadas
+[2026-04-16T19:26:04.190899429] INFO: ClasesRPG cargados
+[2026-04-16T19:26:04.192257434] INFO: Habilidades cargadas
+[2026-04-16T19:26:04.201869555] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:26:04.202013626] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:26:04.202073044] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:26:04.203837459] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:26:04.203909871] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:26:04.212659793] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:26:04.212743933] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:26:04.212832960] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:26:04.213631383] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:26:04.218866888] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:26:04.219000573] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:26:04.219045799] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:26:04.220053492] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:26:04.220476370] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:26:04.224170557] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:26:04.224241861] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:26:04.224446529] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:26:04.227542146] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:26:04.227620312] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:26:04.227660486] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:26:04.229093168] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:26:04.231687541] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:26:04.231794118] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:26:04.231844754] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:26:04.232666430] INFO: Personajes cargados
+[2026-04-16T19:26:04.234048531] INFO: Razas cargadas
+[2026-04-16T19:31:05.570692236] INFO: Items cargados
+[2026-04-16T19:31:05.604377892] INFO: Ciudades cargadas
+[2026-04-16T19:31:05.609239998] INFO: ClasesRPG cargados
+[2026-04-16T19:31:05.612468539] INFO: Habilidades cargadas
+[2026-04-16T19:31:05.627362445] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:31:05.627453392] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:31:05.627497750] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:31:05.629902017] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:31:05.630309042] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:31:05.639569342] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:31:05.639651261] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:31:05.640274743] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:31:05.641394632] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:31:05.645702109] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:31:05.645784990] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:31:05.646025149] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:31:05.647658537] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:31:05.647728987] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:31:05.650753735] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:31:05.650824108] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:31:05.650862536] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:31:05.654489839] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:31:05.654565078] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:31:05.654693181] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:31:05.655362762] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:31:05.658865249] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:31:05.658942112] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:31:05.658986305] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:31:05.660203279] INFO: Personajes cargados
+[2026-04-16T19:31:05.661475025] INFO: Razas cargadas
+[2026-04-16T19:40:05.366251436] INFO: Items cargados
+[2026-04-16T19:40:05.413196038] INFO: Ciudades cargadas
+[2026-04-16T19:40:05.418938089] INFO: ClasesRPG cargados
+[2026-04-16T19:40:05.420667968] INFO: Habilidades cargadas
+[2026-04-16T19:40:05.432244196] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:40:05.432528040] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:40:05.432761429] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:40:05.434960481] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:40:05.435182402] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:40:05.446128389] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:40:05.446237685] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:40:05.446287025] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:40:05.447748471] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:40:05.450523006] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:40:05.450669132] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:40:05.450875648] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:40:05.451846772] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:40:05.451915318] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:40:05.454017304] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:40:05.454091907] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:40:05.454130324] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:40:05.457075983] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:40:05.457183053] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:40:05.457229227] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:40:05.457997476] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:40:05.459926264] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:40:05.459998796] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:40:05.460076681] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:40:05.461030192] INFO: Personajes cargados
+[2026-04-16T19:40:05.462389370] INFO: Razas cargadas
+[2026-04-16T19:40:45.123576921] INFO: El combate a terminado y ha ganadoJaime
+[2026-04-16T19:41:29.473844949] INFO: Items cargados
+[2026-04-16T19:41:29.523660064] INFO: Ciudades cargadas
+[2026-04-16T19:41:29.529099371] INFO: ClasesRPG cargados
+[2026-04-16T19:41:29.530678977] INFO: Habilidades cargadas
+[2026-04-16T19:41:29.543381185] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:41:29.543469547] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:41:29.543727716] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:41:29.545221646] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:41:29.545299290] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:41:29.553641170] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:41:29.553734826] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:41:29.553845532] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:41:29.555454365] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:41:29.557635889] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:41:29.557708356] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:41:29.557750964] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:41:29.558702863] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:41:29.558769866] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:41:29.561331377] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:41:29.561406750] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:41:29.561445728] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:41:29.564065871] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:41:29.564141222] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:41:29.564185620] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:41:29.564995587] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:41:29.567189063] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:41:29.567262546] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:41:29.567302003] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:41:29.568020670] INFO: Personajes cargados
+[2026-04-16T19:41:29.569550498] INFO: Razas cargadas
+[2026-04-16T19:43:49.781138682] INFO: El combate a terminado y ha ganadoJaime
+[2026-04-16T19:44:58.546285943] INFO: Items cargados
+[2026-04-16T19:44:58.598575553] INFO: Ciudades cargadas
+[2026-04-16T19:44:58.608112813] INFO: ClasesRPG cargados
+[2026-04-16T19:44:58.610536853] INFO: Habilidades cargadas
+[2026-04-16T19:44:58.643697783] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:44:58.643793846] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:44:58.643835643] INFO: Habilidades personaje ID: 1 cargadas
+[2026-04-16T19:44:58.646268281] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:44:58.646361695] INFO: Inventario personaje ID: 1 cargado
+[2026-04-16T19:44:58.677688869] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:44:58.677789531] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:44:58.677933379] INFO: Habilidades personaje ID: 7 cargadas
+[2026-04-16T19:44:58.679247543] INFO: Inventario personaje ID: 7 cargado
+[2026-04-16T19:44:58.682878564] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:44:58.682966723] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:44:58.683008814] INFO: Habilidades personaje ID: 2 cargadas
+[2026-04-16T19:44:58.683780225] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:44:58.683888574] INFO: Inventario personaje ID: 2 cargado
+[2026-04-16T19:44:58.689734996] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:44:58.690007371] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:44:58.690061104] INFO: Habilidades personaje ID: 10 cargadas
+[2026-04-16T19:44:58.694161291] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:44:58.694254564] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:44:58.694297227] INFO: Habilidades personaje ID: 9 cargadas
+[2026-04-16T19:44:58.695394188] INFO: Inventario personaje ID: 9 cargado
+[2026-04-16T19:44:58.705253395] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:44:58.705547137] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:44:58.705608910] INFO: Habilidades personaje ID: 8 cargadas
+[2026-04-16T19:44:58.706578597] INFO: Personajes cargados
+[2026-04-16T19:44:58.707831902] INFO: Razas cargadas
+[2026-04-16T19:45:25.271274328] INFO: El combate a terminado y ha ganadoJaime
