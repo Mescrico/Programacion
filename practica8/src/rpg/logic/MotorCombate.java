@@ -33,12 +33,15 @@ public class MotorCombate {
     }
 
     public void combate(Personajes jugador1, Personajes jugador2) {
+        //Guardo los valores de vida de los personajes
         int vidaAntes1 = jugador1.getVida_actual();
         int vidaAntes2 = jugador2.getVida_actual();
 
+        //Calculo el ataqueTotal y defensaTotal de cada personaje
         int ataqueTotal1 = jugador1.getRaza().getBonificador_fuerza();
         int defensaTotal1 = 0;
 
+        //Recorro el HashMap del inventario de cada jugador y voy sumando el ataque y la defensa de los objetos
         for (Map.Entry<Items, Integer> entrada : jugador1.getInventario().entrySet()) {
             Items item = entrada.getKey();
             int cantidad = entrada.getValue();
@@ -58,8 +61,10 @@ public class MotorCombate {
             defensaTotal2 += (item.getBonificador_defensa() * cantidad);
         }
 
+        //Creo el HashMap de usosRestantes de cada personaje
         HashMap<Habilidades, Integer> usosRestantes1 = new HashMap<>();
 
+        //Recorro el HashMap de las habilidades de los personajes y si las tiene activas la añadimos a las habilidades usables
         for (Map.Entry<Habilidades, Boolean> entrada : jugador1.getHabilidades().entrySet()) {
             if (entrada.getValue() == true) {
                 Habilidades hab = entrada.getKey();
@@ -81,6 +86,7 @@ public class MotorCombate {
         System.out.println(jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
         boolean salir = false;
         do {
+            //Primero va el turno del jugador 1
             System.out.println("Turno de "+jugador1.getNombre()+" - Vida: "+jugador1.getVida_actual());
             boolean elegir1 = false;
 
@@ -125,6 +131,7 @@ public class MotorCombate {
                         } else {
                             int usosActuales = usosRestantes1.get(habilidadElegida);
                             if(usosActuales <= 0) {
+                                //Si no quedan usos de esa habilidad se hace un ataque normal
                                 System.out.println("No quedan usos para "+habilidadElegida.getNombre()+" se va a atacar normal");
                                 int dañoRealizadoB = ataqueTotal1 - (defensaTotal2 / 2);
                                 jugador2.setVida_actual(jugador2.getVida_actual()- dañoRealizadoB);
@@ -159,11 +166,13 @@ public class MotorCombate {
 
             } while (!elegir1);
 
+            //Compruebo si ha muerto el jugador2
             if(jugador2.getVida_actual() <= 0) {
                 salir = true;
                 break;
             }
 
+            //Turno del jugador 2
             System.out.println("Turno de "+jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
             boolean elegir2 = false;
 
@@ -207,6 +216,7 @@ public class MotorCombate {
                         if (habilidadElegida == null) {
                             System.out.println("Esa id no existe");
                         } else {
+                            //Si no quedan usos de esa habilidad se hace un ataque normal
                             int usosActuales = usosRestantes2.get(habilidadElegida);
                             if(usosActuales <= 0) {
                                 System.out.println("No quedan usos para "+habilidadElegida.getNombre()+" se va a atacar normal");
@@ -245,6 +255,7 @@ public class MotorCombate {
                         }
                 }
 
+                //Compruebo si ha muerto el jugador1
                 if(jugador1.getVida_actual() <= 0) {
                     salir = true;
                     break;
@@ -254,6 +265,7 @@ public class MotorCombate {
 
         System.out.println("Final del combate");
 
+        //Al terminar el combate miro cual es el jugador que ha muerto
         if(jugador1.getVida_actual() == 0) {
             LoggerCustom.logInfo("El combate a terminado y ha ganado"+jugador2.getNombre());
             System.out.println("Ha ganado "+jugador2.getNombre()+" - Vida: "+jugador2.getVida_actual());
@@ -261,6 +273,7 @@ public class MotorCombate {
 
             System.out.println(jugador2.getNombre()+" recibe "+oroRobado+" monedas de oro por ganar");
 
+            //Calculo el oro que tienen ahora cada personaje
             int oroAntesG = jugador2.getOro();
             int oroAntesP = jugador1.getOro();
 
@@ -291,6 +304,7 @@ public class MotorCombate {
 
             System.out.println(jugador1.getNombre()+" recibe "+oroRobado+" monedas de oro por ganar");
 
+            //Calculo el oro que tienen ahora cada personaje
             int oroAntesG = jugador1.getOro();
             int oroAntesP = jugador2.getOro();
 
@@ -315,6 +329,7 @@ public class MotorCombate {
             }
         }
 
+        //Reinicio la vida de los personajes
         jugador1.setVida_actual(vidaAntes1);
         jugador2.setVida_actual(vidaAntes2);
 

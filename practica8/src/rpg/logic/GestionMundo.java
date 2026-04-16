@@ -156,6 +156,7 @@ public class GestionMundo {
                 ResultSet rs4 = st4.executeQuery("SELECT * FROM CLASES_RPG WHERE id = "+opcion);
 
                 if(rs4.next()) {
+                    //Busco las habilidades de la clase que se ha elegido y se las agrego
                     int idClase = rs4.getInt("id");
                     String nombreClase = rs4.getString("nombre");
 
@@ -232,6 +233,8 @@ public class GestionMundo {
             }
 
         }
+
+        //Si el personaje no tiene ciudad es porque esta desterrado
         String nombreCiudadPersonaje;
         if(personaje.getCiudad() == null) {
             nombreCiudadPersonaje = "Desterrado";
@@ -347,6 +350,7 @@ public class GestionMundo {
             }
 
 
+            //Si el personaje ya tenia ese item en el inventario añadimos uno a la cantidad
             if(personaje.getInventario().containsKey(item)) {
                 try {
                     PreparedStatement ps = connection.prepareStatement("UPDATE inventarios iv SET cantidad = ? WHERE iv.id_item = ? AND iv.id_personaje = ?");
@@ -382,11 +386,14 @@ public class GestionMundo {
     }
 
     public void cobroImpuestos(List<Personajes> personajesCiudad) {
+        //Si el usuario elige una ciudad sin personajes
         if(personajesCiudad.isEmpty()) {
             System.out.println("No hay personajes en esa ciudad");
 
         } else {
+            //Uso el iterador en la lista personajesCiudad
             Iterator<Personajes> iterator = personajesCiudad.iterator();
+            //Mientras que haya un personaje mas en el iterador se hace lo siguiente
             while(iterator.hasNext()) {
                 try {
                     PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? WHERE id = ?");
@@ -394,6 +401,7 @@ public class GestionMundo {
                     int oroActual = personaje.getOro();
                     personaje.setOro(oroActual-20);
 
+                    //Si se queda en negativo se destierra
                     if(personaje.getOro() < 0) {
                         System.out.println("El personaje "+personaje.getNombre()+" a sido desterrado");
 
@@ -421,6 +429,7 @@ public class GestionMundo {
     }
 
     public void jugadoresRicos() {
+        //Hago un comparator de una lista que contiene todos los personajes y comparo el Int Oro y lo pongo en reversa para que sea descendientemente
         List<Personajes> ordenados = getPersonajes().stream()
                 .sorted(Comparator.comparingInt(Personajes::getOro).reversed()).toList();
 
@@ -428,6 +437,7 @@ public class GestionMundo {
 
         System.out.println("Los 3 personajes más ricos son:");
         for (int i = 0; i < ordenados.size(); i++) {
+            //Cuando ya haya mostrado 3 mensajes lo paramos
             if(i == 3) {
                 break;
             }
@@ -440,6 +450,7 @@ public class GestionMundo {
         List<Personajes> personajes = getPersonajes();
         HashMap<String, Integer> recuento = new HashMap<>();
 
+        //Recorro toda la lista de perseonajes y por cada clase nueva que haya le pongo el valor por defecto de 1, y si ya ha salido le añado 1
         for (int i = 0; i < personajes.size(); i++) {
             recuento.put(personajes.get(i).getClase().getNombre(), recuento.getOrDefault(personajes.get(i).getClase().getNombre(), 1)+1);
         }
@@ -488,12 +499,14 @@ public class GestionMundo {
             }
 
 
+            //Si el personaje elige una habilidad de las de su clase
             if(personaje.getHabilidades().containsKey(habilidad)) {
                 boolean estaEquipada = personaje.getHabilidades().get(habilidad);
 
+                //Si estaba equipada sale lo siguiente
                 if(estaEquipada) {
                     System.out.println("La habilidad "+habilidad.getNombre()+"ya estaba equipada");
-                } else {
+                } else { //Sino sale lo siguiente
                     try {
                         PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES_HABILIDADES SET equipada_combate = ? WHERE id_habilidad = ? AND id_personaje = ?");
                         ps.setBoolean(1, true);
@@ -511,11 +524,12 @@ public class GestionMundo {
 
                 }
             } else {
+                //Si elige una id de una habilidad que no existe
                 if(!habilidades.contains(habilidad)) {
                     System.out.println("Esa id no existe");
                     LoggerCustom.logError(personaje.getNombre()+" ha intentado equipar una habilidad que no existe");
                     throw new LimiteHabilidadesException(personaje.getNombre()+" ha intentado equipar una habilidad que no existe");
-                } else {
+                } else { //Si elige una id de una habilidad que no esta en su clase
                     System.out.println("No se puede elegir una habilidad que no este en su clase");
                     LoggerCustom.logError(personaje.getNombre()+" ha intentado equipar una habilidad que no es de su clase");
                     throw new LimiteHabilidadesException(personaje.getNombre()+" ha intentado equipar una habilidad que no es de su clase");
