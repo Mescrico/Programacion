@@ -178,12 +178,50 @@ public class GestionMundo {
                 }
             }
 
-            PreparedStatement psPersonaje = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES (?, 1, 100, ?, ?, ?, 1)", Statement.RETURN_GENERATED_KEYS);
+            //Si el nivel de la ciudad es 1 se crea con 100 monedas de oro y si no es 1 se crea con 500
+
+            System.out.println("En que ciudad quieres iniciar");
+
+            boolean existeC = false;
+            Ciudades ciudad = null;
+            for (Ciudades c : ciudades) {
+                System.out.println("ID: "+c.getIdCiudades()+" - Nombre: "+c.getNombre()+" - Nivel: "+c.getNivel_minimo_acceso());
+            }
+
+            while(!existeC) {
+                System.out.println("ID de la ciudad a elegir");
+                int id = s.nextInt();
+
+                for (Ciudades c : ciudades) {
+                    if (c.getIdCiudades() == id) {
+                        ciudad = c;
+                        break;
+                    }
+                }
+
+                if (ciudad == null) {
+                    System.out.println("Esa id no existe");
+                } else {
+                    existeC = true;
+                }
+            }
+
+            int oro = 0;
+            if(ciudad.getNivel_minimo_acceso() == 1) {
+                oro = 100;
+            } else {
+                oro = 500;
+            }
+
+            PreparedStatement psPersonaje = connection.prepareStatement("INSERT INTO PERSONAJES (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) VALUES (?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
             psPersonaje.setString(1, nombrePersonaje);
-            psPersonaje.setInt(2, 100+raza.getBonificador_vida());
-            psPersonaje.setInt(3, raza.getIdRaza());
-            psPersonaje.setInt(4, clase.getIdClasesRPG());
+            psPersonaje.setInt(2, ciudad.getNivel_minimo_acceso());
+            psPersonaje.setInt(3, oro);
+            psPersonaje.setInt(4, 100+raza.getBonificador_vida());
+            psPersonaje.setInt(5, raza.getIdRaza());
+            psPersonaje.setInt(6, clase.getIdClasesRPG());
+            psPersonaje.setInt(7, ciudad.getIdCiudades());
 
             psPersonaje.executeUpdate();
 
@@ -540,5 +578,59 @@ public class GestionMundo {
         }
 
 
+    }
+
+
+    private void procesarRitual(List<Personajes> expedicion, int idClaseEvolucionada) {
+        Iterator<Personajes> iterator = expedicion.iterator();
+
+        while(iterator.hasNext()) {
+            Personajes personaje = iterator.next();
+
+            int contador = 0;
+            for(Map.Entry<Habilidades, Boolean> revisar : personaje.getHabilidades().entrySet()) {
+                if(revisar.getValue()) {
+                    contador++;
+                }
+            }
+
+            int itemsTotal = 0;
+            if(contador == 3) {
+                for (Map.Entry<Items, Integer> revisar : personaje.getInventario().entrySet()) {
+                    itemsTotal += revisar.getValue();
+                }
+
+
+                if(itemsTotal > 5) {
+                    personaje.getClase().setIdClasesRPG(idClaseEvolucionada);
+                    personaje.setOro(personaje.getOro()-50);
+
+                    try {
+                        PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES SET oro = ? AND id_clase = ?");
+                        ps.setInt(1, personaje.getOro());
+                        ps.setInt(2, personaje.getClase().getIdClasesRPG());
+
+                        ps.executeUpdate();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+                if(personaje.getVida_actual() <= personaje.getRaza().getBonificador_vida() * 0.1) {
+
+                    personaje.setCiudad(null);
+                    try {
+                        PreparedStatement ps = connection.prepareStatement("UPDATE PERSONAJES SET id_ciudad_actual = ?");
+                        ps.setInt(1, personaje.getCiudad().getIdCiudades());
+
+                        ps.executeUpdate();
+
+                        iterator.remove();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
     }
 }
